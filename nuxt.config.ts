@@ -47,7 +47,7 @@ export default defineNuxtConfig({
     public: {
       appName: 'Job Classification Assistant',
       selectedModel: 'Xenova/bge-small-en-v1.5',
-      generationModel: 'onnx-community/gemma-3-270m-it-ONNX',
+      generationModel: 'HuggingFaceTB/SmolLM2-360M-Instruct',
       allowRemoteModels: true,
       localModelPath: '/models/',
     },

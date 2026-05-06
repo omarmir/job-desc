@@ -1,0 +1,29 @@
+{
+  "generated": "2026-05-06T15:13:03.753Z",
+  "modelId": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "label": "SmolLM2 360M Instruct",
+  "family": "SmolLM2",
+  "params": "360M",
+  "dtype": "q4",
+  "approxDownloadMB": 372,
+  "caseStart": 0,
+  "caseCount": 1,
+  "caseIds": [
+    "as-01"
+  ],
+  "loadMs": 1134,
+  "durations": [
+    1980
+  ],
+  "totalChars": 199,
+  "groundingSum": 0.677419,
+  "coverageSum": 0.913043,
+  "completenessSum": 0.7,
+  "faithfulnessSum": 0.677419,
+  "unsupportedClaimSum": 0.913043,
+  "rewriteQualitySum": 0.7,
+  "formattingSum": 1,
+  "promptMode": "compact-proxy",
+  "maxNewTokens": 80,
+  "batchSize": 1
+}

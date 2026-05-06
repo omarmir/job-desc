@@ -212,6 +212,10 @@ export interface GenerationBenchmarkResult {
   groundingScore: number
   coverageScore: number
   sectionCompleteness: number
+  faithfulnessScore?: number
+  unsupportedClaimScore?: number
+  rewriteQualityScore?: number
+  formattingScore?: number
   totalScore: number
   benchmarked: boolean
   benchmarkNotes?: string

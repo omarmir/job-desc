@@ -76,3 +76,48 @@ export function buildJobDescriptionSectionMessages(input: DraftInput, sectionKey
     },
   ]
 }
+
+export function buildJobDescriptionRewriteMessages(
+  input: DraftInput,
+  sectionKey: DraftSectionKey,
+  groundedDraft: string,
+): ChatMessage[] {
+  const heading = JD_SECTION_LABELS[sectionKey]
+
+  return [
+    {
+      role: 'system',
+      content: [
+        'You carefully rewrite Canadian federal public service job description sections.',
+        'You must preserve meaning and must not add facts.',
+        'Use only facts present in the grounded draft and input facts.',
+        'Do not add names, dates, departments, branches, teams, programs, clients, stakeholders, locations, systems, tools, legislation, service channels, reporting relationships, workload, travel, supervision, or outcomes unless they appear verbatim in the input facts.',
+        'If the grounded draft says "To be confirmed", keep that phrase.',
+        'Return plain text only, with no headings, markdown, tables, notes, or explanations.',
+        'Prefer concise, useful wording over length.',
+      ].join(' '),
+    },
+    {
+      role: 'user',
+      content: [
+        `Rewrite only this section: ${heading}`,
+        '',
+        'Grounded draft to improve',
+        groundedDraft,
+        '',
+        'Input facts',
+        `Job title: ${input.jobTitle}`,
+        `Duties: ${input.duties || 'None provided'}`,
+        `Additional context: ${input.context || 'None provided'}`,
+        `Selected classification: ${input.fullClassification || `${input.selectedCode} - ${input.selectedTitle}`}`,
+        input.levelEvidence ? `JES level evidence: ${input.levelEvidence}` : '',
+        '',
+        'Rules',
+        '- Do not introduce any fact not present above.',
+        '- Do not expand "To be confirmed" into assumed content.',
+        '- Keep bullets as bullets when the grounded draft uses bullets.',
+        '- Use complete sentences.',
+      ].filter(Boolean).join('\n'),
+    },
+  ]
+}

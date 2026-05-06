@@ -37,7 +37,9 @@ const smartestGenerationModelId = computed(() =>
 )
 
 const fastestGenerationModelId = computed(() =>
-  [...benchmarkedGenerationResults.value].sort((a, b) => a.avgDurationMs - b.avgDurationMs)[0]?.id,
+  [...benchmarkedGenerationResults.value]
+    .filter((result) => result.avgDurationMs > 0)
+    .sort((a, b) => a.avgDurationMs - b.avgDurationMs)[0]?.id,
 )
 
 const largestGenerationModelId = computed(() =>
@@ -60,6 +62,10 @@ function formatDuration(value: number) {
 
 function generationModelNotes(id: string) {
   return GENERATION_MODEL_CANDIDATES.find((candidate) => candidate.id === id)
+}
+
+function metricLabel(score: number | undefined, benchmarked: boolean) {
+  return benchmarkScoreLabel(score ?? 0, benchmarked)
 }
 </script>
 
@@ -119,8 +125,9 @@ function generationModelNotes(id: string) {
           <div class="px-6 py-6 text-sm leading-6 text-slate-700">
             <p class="font-semibold text-slate-950">3. Draft from the selected candidate</p>
             <p class="mt-2">
-              The generation model receives the selected classification, JES evidence, user
-              context, and one required template section at a time. The browser renders an HTML
+              The app first builds a grounded draft from the selected classification and user
+              facts. The generation model can rewrite that grounded text, but a validator rejects
+              rewrites that add unsupported or suspicious content. The browser renders an HTML
               preview and can fill the Word template for download.
             </p>
           </div>
@@ -264,14 +271,15 @@ function generationModelNotes(id: string) {
         <div class="space-y-5 px-6 py-6 text-sm leading-6 text-slate-700">
           <p>
             The generation benchmark uses {{ generationBenchmarkReport.corpusSize }} handcrafted
-            drafting cases. Each model is scored for grounding in the selected classification,
-            coverage of expected content, section completeness, and throughput.
+            conservative rewrite cases. Each model is scored for preserving grounded content,
+            avoiding unsupported claims, improving wording, and keeping usable formatting. The app
+            uses the grounded draft as the fallback whenever a model rewrite fails these checks.
           </p>
           <p>
             Size is the approximate browser download for the app's selected ONNX dtype and required
             tokenizer/config files, not the full Hugging Face repository size.
           </p>
-          <div v-if="defaultGenerationModel" class="grid gap-3 sm:grid-cols-3">
+          <div v-if="defaultGenerationModel" class="grid gap-3 sm:grid-cols-4">
             <div class="border border-blue-300 bg-blue-50 px-4 py-4">
               <p class="text-xs uppercase tracking-[0.14em] text-blue-800">Current default</p>
               <p class="mt-1 text-base font-semibold text-slate-950">
@@ -290,6 +298,38 @@ function generationModelNotes(id: string) {
                 {{ defaultGenerationModel.dtype }}
               </p>
             </div>
+            <div class="border border-slate-300 bg-slate-50 px-4 py-4">
+              <p class="text-xs uppercase tracking-[0.14em] text-slate-600">Fallback</p>
+              <p class="mt-1 text-base font-semibold text-slate-950">
+                Grounded draft
+              </p>
+            </div>
+          </div>
+          <div class="grid gap-3 md:grid-cols-4">
+            <div class="border border-slate-300 bg-white px-4 py-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">Faithful</p>
+              <p class="mt-2 text-xs leading-5 text-slate-700">
+                Keeps the grounded source duties and context.
+              </p>
+            </div>
+            <div class="border border-slate-300 bg-white px-4 py-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">No extras</p>
+              <p class="mt-2 text-xs leading-5 text-slate-700">
+                Avoids unsupported facts, labels, prompt leakage, and invented entities.
+              </p>
+            </div>
+            <div class="border border-slate-300 bg-white px-4 py-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">Wording</p>
+              <p class="mt-2 text-xs leading-5 text-slate-700">
+                Improves readability without over-expanding the section.
+              </p>
+            </div>
+            <div class="border border-slate-300 bg-white px-4 py-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">Format</p>
+              <p class="mt-2 text-xs leading-5 text-slate-700">
+                Returns plain section text or bullets, not markdown headings or tables.
+              </p>
+            </div>
           </div>
           <div class="overflow-x-auto border border-slate-300">
             <table class="min-w-full divide-y divide-slate-300 text-left text-xs">
@@ -297,9 +337,10 @@ function generationModelNotes(id: string) {
                 <tr>
                   <th class="px-3 py-2 font-semibold">Model</th>
                   <th class="px-3 py-2 font-semibold">Score</th>
-                  <th class="px-3 py-2 font-semibold">Grounding</th>
-                  <th class="px-3 py-2 font-semibold">Coverage</th>
-                  <th class="px-3 py-2 font-semibold">Sections</th>
+                  <th class="px-3 py-2 font-semibold">Faithful</th>
+                  <th class="px-3 py-2 font-semibold">No extras</th>
+                  <th class="px-3 py-2 font-semibold">Wording</th>
+                  <th class="px-3 py-2 font-semibold">Format</th>
                   <th class="px-3 py-2 font-semibold">Avg</th>
                   <th class="px-3 py-2 font-semibold">P95</th>
                   <th class="px-3 py-2 font-semibold">Dtype</th>
@@ -319,9 +360,10 @@ function generationModelNotes(id: string) {
                     </div>
                   </td>
                   <td class="px-3 py-2">{{ benchmarkScoreLabel(result.totalScore, result.benchmarked) }}</td>
-                  <td class="px-3 py-2">{{ benchmarkScoreLabel(result.groundingScore, result.benchmarked) }}</td>
-                  <td class="px-3 py-2">{{ benchmarkScoreLabel(result.coverageScore, result.benchmarked) }}</td>
-                  <td class="px-3 py-2">{{ benchmarkScoreLabel(result.sectionCompleteness, result.benchmarked) }}</td>
+                  <td class="px-3 py-2">{{ metricLabel(result.faithfulnessScore ?? result.groundingScore, result.benchmarked) }}</td>
+                  <td class="px-3 py-2">{{ metricLabel(result.unsupportedClaimScore ?? result.coverageScore, result.benchmarked) }}</td>
+                  <td class="px-3 py-2">{{ metricLabel(result.rewriteQualityScore ?? result.sectionCompleteness, result.benchmarked) }}</td>
+                  <td class="px-3 py-2">{{ metricLabel(result.formattingScore ?? result.sectionCompleteness, result.benchmarked) }}</td>
                   <td class="px-3 py-2">{{ formatDuration(result.avgDurationMs) }}</td>
                   <td class="px-3 py-2">{{ formatDuration(result.p95DurationMs) }}</td>
                   <td class="px-3 py-2">{{ result.dtype }}</td>
@@ -343,9 +385,9 @@ function generationModelNotes(id: string) {
                   Default
                 </UBadge>
                 <UBadge v-if="smartestGenerationModelId === result.id" color="success" variant="subtle">
-                  Smartest
+                  Best rewrite
                 </UBadge>
-                <UBadge v-if="fastestGenerationModelId === result.id" color="warning" variant="subtle">
+                <UBadge v-if="fastestGenerationModelId && fastestGenerationModelId === result.id" color="warning" variant="subtle">
                   Fastest
                 </UBadge>
                 <UBadge v-if="largestGenerationModelId === result.id" color="neutral" variant="subtle">
@@ -365,11 +407,27 @@ function generationModelNotes(id: string) {
                 <span class="border border-slate-300 bg-white px-2 py-1">
                   {{ benchmarkScoreLabel(result.totalScore, result.benchmarked) }} score
                 </span>
+                <span
+                  v-if="result.benchmarked"
+                  class="border border-slate-300 bg-white px-2 py-1"
+                >
+                  validator fallback required
+                </span>
               </div>
               <p v-if="result.benchmarkNotes" class="mt-2 text-xs text-slate-600">
                 {{ result.benchmarkNotes }}
               </p>
             </div>
+          </div>
+          <div class="border border-slate-300 bg-slate-50 px-4 py-4 text-xs leading-5 text-slate-700">
+            <p class="font-semibold text-slate-950">Current interpretation</p>
+            <p class="mt-2">
+              SmolLM2 is the default because it behaved better than Gemma 270M in conservative
+              rewrite smoke tests, not because it can be trusted without checks. Gemma 270M failed
+              by adding unsupported facts and markdown structure. Qwen2.5 0.5B leaked prompt/input
+              labels in a smoke case. The production path therefore treats every model as optional
+              polish over a grounded draft and rejects unsafe rewrites.
+            </p>
           </div>
         </div>
       </section>

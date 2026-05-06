@@ -20,6 +20,10 @@ type ChunkPayload = {
   groundingSum: number
   coverageSum: number
   completenessSum: number
+  faithfulnessSum?: number
+  unsupportedClaimSum?: number
+  rewriteQualitySum?: number
+  formattingSum?: number
   promptMode: 'compact-proxy'
   maxNewTokens: number
   batchSize: number
@@ -78,6 +82,10 @@ const results: GenerationBenchmarkResult[] = GENERATION_MODEL_CANDIDATES
     const groundingSum = modelChunks.reduce((sum, chunk) => sum + chunk.groundingSum, 0)
     const coverageSum = modelChunks.reduce((sum, chunk) => sum + chunk.coverageSum, 0)
     const completenessSum = modelChunks.reduce((sum, chunk) => sum + chunk.completenessSum, 0)
+    const faithfulnessSum = modelChunks.reduce((sum, chunk) => sum + (chunk.faithfulnessSum ?? chunk.groundingSum), 0)
+    const unsupportedClaimSum = modelChunks.reduce((sum, chunk) => sum + (chunk.unsupportedClaimSum ?? chunk.coverageSum), 0)
+    const rewriteQualitySum = modelChunks.reduce((sum, chunk) => sum + (chunk.rewriteQualitySum ?? chunk.completenessSum), 0)
+    const formattingSum = modelChunks.reduce((sum, chunk) => sum + (chunk.formattingSum ?? chunk.completenessSum), 0)
     const benchmarked = caseIds.length === totalCaseCount && durations.length === totalCaseCount
     const divisor = Math.max(caseIds.length, 1)
     const totalDurationMs = durations.reduce((sum, value) => sum + value, 0)
@@ -88,16 +96,23 @@ const results: GenerationBenchmarkResult[] = GENERATION_MODEL_CANDIDATES
     const groundingScore = Number((groundingSum / divisor).toFixed(4))
     const coverageScore = Number((coverageSum / divisor).toFixed(4))
     const sectionCompleteness = Number((completenessSum / divisor).toFixed(4))
+    const faithfulnessScore = Number((faithfulnessSum / divisor).toFixed(4))
+    const unsupportedClaimScore = Number((unsupportedClaimSum / divisor).toFixed(4))
+    const rewriteQualityScore = Number((rewriteQualitySum / divisor).toFixed(4))
+    const formattingScore = Number((formattingSum / divisor).toFixed(4))
     const totalScore = benchmarked
-      ? Number((groundingScore * 0.35 + coverageScore * 0.45 + sectionCompleteness * 0.2).toFixed(4))
+      ? Number((
+        faithfulnessScore * 0.35 +
+        unsupportedClaimScore * 0.35 +
+        rewriteQualityScore * 0.2 +
+        formattingScore * 0.1
+      ).toFixed(4))
       : 0
 
     let benchmarkNotes = `${modelChunks.length} chunk file(s), ${caseIds.length}/${totalCaseCount} cases complete.`
     if (benchmarked) {
       if (candidate.id === 'onnx-community/gemma-3-270m-it-ONNX') {
         benchmarkNotes = 'Completed compact-proxy benchmark. Smallest and fastest model in the set.'
-      } else if (candidate.id === 'onnx-community/Qwen2.5-1.5B-Instruct') {
-        benchmarkNotes = 'Completed compact-proxy benchmark. Heaviest practical browser model and primary quality target.'
       } else {
         benchmarkNotes = 'Completed compact-proxy benchmark.'
       }
@@ -119,6 +134,10 @@ const results: GenerationBenchmarkResult[] = GENERATION_MODEL_CANDIDATES
       groundingScore,
       coverageScore,
       sectionCompleteness,
+      faithfulnessScore,
+      unsupportedClaimScore,
+      rewriteQualityScore,
+      formattingScore,
       totalScore,
       benchmarked,
       benchmarkNotes,
@@ -132,8 +151,8 @@ const payload: GenerationBenchmarkReport = {
   corpusSize: totalCaseCount,
   methodology: [
     `${totalCaseCount} handcrafted role cases grounded in the JES corpus.`,
-    'Each chunk benchmarks a compact job-description drafting proxy instead of a full long draft to keep local runs stable.',
-    'Scores combine expected duty keyword coverage, JES grounding terms, and section completeness after template normalization.',
+    'Each chunk benchmarks conservative rewriting of a grounded deterministic draft rather than unrestricted long-form generation.',
+    'Scores prioritize faithfulness to source content, unsupported-claim avoidance, wording usefulness, and formatting.',
     'Terminal-side benchmark runs are CPU-only here because the installed onnxruntime-node CUDA provider is unavailable.',
   ],
   selectedModel: selectedId,

@@ -34,7 +34,10 @@ const SAMPLE_ROLE = {
   generationContext:
     'Branch supports labour-market and affordability policy. Position contributes to Treasury Board and cabinet-style briefing material and provides analytical advice to directors and executives.',
 } as const
-const LEGACY_DEFAULT_GENERATION_MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct'
+const LEGACY_DEFAULT_GENERATION_MODEL_IDS = [
+  'onnx-community/Qwen2.5-0.5B-Instruct',
+  'onnx-community/gemma-3-270m-it-ONNX',
+]
 
 const formState = reactive({
   jobTitle: SAMPLE_ROLE.jobTitle,
@@ -208,7 +211,7 @@ onMounted(async () => {
   const stored = window.localStorage.getItem('job-desc:generation-model')
   if (
     stored &&
-    stored !== LEGACY_DEFAULT_GENERATION_MODEL_ID &&
+    !LEGACY_DEFAULT_GENERATION_MODEL_IDS.includes(stored) &&
     GENERATION_MODEL_CANDIDATES.some((candidate) => candidate.id === stored)
   ) {
     setSelectedModel(stored)

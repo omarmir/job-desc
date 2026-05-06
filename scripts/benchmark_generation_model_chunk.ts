@@ -3,12 +3,8 @@ import { resolve } from 'node:path'
 import { performance } from 'node:perf_hooks'
 import { pipeline } from '@huggingface/transformers'
 import { GENERATION_MODEL_CANDIDATES } from '../lib/generation-model-candidates'
-import {
-  createEmptySections,
-  extractJobDescriptionSections,
-  formatJobDescriptionTemplate,
-} from '../lib/job-description-template'
-import type { DraftInput, GenerationBenchmarkCase, JesIndex } from '../lib/types'
+import { buildJobDescriptionRewriteMessages } from '../lib/job-description-prompt'
+import type { DraftInput, DraftSectionKey, GenerationBenchmarkCase, JesIndex } from '../lib/types'
 
 type OutputChunk = {
   generated_text?: unknown
@@ -36,6 +32,10 @@ type ChunkPayload = {
   groundingSum: number
   coverageSum: number
   completenessSum: number
+  faithfulnessSum: number
+  unsupportedClaimSum: number
+  rewriteQualitySum: number
+  formattingSum: number
   promptMode: 'compact-proxy'
   maxNewTokens: number
   batchSize: number
@@ -106,94 +106,37 @@ function readGeneratedText(output: unknown): string {
   return ''
 }
 
-function scoreCoverage(markdown: string, expectedKeywords: string[]) {
-  const textTokens = new Set(tokenize(markdown))
-  const matched = expectedKeywords.filter((keyword) => textTokens.has(stem(normalize(keyword))))
-  return matched.length / expectedKeywords.length
-}
+const BENCH_SECTION: DraftSectionKey = 'skill'
+const HALLUCINATION_PATTERN = /\b(assigned to|status:|date:|department of|census bureau|sponsor|python|sas|ms project|ottawa|marketing|sales|finance|input facts)\b/i
 
-function scoreGrounding(markdown: string, entry: JesIndex['entries'][number]) {
-  const textTokens = new Set(tokenize(markdown))
-  const groundingTerms = [
-    ...entry.fac.slice(0, 3),
-    ...entry.tags.slice(0, 6),
-    ...entry.alias.slice(0, 2),
-  ]
-    .map((term) => stem(normalize(term)))
-    .filter((term) => term.length > 3)
-
-  const uniqueTerms = [...new Set(groundingTerms)]
-  const hits = uniqueTerms.filter((term) => textTokens.has(term))
-  return uniqueTerms.length ? Math.min(1, hits.length / Math.min(6, uniqueTerms.length)) : 0.5
-}
-
-function scoreSectionCompleteness(markdown: string) {
-  const sections = extractJobDescriptionSections(markdown)
-  const emptyDefaults = createEmptySections()
-  let filledSections = 0
-
-  for (const [key, value] of Object.entries(sections)) {
-    if (value && value !== emptyDefaults[key as keyof typeof emptyDefaults]) {
-      filledSections += 1
-    }
-  }
-
-  const keyActivitiesLines = sections.key_activities
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line.startsWith('- '))
-  const bulletScore = keyActivitiesLines.length >= 2 && keyActivitiesLines.length <= 3 ? 1 : Math.min(1, keyActivitiesLines.length / 2)
-
-  return Math.min(1, filledSections / 7 * 0.75 + bulletScore * 0.25)
-}
-
-function buildJobDescriptionMessages(input: DraftInput, entry: JesIndex['entries'][number]): ChatMessage[] {
-  const contextLines = [
-    `Selected classification: ${input.selectedCode} - ${input.selectedTitle}`,
-    entry.plan ? `Evaluation plan: ${entry.plan}` : '',
-    entry.lvl.length ? `Observed levels: ${entry.lvl.slice(0, 4).join(', ')}` : '',
-    entry.def ? `Group definition: ${entry.def}` : '',
-    entry.fac.length ? `Factors: ${entry.fac.slice(0, 6).join(', ')}` : '',
-    input.context ? `Additional user context: ${input.context}` : '',
-  ]
+function buildGroundedDraft(input: DraftInput): string {
+  const activities = (input.duties || 'To be confirmed.')
+    .split(/;|\s*,\s+and\s+|\s+and\s+/)
+    .map((item) => item.trim().replace(/[.!?]$/g, '').toLowerCase())
     .filter(Boolean)
-    .join('\n')
+    .slice(0, 4)
+  const activityText = activities.length ? activities.join('; ') : 'To be confirmed'
+  return `The work requires applying knowledge relevant to ${input.selectedTitle} to ${activityText}. Specific policy, system, communication, analytical, and judgment requirements are to be confirmed.`
+}
 
-  return [
-    {
-      role: 'system',
-      content:
-        'You draft compact Canadian federal public service job description sections. Return markdown only. Use plain administrative language.',
-    },
-    {
-      role: 'user',
-      content: [
-        'Prepare a compact, grounded Part 2 job description body for benchmarking.',
-        '',
-        `Job title: ${input.jobTitle}`,
-        `Optional duties: ${input.duties || 'None provided'}`,
-        '',
-        'Classification context',
-        contextLines,
-        '',
-        'Required headings',
-        '- Organizational context',
-        '- Client service results',
-        '- Key activities',
-        '- Skill',
-        '- Effort',
-        '- Responsibility',
-        '- Working conditions',
-        '',
-        'Content rules',
-        '- Organizational context: 1 or 2 bullets.',
-        '- Client service results: 1 short sentence.',
-        '- Key activities: 2 or 3 bullets.',
-        '- Skill, Effort, Responsibility, Working conditions: 1 short sentence each.',
-        '- Use "To be confirmed." if needed instead of inventing facts.',
-      ].join('\n'),
-    },
-  ]
+function scoreRewrite(output: string, groundedDraft: string, input: DraftInput) {
+  const allowed = new Set(tokenize([groundedDraft, input.jobTitle, input.duties, input.context, input.selectedTitle].filter(Boolean).join(' ')))
+  const tokens = tokenize(output)
+  const unsupported = tokens.filter((token) => !allowed.has(token) && token.length > 4)
+  const unsupportedRatio = tokens.length ? unsupported.length / tokens.length : 1
+  const unsupportedClaimScore = HALLUCINATION_PATTERN.test(output) ? 0 : Math.max(0, 1 - unsupportedRatio * 2)
+  const sourceTerms = tokenize(groundedDraft)
+  const keptTerms = sourceTerms.filter((token) => tokens.includes(token))
+  const faithfulnessScore = sourceTerms.length ? Math.min(1, keptTerms.length / sourceTerms.length) : 0
+  const formattingScore = /^#{1,6}\s|```|\||^\s*(skill|input facts)\s*:/i.test(output) ? 0 : 1
+  const rewriteQualityScore = output.length < 40 || output.length > groundedDraft.length * 1.8 ? 0.2 : 0.7
+
+  return {
+    faithfulnessScore,
+    unsupportedClaimScore,
+    rewriteQualityScore,
+    formattingScore,
+  }
 }
 
 mkdirSync(chunksDir, { recursive: true })
@@ -214,6 +157,10 @@ let totalChars = 0
 let groundingSum = 0
 let coverageSum = 0
 let completenessSum = 0
+let faithfulnessSum = 0
+let unsupportedClaimSum = 0
+let rewriteQualitySum = 0
+let formattingSum = 0
 
 for (let batchStart = 0; batchStart < benchmarkCases.length; batchStart += batchSize) {
   const batch = benchmarkCases.slice(batchStart, batchStart + batchSize)
@@ -233,12 +180,14 @@ for (let batchStart = 0; batchStart < benchmarkCases.length; batchStart += batch
       source: entry.src,
       context: benchmarkCase.context,
     }
+    const groundedDraft = buildGroundedDraft(input)
 
     return {
       benchmarkCase,
       entry,
       input,
-      messages: buildJobDescriptionMessages(input, entry),
+      groundedDraft,
+      messages: buildJobDescriptionRewriteMessages(input, BENCH_SECTION, groundedDraft) as ChatMessage[],
     }
   })
 
@@ -259,12 +208,16 @@ for (let batchStart = 0; batchStart < benchmarkCases.length; batchStart += batch
   prepared.forEach((item, index) => {
     durations.push(perCaseDurationMs)
     const rawText = readGeneratedText(Array.isArray(outputs) ? outputs[index] : outputs)
-    const markdown = formatJobDescriptionTemplate(item.input, extractJobDescriptionSections(rawText))
+    const scores = scoreRewrite(rawText, item.groundedDraft, item.input)
 
-    totalChars += markdown.length
-    groundingSum += scoreGrounding(markdown, item.entry)
-    coverageSum += scoreCoverage(markdown, item.benchmarkCase.expectedKeywords)
-    completenessSum += scoreSectionCompleteness(markdown)
+    totalChars += rawText.length
+    groundingSum += scores.faithfulnessScore
+    coverageSum += scores.unsupportedClaimScore
+    completenessSum += scores.rewriteQualityScore
+    faithfulnessSum += scores.faithfulnessScore
+    unsupportedClaimSum += scores.unsupportedClaimScore
+    rewriteQualitySum += scores.rewriteQualityScore
+    formattingSum += scores.formattingScore
   })
 
   console.log(`${candidate.label}: ${Math.min(batchStart + prepared.length, benchmarkCases.length)}/${benchmarkCases.length}`)
@@ -291,6 +244,10 @@ const payload: ChunkPayload = {
   groundingSum: Number(groundingSum.toFixed(6)),
   coverageSum: Number(coverageSum.toFixed(6)),
   completenessSum: Number(completenessSum.toFixed(6)),
+  faithfulnessSum: Number(faithfulnessSum.toFixed(6)),
+  unsupportedClaimSum: Number(unsupportedClaimSum.toFixed(6)),
+  rewriteQualitySum: Number(rewriteQualitySum.toFixed(6)),
+  formattingSum: Number(formattingSum.toFixed(6)),
   promptMode: 'compact-proxy',
   maxNewTokens,
   batchSize,
