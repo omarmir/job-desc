@@ -1,4 +1,26 @@
+export interface JesLevelProfile {
+  level: string
+  label: string
+  summary: string
+  evidence: string[]
+  source: string
+  confidenceBasis: string
+}
+
 export interface JesEntry {
+  code: string
+  title: string
+  source: string
+  sourceFormat: 'pdf' | 'md'
+  aliases: string[]
+  groupDefinition: string
+  inclusions: string[]
+  exclusions: string[]
+  routingTags: string[]
+  nearMissGroups: string[]
+  levelProfiles: JesLevelProfile[]
+
+  // Legacy compact-index fields retained for scripts that still consume v1 names.
   c: string
   t: string
   src: string
@@ -37,14 +59,26 @@ export interface SearchDocument {
   text: string
   keywords: string[]
   tags: string[]
+  nearMissGroups: string[]
   levels: string[]
   plan: string | null
   source: string
+  kind?: 'group' | 'level'
+  level?: string
+  levelLabel?: string
+  evidence?: string
 }
 
 export interface RankedMatch {
   code: string
   title: string
+  selectedGroup: string
+  selectedLevel: string
+  fullClassification: string
+  groupConfidence: number
+  levelConfidence: number
+  levelEvidence: string
+  evidenceLabel: string
   score: number
   semanticScore: number
   lexicalScore: number
@@ -59,10 +93,34 @@ export interface DraftInput {
   duties?: string
   selectedCode: string
   selectedTitle: string
+  selectedLevel?: string
+  fullClassification?: string
+  levelEvidence?: string
   plan?: string | null
   levels?: string[]
   source?: string
   context?: string
+}
+
+export type DraftSectionKey =
+  | 'organizational_context'
+  | 'client_service_results'
+  | 'key_activities'
+  | 'skill'
+  | 'effort'
+  | 'responsibility'
+  | 'working_conditions'
+
+export interface GeneratedDraftSection {
+  key: DraftSectionKey
+  label: string
+  text: string
+}
+
+export interface GeneratedDraftResult {
+  rawText: string
+  html: string
+  sections: Record<DraftSectionKey, string>
 }
 
 export interface ProgressFileInfo {
@@ -80,9 +138,20 @@ export interface GenerationProgressState {
   files: Record<string, ProgressFileInfo>
 }
 
+export interface InferenceProgressState {
+  stage: 'idle' | 'loading' | 'indexing' | 'ready' | 'error'
+  label: string
+  percent: number
+  loadedBytes: number
+  totalBytes: number
+  currentFile: string
+  files: Record<string, ProgressFileInfo>
+}
+
 export interface BenchmarkCase {
   id: string
   target: string
+  expectedLevel?: string
   title: string
   duties?: string
   notes?: string

@@ -1,5 +1,5 @@
-import type { RankedMatch } from '~/lib/types'
-import { matchRole } from '~/lib/matcher/browser'
+import type { InferenceProgressState, RankedMatch } from '~/lib/types'
+import { matchRole, preloadMatcherModel } from '~/lib/matcher/browser'
 
 export function useJobMatcher() {
   const runtimeConfig = useRuntimeConfig()
@@ -11,7 +11,54 @@ export function useJobMatcher() {
     query: '',
     matches: [] as RankedMatch[],
     lastDurationMs: 0,
+    progress: {
+      stage: 'idle',
+      label: 'Retrieval model pending',
+      percent: 0,
+      loadedBytes: 0,
+      totalBytes: 0,
+      currentFile: '',
+      files: {},
+    } as InferenceProgressState,
   })
+
+  function applyProgress(update: Partial<InferenceProgressState>) {
+    Object.assign(state.progress, update)
+    state.ready = state.progress.stage === 'ready'
+  }
+
+  async function preloadModel() {
+    if (state.progress.stage === 'ready' || state.progress.stage === 'loading' || state.progress.stage === 'indexing') {
+      return
+    }
+
+    state.error = null
+    applyProgress({
+      stage: 'loading',
+      label: 'Starting retrieval model',
+      percent: 0,
+    })
+
+    try {
+      await preloadMatcherModel(
+        runtimeConfig.public.selectedModel,
+        runtimeConfig.public.allowRemoteModels,
+        runtimeConfig.public.localModelPath,
+        applyProgress,
+      )
+      applyProgress({
+        stage: 'ready',
+        label: 'Retrieval model ready',
+        percent: 100,
+      })
+    } catch (error) {
+      applyProgress({
+        stage: 'error',
+        label: 'Retrieval model failed',
+      })
+      state.error = error instanceof Error ? error.message : 'Unknown inference error'
+    }
+  }
 
   async function analyzeRole(jobTitle: string, duties?: string) {
     const query = [jobTitle.trim(), duties?.trim()].filter(Boolean).join('. ')
@@ -36,6 +83,11 @@ export function useJobMatcher() {
       )
 
       state.ready = true
+      applyProgress({
+        stage: 'ready',
+        label: 'Retrieval model ready',
+        percent: 100,
+      })
       state.matches = result.matches
       state.lastDurationMs = Math.round(performance.now() - startedAt)
     } catch (error) {
@@ -48,6 +100,7 @@ export function useJobMatcher() {
 
   return {
     state: readonly(state),
+    preloadModel,
     analyzeRole,
   }
 }

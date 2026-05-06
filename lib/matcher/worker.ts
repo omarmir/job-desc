@@ -1,6 +1,7 @@
 /// <reference lib="webworker" />
 
-import { matchRoleRuntime } from './runtime'
+import { ensureDocumentEmbeddings, matchRoleRuntime } from './runtime'
+import type { InferenceProgressState } from '../types'
 
 type MatchRequestMessage = {
   type: 'match'
@@ -13,13 +14,46 @@ type MatchRequestMessage = {
   }
 }
 
-self.onmessage = async (event: MessageEvent<MatchRequestMessage>) => {
+type PreloadRequestMessage = {
+  type: 'preload'
+  requestId: string
+  payload: {
+    modelId: string
+    allowRemoteModels: boolean
+    localModelPath: string
+  }
+}
+
+type RequestMessage = MatchRequestMessage | PreloadRequestMessage
+
+self.onmessage = async (event: MessageEvent<RequestMessage>) => {
   const message = event.data
-  if (message?.type !== 'match') {
+  if (message?.type !== 'match' && message?.type !== 'preload') {
     return
   }
 
   try {
+    if (message.type === 'preload') {
+      await ensureDocumentEmbeddings(
+        message.payload.modelId,
+        message.payload.allowRemoteModels,
+        message.payload.localModelPath,
+        (progress: Partial<InferenceProgressState>) => {
+          self.postMessage({
+            type: 'progress',
+            requestId: message.requestId,
+            payload: progress,
+          })
+        },
+      )
+
+      self.postMessage({
+        type: 'ready',
+        requestId: message.requestId,
+      })
+      return
+    }
+
     const result = await matchRoleRuntime(
       message.payload.query,
       message.payload.modelId,

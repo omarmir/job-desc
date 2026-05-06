@@ -3,2100 +3,2158 @@
     "id": "ac-01",
     "target": "AC",
     "title": "Actuarial Scientist",
-    "duties": "Leads analysis related to actuarial science, prepares recommendations, and supports accident planning with clear written briefings.",
-    "notes": "Actuarial Science | accident, accident sickness, accidents"
+    "duties": "Leads analysis related to actuarial science, prepares recommendations, and supports actuarial analysis planning with clear written briefings.",
+    "notes": "Actuarial Science | actuarial analysis, insurance valuations, pensions"
   },
   {
     "id": "ac-02",
     "target": "AC",
     "title": "Senior Actuarial Scientist",
-    "duties": "Coordinates work tied to actuarial science, reviews files, and provides advice to internal clients and partners on accident sickness.",
-    "notes": "Actuarial Science | accident, accident sickness, accidents"
+    "duties": "Coordinates work tied to actuarial science, reviews files, and provides advice to internal clients and partners on insurance valuations.",
+    "notes": "Actuarial Science | actuarial analysis, insurance valuations, pensions"
   },
   {
     "id": "ac-03",
     "target": "AC",
     "title": "Actuarial Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to actuarial science, while monitoring accidents delivery against departmental requirements.",
-    "notes": "Actuarial Science | accident, accident sickness, accidents"
+    "duties": "Conducts research and develops procedures connected to actuarial science, while monitoring pensions delivery against departmental requirements.",
+    "notes": "Actuarial Science | actuarial analysis, insurance valuations, pensions"
   },
   {
     "id": "ac-04",
     "target": "AC",
     "title": "Actuarial Scientist Coordinator",
-    "duties": "Provides operational support for actuarial science, resolves issues, and maintains records, guidance, and reporting on acquired.",
-    "notes": "Actuarial Science | accident, accident sickness, accidents"
+    "duties": "Provides operational support for actuarial science, resolves issues, and maintains records, guidance, and reporting on actuarial reserves.",
+    "notes": "Actuarial Science | actuarial analysis, insurance valuations, pensions"
   },
   {
     "id": "ag-01",
     "target": "AG",
     "title": "Agriculture Officer",
-    "duties": "Leads analysis related to agriculture, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Agriculture | activities, activities each, agri food"
+    "duties": "Leads analysis related to agriculture, prepares recommendations, and supports agriculture science planning with clear written briefings.",
+    "notes": "Agriculture | agriculture science, crops, livestock"
   },
   {
     "id": "ag-02",
     "target": "AG",
     "title": "Senior Agriculture Officer",
-    "duties": "Coordinates work tied to agriculture, reviews files, and provides advice to internal clients and partners on activities each.",
-    "notes": "Agriculture | activities, activities each, agri food"
+    "duties": "Coordinates work tied to agriculture, reviews files, and provides advice to internal clients and partners on crops.",
+    "notes": "Agriculture | agriculture science, crops, livestock"
   },
   {
     "id": "ag-03",
     "target": "AG",
     "title": "Agriculture Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to agriculture, while monitoring agri food delivery against departmental requirements.",
-    "notes": "Agriculture | activities, activities each, agri food"
+    "duties": "Conducts research and develops procedures connected to agriculture, while monitoring livestock delivery against departmental requirements.",
+    "notes": "Agriculture | agriculture science, crops, livestock"
   },
   {
     "id": "ag-04",
     "target": "AG",
     "title": "Agriculture Officer Coordinator",
-    "duties": "Provides operational support for agriculture, resolves issues, and maintains records, guidance, and reporting on agricultural.",
-    "notes": "Agriculture | activities, activities each, agri food"
+    "duties": "Provides operational support for agriculture, resolves issues, and maintains records, guidance, and reporting on agricultural programs.",
+    "notes": "Agriculture | agriculture science, crops, livestock"
   },
   {
     "id": "ai-01",
     "target": "AI",
     "title": "Air Officer",
-    "duties": "Leads analysis related to air traffic control, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Air Traffic Control | activities, air traffic, aviation"
+    "duties": "Leads analysis related to air traffic control, prepares recommendations, and supports air traffic control planning with clear written briefings.",
+    "notes": "Air Traffic Control | air traffic control, flight service operations, aviation traffic safety"
   },
   {
     "id": "ai-02",
     "target": "AI",
     "title": "Senior Air Officer",
-    "duties": "Coordinates work tied to air traffic control, reviews files, and provides advice to internal clients and partners on air traffic.",
-    "notes": "Air Traffic Control | activities, air traffic, aviation"
+    "duties": "Coordinates work tied to air traffic control, reviews files, and provides advice to internal clients and partners on flight service operations.",
+    "notes": "Air Traffic Control | air traffic control, flight service operations, aviation traffic safety"
   },
   {
     "id": "ai-03",
     "target": "AI",
     "title": "Air Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to air traffic control, while monitoring aviation delivery against departmental requirements.",
-    "notes": "Air Traffic Control | activities, air traffic, aviation"
+    "duties": "Conducts research and develops procedures connected to air traffic control, while monitoring aviation traffic safety delivery against departmental requirements.",
+    "notes": "Air Traffic Control | air traffic control, flight service operations, aviation traffic safety"
   },
   {
     "id": "ai-04",
     "target": "AI",
     "title": "Air Officer Coordinator",
-    "duties": "Provides operational support for air traffic control, resolves issues, and maintains records, guidance, and reporting on aviation traffic.",
-    "notes": "Air Traffic Control | activities, air traffic, aviation"
+    "duties": "Provides operational support for air traffic control, resolves issues, and maintains records, guidance, and reporting on airport control.",
+    "notes": "Air Traffic Control | air traffic control, flight service operations, aviation traffic safety"
   },
   {
     "id": "ao-01",
     "target": "AO",
     "title": "Operations Officer",
-    "duties": "Leads analysis related to aircraft operations, prepares recommendations, and supports aircraft planning with clear written briefings.",
-    "notes": "Aircraft Operations | aircraft, aircraft inspection, aircraft operations"
+    "duties": "Leads analysis related to aircraft operations, prepares recommendations, and supports aircraft operations planning with clear written briefings.",
+    "notes": "Aircraft Operations | aircraft operations, pilot inspection, civil aviation inspection"
   },
   {
     "id": "ao-02",
     "target": "AO",
     "title": "Senior Operations Officer",
-    "duties": "Coordinates work tied to aircraft operations, reviews files, and provides advice to internal clients and partners on aircraft inspection.",
-    "notes": "Aircraft Operations | aircraft, aircraft inspection, aircraft operations"
+    "duties": "Coordinates work tied to aircraft operations, reviews files, and provides advice to internal clients and partners on pilot inspection.",
+    "notes": "Aircraft Operations | aircraft operations, pilot inspection, civil aviation inspection"
   },
   {
     "id": "ao-03",
     "target": "AO",
     "title": "Operations Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to aircraft operations, while monitoring aircraft operations delivery against departmental requirements.",
-    "notes": "Aircraft Operations | aircraft, aircraft inspection, aircraft operations"
+    "duties": "Conducts research and develops procedures connected to aircraft operations, while monitoring civil aviation inspection delivery against departmental requirements.",
+    "notes": "Aircraft Operations | aircraft operations, pilot inspection, civil aviation inspection"
   },
   {
     "id": "ao-04",
     "target": "AO",
     "title": "Operations Officer Coordinator",
-    "duties": "Provides operational support for aircraft operations, resolves issues, and maintains records, guidance, and reporting on aircrafts.",
-    "notes": "Aircraft Operations | aircraft, aircraft inspection, aircraft operations"
+    "duties": "Provides operational support for aircraft operations, resolves issues, and maintains records, guidance, and reporting on test pilots.",
+    "notes": "Aircraft Operations | aircraft operations, pilot inspection, civil aviation inspection"
   },
   {
     "id": "ar-01",
     "target": "AR",
     "title": "Architecture Officer",
     "duties": "Leads analysis related to architecture and town planning, prepares recommendations, and supports architecture planning with clear written briefings.",
-    "notes": "Architecture and Town Planning | architecture, architecture town, architecture urban"
+    "notes": "Architecture and Town Planning | architecture, urban planning, town planning"
   },
   {
     "id": "ar-02",
     "target": "AR",
     "title": "Senior Architecture Officer",
-    "duties": "Coordinates work tied to architecture and town planning, reviews files, and provides advice to internal clients and partners on architecture town.",
-    "notes": "Architecture and Town Planning | architecture, architecture town, architecture urban"
+    "duties": "Coordinates work tied to architecture and town planning, reviews files, and provides advice to internal clients and partners on urban planning.",
+    "notes": "Architecture and Town Planning | architecture, urban planning, town planning"
   },
   {
     "id": "ar-03",
     "target": "AR",
     "title": "Architecture Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to architecture and town planning, while monitoring architecture urban delivery against departmental requirements.",
-    "notes": "Architecture and Town Planning | architecture, architecture town, architecture urban"
+    "duties": "Conducts research and develops procedures connected to architecture and town planning, while monitoring town planning delivery against departmental requirements.",
+    "notes": "Architecture and Town Planning | architecture, urban planning, town planning"
   },
   {
     "id": "ar-04",
     "target": "AR",
     "title": "Architecture Officer Coordinator",
-    "duties": "Provides operational support for architecture and town planning, resolves issues, and maintains records, guidance, and reporting on architectures.",
-    "notes": "Architecture and Town Planning | architecture, architecture town, architecture urban"
+    "duties": "Provides operational support for architecture and town planning, resolves issues, and maintains records, guidance, and reporting on built environment.",
+    "notes": "Architecture and Town Planning | architecture, urban planning, town planning"
   },
   {
     "id": "as-01",
     "target": "AS",
+    "expectedLevel": "01",
     "title": "Administrative Officer",
-    "duties": "Leads analysis related to administrative services, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Administrative Services | administr, administration, administrations"
+    "duties": "Leads analysis related to administrative services, prepares recommendations, and supports administrative services planning with clear written briefings.",
+    "notes": "Administrative Services | administrative services, management support, planning"
   },
   {
     "id": "as-02",
     "target": "AS",
+    "expectedLevel": "03",
     "title": "Senior Administrative Officer",
-    "duties": "Coordinates work tied to administrative services, reviews files, and provides advice to internal clients and partners on administration.",
-    "notes": "Administrative Services | administr, administration, administrations"
+    "duties": "Coordinates work tied to administrative services, reviews files, and provides advice to internal clients and partners on management support.",
+    "notes": "Administrative Services | administrative services, management support, planning"
   },
   {
     "id": "as-03",
     "target": "AS",
+    "expectedLevel": "04",
     "title": "Administrative Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to administrative services, while monitoring administrations delivery against departmental requirements.",
-    "notes": "Administrative Services | administr, administration, administrations"
+    "duties": "Conducts research and develops procedures connected to administrative services, while monitoring planning delivery against departmental requirements.",
+    "notes": "Administrative Services | administrative services, management support, planning"
   },
   {
     "id": "as-04",
     "target": "AS",
+    "expectedLevel": "05",
     "title": "Administrative Officer Coordinator",
-    "duties": "Provides operational support for administrative services, resolves issues, and maintains records, guidance, and reporting on administrative.",
-    "notes": "Administrative Services | administr, administration, administrations"
+    "duties": "Provides operational support for administrative services, resolves issues, and maintains records, guidance, and reporting on coordination.",
+    "notes": "Administrative Services | administrative services, management support, planning"
   },
   {
     "id": "bi-01",
     "target": "BI",
     "title": "Biological Scientist",
-    "duties": "Leads analysis related to biological sciences, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Biological Sciences | allocat, allocated, allocated biological"
+    "duties": "Leads analysis related to biological sciences, prepares recommendations, and supports biology planning with clear written briefings.",
+    "notes": "Biological Sciences | biology, ecology, biological research"
   },
   {
     "id": "bi-02",
     "target": "BI",
     "title": "Senior Biological Scientist",
-    "duties": "Coordinates work tied to biological sciences, reviews files, and provides advice to internal clients and partners on allocated.",
-    "notes": "Biological Sciences | allocat, allocated, allocated biological"
+    "duties": "Coordinates work tied to biological sciences, reviews files, and provides advice to internal clients and partners on ecology.",
+    "notes": "Biological Sciences | biology, ecology, biological research"
   },
   {
     "id": "bi-03",
     "target": "BI",
     "title": "Biological Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to biological sciences, while monitoring allocated biological delivery against departmental requirements.",
-    "notes": "Biological Sciences | allocat, allocated, allocated biological"
+    "duties": "Conducts research and develops procedures connected to biological sciences, while monitoring biological research delivery against departmental requirements.",
+    "notes": "Biological Sciences | biology, ecology, biological research"
   },
   {
     "id": "bi-04",
     "target": "BI",
     "title": "Biological Scientist Coordinator",
-    "duties": "Provides operational support for biological sciences, resolves issues, and maintains records, guidance, and reporting on allocateds.",
-    "notes": "Biological Sciences | allocat, allocated, allocated biological"
+    "duties": "Provides operational support for biological sciences, resolves issues, and maintains records, guidance, and reporting on wildlife.",
+    "notes": "Biological Sciences | biology, ecology, biological research"
   },
   {
     "id": "ch-01",
     "target": "CH",
     "title": "Chemistry Scientist",
-    "duties": "Leads analysis related to chemistry, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Chemistry | activities, activities each, allocat"
+    "duties": "Leads analysis related to chemistry, prepares recommendations, and supports chemistry planning with clear written briefings.",
+    "notes": "Chemistry | chemistry, laboratory chemistry, chemical analysis"
   },
   {
     "id": "ch-02",
     "target": "CH",
     "title": "Senior Chemistry Scientist",
-    "duties": "Coordinates work tied to chemistry, reviews files, and provides advice to internal clients and partners on activities each.",
-    "notes": "Chemistry | activities, activities each, allocat"
+    "duties": "Coordinates work tied to chemistry, reviews files, and provides advice to internal clients and partners on laboratory chemistry.",
+    "notes": "Chemistry | chemistry, laboratory chemistry, chemical analysis"
   },
   {
     "id": "ch-03",
     "target": "CH",
     "title": "Chemistry Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to chemistry, while monitoring allocat delivery against departmental requirements.",
-    "notes": "Chemistry | activities, activities each, allocat"
+    "duties": "Conducts research and develops procedures connected to chemistry, while monitoring chemical analysis delivery against departmental requirements.",
+    "notes": "Chemistry | chemistry, laboratory chemistry, chemical analysis"
   },
   {
     "id": "ch-04",
     "target": "CH",
     "title": "Chemistry Scientist Coordinator",
-    "duties": "Provides operational support for chemistry, resolves issues, and maintains records, guidance, and reporting on allocated.",
-    "notes": "Chemistry | activities, activities each, allocat"
+    "duties": "Provides operational support for chemistry, resolves issues, and maintains records, guidance, and reporting on analytical methods.",
+    "notes": "Chemistry | chemistry, laboratory chemistry, chemical analysis"
   },
   {
     "id": "cm-01",
     "target": "CM",
     "title": "Communications Advisor",
-    "duties": "Leads analysis related to communications, prepares recommendations, and supports approvisionne planning with clear written briefings.",
-    "notes": "Communications | approvisionne, approvisionnement, approvisionnements"
+    "duties": "Leads analysis related to communications, prepares recommendations, and supports communications production planning with clear written briefings.",
+    "notes": "Communications | communications production, public communications processes, writing"
   },
   {
     "id": "cm-02",
     "target": "CM",
     "title": "Senior Communications Advisor",
-    "duties": "Coordinates work tied to communications, reviews files, and provides advice to internal clients and partners on approvisionnement.",
-    "notes": "Communications | approvisionne, approvisionnement, approvisionnements"
+    "duties": "Coordinates work tied to communications, reviews files, and provides advice to internal clients and partners on public communications processes.",
+    "notes": "Communications | communications production, public communications processes, writing"
   },
   {
     "id": "cm-03",
     "target": "CM",
     "title": "Communications Advisor Advisor",
-    "duties": "Conducts research and develops procedures connected to communications, while monitoring approvisionnements delivery against departmental requirements.",
-    "notes": "Communications | approvisionne, approvisionnement, approvisionnements"
+    "duties": "Conducts research and develops procedures connected to communications, while monitoring writing delivery against departmental requirements.",
+    "notes": "Communications | communications production, public communications processes, writing"
   },
   {
     "id": "cm-04",
     "target": "CM",
     "title": "Communications Advisor Coordinator",
-    "duties": "Provides operational support for communications, resolves issues, and maintains records, guidance, and reporting on approvisionnements et.",
-    "notes": "Communications | approvisionne, approvisionnement, approvisionnements"
+    "duties": "Provides operational support for communications, resolves issues, and maintains records, guidance, and reporting on editing.",
+    "notes": "Communications | communications production, public communications processes, writing"
   },
   {
     "id": "co-01",
     "target": "CO",
+    "expectedLevel": "01",
     "title": "Commerce Officer",
-    "duties": "Leads analysis related to commerce, prepares recommendations, and supports analysis planning with clear written briefings.",
-    "notes": "Commerce | analysis, busines, business"
+    "duties": "Leads analysis related to commerce, prepares recommendations, and supports commerce planning with clear written briefings.",
+    "notes": "Commerce | commerce, business development, industrial development"
   },
   {
     "id": "co-02",
     "target": "CO",
+    "expectedLevel": "02",
     "title": "Senior Commerce Officer",
-    "duties": "Coordinates work tied to commerce, reviews files, and provides advice to internal clients and partners on busines.",
-    "notes": "Commerce | analysis, busines, business"
+    "duties": "Coordinates work tied to commerce, reviews files, and provides advice to internal clients and partners on business development.",
+    "notes": "Commerce | commerce, business development, industrial development"
   },
   {
     "id": "co-03",
     "target": "CO",
+    "expectedLevel": "03",
     "title": "Commerce Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to commerce, while monitoring business delivery against departmental requirements.",
-    "notes": "Commerce | analysis, busines, business"
+    "duties": "Conducts research and develops procedures connected to commerce, while monitoring industrial development delivery against departmental requirements.",
+    "notes": "Commerce | commerce, business development, industrial development"
   },
   {
     "id": "co-04",
     "target": "CO",
+    "expectedLevel": "04",
     "title": "Commerce Officer Coordinator",
-    "duties": "Provides operational support for commerce, resolves issues, and maintains records, guidance, and reporting on business development.",
-    "notes": "Commerce | analysis, busines, business"
+    "duties": "Provides operational support for commerce, resolves issues, and maintains records, guidance, and reporting on trade.",
+    "notes": "Commerce | commerce, business development, industrial development"
   },
   {
     "id": "cr-01",
     "target": "CR",
+    "expectedLevel": "03",
     "title": "Clerical Officer",
-    "duties": "Leads analysis related to clerical and regulatory, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Clerical and Regulatory | administr, administration, administrations"
+    "duties": "Leads analysis related to clerical and regulatory, prepares recommendations, and supports clerical processing planning with clear written briefings.",
+    "notes": "Clerical and Regulatory | clerical processing, regulatory clerical work, records"
   },
   {
     "id": "cr-02",
     "target": "CR",
+    "expectedLevel": "04",
     "title": "Senior Clerical Officer",
-    "duties": "Coordinates work tied to clerical and regulatory, reviews files, and provides advice to internal clients and partners on administration.",
-    "notes": "Clerical and Regulatory | administr, administration, administrations"
+    "duties": "Coordinates work tied to clerical and regulatory, reviews files, and provides advice to internal clients and partners on regulatory clerical work.",
+    "notes": "Clerical and Regulatory | clerical processing, regulatory clerical work, records"
   },
   {
     "id": "cr-03",
     "target": "CR",
+    "expectedLevel": "05",
     "title": "Clerical Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to clerical and regulatory, while monitoring administrations delivery against departmental requirements.",
-    "notes": "Clerical and Regulatory | administr, administration, administrations"
+    "duties": "Conducts research and develops procedures connected to clerical and regulatory, while monitoring records delivery against departmental requirements.",
+    "notes": "Clerical and Regulatory | clerical processing, regulatory clerical work, records"
   },
   {
     "id": "cr-04",
     "target": "CR",
+    "expectedLevel": "06",
     "title": "Clerical Officer Coordinator",
-    "duties": "Provides operational support for clerical and regulatory, resolves issues, and maintains records, guidance, and reporting on clerical.",
-    "notes": "Clerical and Regulatory | administr, administration, administrations"
+    "duties": "Provides operational support for clerical and regulatory, resolves issues, and maintains records, guidance, and reporting on forms.",
+    "notes": "Clerical and Regulatory | clerical processing, regulatory clerical work, records"
   },
   {
     "id": "ct-01",
     "target": "CT",
     "title": "Financial Management Advisor",
-    "duties": "Leads analysis related to comptrollership, prepares recommendations, and supports accept planning with clear written briefings.",
-    "notes": "Comptrollership Group | accept, accepted, accepted accounting"
+    "duties": "Leads analysis related to comptrollership, prepares recommendations, and supports internal audit planning with clear written briefings.",
+    "notes": "Comptrollership | internal audit, financial management, external audit"
   },
   {
     "id": "ct-02",
     "target": "CT",
     "title": "Senior Financial Management Advisor",
-    "duties": "Coordinates work tied to comptrollership, reviews files, and provides advice to internal clients and partners on accepted.",
-    "notes": "Comptrollership Group | accept, accepted, accepted accounting"
+    "duties": "Coordinates work tied to comptrollership, reviews files, and provides advice to internal clients and partners on financial management.",
+    "notes": "Comptrollership | internal audit, financial management, external audit"
   },
   {
     "id": "ct-03",
     "target": "CT",
     "title": "Financial Management Advisor Advisor",
-    "duties": "Conducts research and develops procedures connected to comptrollership, while monitoring accepted accounting delivery against departmental requirements.",
-    "notes": "Comptrollership Group | accept, accepted, accepted accounting"
+    "duties": "Conducts research and develops procedures connected to comptrollership, while monitoring external audit delivery against departmental requirements.",
+    "notes": "Comptrollership | internal audit, financial management, external audit"
   },
   {
     "id": "ct-04",
     "target": "CT",
     "title": "Financial Management Advisor Coordinator",
-    "duties": "Provides operational support for comptrollership, resolves issues, and maintains records, guidance, and reporting on accepteds.",
-    "notes": "Comptrollership Group | accept, accepted, accepted accounting"
+    "duties": "Provides operational support for comptrollership, resolves issues, and maintains records, guidance, and reporting on comptrollership.",
+    "notes": "Comptrollership | internal audit, financial management, external audit"
   },
   {
     "id": "cx-01",
     "target": "CX",
     "title": "Correctional Officer",
-    "duties": "Leads analysis related to correctional services, prepares recommendations, and supports correctional planning with clear written briefings.",
-    "notes": "Correctional Services | correctional, correctional officer, correctionals"
+    "duties": "Leads analysis related to correctional services, prepares recommendations, and supports correctional officer work planning with clear written briefings.",
+    "notes": "Correctional Services | correctional officer work, institutional security, offender supervision"
   },
   {
     "id": "cx-02",
     "target": "CX",
     "title": "Senior Correctional Officer",
-    "duties": "Coordinates work tied to correctional services, reviews files, and provides advice to internal clients and partners on correctional officer.",
-    "notes": "Correctional Services | correctional, correctional officer, correctionals"
+    "duties": "Coordinates work tied to correctional services, reviews files, and provides advice to internal clients and partners on institutional security.",
+    "notes": "Correctional Services | correctional officer work, institutional security, offender supervision"
   },
   {
     "id": "cx-03",
     "target": "CX",
     "title": "Correctional Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to correctional services, while monitoring correctionals delivery against departmental requirements.",
-    "notes": "Correctional Services | correctional, correctional officer, correctionals"
+    "duties": "Conducts research and develops procedures connected to correctional services, while monitoring offender supervision delivery against departmental requirements.",
+    "notes": "Correctional Services | correctional officer work, institutional security, offender supervision"
   },
   {
     "id": "cx-04",
     "target": "CX",
     "title": "Correctional Officer Coordinator",
-    "duties": "Provides operational support for correctional services, resolves issues, and maintains records, guidance, and reporting on institutional.",
-    "notes": "Correctional Services | correctional, correctional officer, correctionals"
+    "duties": "Provides operational support for correctional services, resolves issues, and maintains records, guidance, and reporting on custody.",
+    "notes": "Correctional Services | correctional officer work, institutional security, offender supervision"
   },
   {
     "id": "da-01",
     "target": "DA",
     "title": "Data Officer",
-    "duties": "Leads analysis related to data processing, prepares recommendations, and supports alpha planning with clear written briefings.",
-    "notes": "Data Processing | alpha, alpha numeric, alphas"
+    "duties": "Leads analysis related to data processing, prepares recommendations, and supports data conversion planning with clear written briefings.",
+    "notes": "Data Processing | data conversion, data production, data processing operations"
   },
   {
     "id": "da-02",
     "target": "DA",
     "title": "Senior Data Officer",
-    "duties": "Coordinates work tied to data processing, reviews files, and provides advice to internal clients and partners on alpha numeric.",
-    "notes": "Data Processing | alpha, alpha numeric, alphas"
+    "duties": "Coordinates work tied to data processing, reviews files, and provides advice to internal clients and partners on data production.",
+    "notes": "Data Processing | data conversion, data production, data processing operations"
   },
   {
     "id": "da-03",
     "target": "DA",
     "title": "Data Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to data processing, while monitoring alphas delivery against departmental requirements.",
-    "notes": "Data Processing | alpha, alpha numeric, alphas"
+    "duties": "Conducts research and develops procedures connected to data processing, while monitoring data processing operations delivery against departmental requirements.",
+    "notes": "Data Processing | data conversion, data production, data processing operations"
   },
   {
     "id": "da-04",
     "target": "DA",
     "title": "Data Officer Coordinator",
-    "duties": "Provides operational support for data processing, resolves issues, and maintains records, guidance, and reporting on conversion.",
-    "notes": "Data Processing | alpha, alpha numeric, alphas"
+    "duties": "Provides operational support for data processing, resolves issues, and maintains records, guidance, and reporting on legacy data processing support.",
+    "notes": "Data Processing | data conversion, data production, data processing operations"
   },
   {
     "id": "dd-01",
     "target": "DD",
     "title": "Drafting Officer",
-    "duties": "Leads analysis related to drafting and illustration, prepares recommendations, and supports draft planning with clear written briefings.",
-    "notes": "Drafting and Illustration | draft, drafting, drafting illustration"
+    "duties": "Leads analysis related to drafting and illustration, prepares recommendations, and supports drafting planning with clear written briefings.",
+    "notes": "Drafting and Illustration | drafting, technical illustration, engineering drawings"
   },
   {
     "id": "dd-02",
     "target": "DD",
     "title": "Senior Drafting Officer",
-    "duties": "Coordinates work tied to drafting and illustration, reviews files, and provides advice to internal clients and partners on drafting.",
-    "notes": "Drafting and Illustration | draft, drafting, drafting illustration"
+    "duties": "Coordinates work tied to drafting and illustration, reviews files, and provides advice to internal clients and partners on technical illustration.",
+    "notes": "Drafting and Illustration | drafting, technical illustration, engineering drawings"
   },
   {
     "id": "dd-03",
     "target": "DD",
     "title": "Drafting Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to drafting and illustration, while monitoring drafting illustration delivery against departmental requirements.",
-    "notes": "Drafting and Illustration | draft, drafting, drafting illustration"
+    "duties": "Conducts research and develops procedures connected to drafting and illustration, while monitoring engineering drawings delivery against departmental requirements.",
+    "notes": "Drafting and Illustration | drafting, technical illustration, engineering drawings"
   },
   {
     "id": "dd-04",
     "target": "DD",
     "title": "Drafting Officer Coordinator",
-    "duties": "Provides operational support for drafting and illustration, resolves issues, and maintains records, guidance, and reporting on drafting technical.",
-    "notes": "Drafting and Illustration | draft, drafting, drafting illustration"
+    "duties": "Provides operational support for drafting and illustration, resolves issues, and maintains records, guidance, and reporting on graphic technical plans.",
+    "notes": "Drafting and Illustration | drafting, technical illustration, engineering drawings"
   },
   {
     "id": "de-01",
     "target": "DE",
     "title": "Dentist",
-    "duties": "Leads analysis related to dentistry, prepares recommendations, and supports alloc planning with clear written briefings.",
-    "notes": "Dentistry | alloc, allocation, allocation recommended"
+    "duties": "Leads analysis related to dentistry, prepares recommendations, and supports dentistry planning with clear written briefings.",
+    "notes": "Dentistry | dentistry, dental professional work, oral health services"
   },
   {
     "id": "de-02",
     "target": "DE",
     "title": "Senior Dentist",
-    "duties": "Coordinates work tied to dentistry, reviews files, and provides advice to internal clients and partners on allocation.",
-    "notes": "Dentistry | alloc, allocation, allocation recommended"
+    "duties": "Coordinates work tied to dentistry, reviews files, and provides advice to internal clients and partners on dental professional work.",
+    "notes": "Dentistry | dentistry, dental professional work, oral health services"
   },
   {
     "id": "de-03",
     "target": "DE",
     "title": "Dentist Advisor",
-    "duties": "Conducts research and develops procedures connected to dentistry, while monitoring allocation recommended delivery against departmental requirements.",
-    "notes": "Dentistry | alloc, allocation, allocation recommended"
+    "duties": "Conducts research and develops procedures connected to dentistry, while monitoring oral health services delivery against departmental requirements.",
+    "notes": "Dentistry | dentistry, dental professional work, oral health services"
   },
   {
     "id": "de-04",
     "target": "DE",
     "title": "Dentist Coordinator",
-    "duties": "Provides operational support for dentistry, resolves issues, and maintains records, guidance, and reporting on allocations.",
-    "notes": "Dentistry | alloc, allocation, allocation recommended"
+    "duties": "Provides operational support for dentistry, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Dentistry | dentistry, dental professional work, oral health services"
   },
   {
     "id": "ds-01",
     "target": "DS",
     "title": "Defense Officer",
-    "duties": "Leads analysis related to defense scientific service, prepares recommendations, and supports analysis planning with clear written briefings.",
-    "notes": "Defense Scientific Service | analysis, analysis defence, board"
+    "duties": "Leads analysis related to defense scientific service, prepares recommendations, and supports defence science planning with clear written briefings.",
+    "notes": "Defense Scientific Service | defence science, military scientific analysis, defence research"
   },
   {
     "id": "ds-02",
     "target": "DS",
     "title": "Senior Defense Officer",
-    "duties": "Coordinates work tied to defense scientific service, reviews files, and provides advice to internal clients and partners on analysis defence.",
-    "notes": "Defense Scientific Service | analysis, analysis defence, board"
+    "duties": "Coordinates work tied to defense scientific service, reviews files, and provides advice to internal clients and partners on military scientific analysis.",
+    "notes": "Defense Scientific Service | defence science, military scientific analysis, defence research"
   },
   {
     "id": "ds-03",
     "target": "DS",
     "title": "Defense Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to defense scientific service, while monitoring board delivery against departmental requirements.",
-    "notes": "Defense Scientific Service | analysis, analysis defence, board"
+    "duties": "Conducts research and develops procedures connected to defense scientific service, while monitoring defence research delivery against departmental requirements.",
+    "notes": "Defense Scientific Service | defence science, military scientific analysis, defence research"
   },
   {
     "id": "ds-04",
     "target": "DS",
     "title": "Defense Officer Coordinator",
-    "duties": "Provides operational support for defense scientific service, resolves issues, and maintains records, guidance, and reporting on board staffing.",
-    "notes": "Defense Scientific Service | analysis, analysis defence, board"
+    "duties": "Provides operational support for defense scientific service, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Defense Scientific Service | defence science, military scientific analysis, defence research"
   },
   {
     "id": "ec-01",
     "target": "EC",
+    "expectedLevel": "02",
     "title": "Economics Scientist",
-    "duties": "Leads analysis related to economics and social science services, prepares recommendations, and supports according planning with clear written briefings.",
-    "notes": "Economics and Social Science Services Group | according, according prescribed, accordings"
+    "duties": "Leads analysis related to economics and social science services, prepares recommendations, and supports economics planning with clear written briefings.",
+    "notes": "Economics and Social Science Services | economics, social sciences, surveys"
   },
   {
     "id": "ec-02",
     "target": "EC",
+    "expectedLevel": "04",
     "title": "Senior Economics Scientist",
-    "duties": "Coordinates work tied to economics and social science services, reviews files, and provides advice to internal clients and partners on according prescribed.",
-    "notes": "Economics and Social Science Services Group | according, according prescribed, accordings"
+    "duties": "Coordinates work tied to economics and social science services, reviews files, and provides advice to internal clients and partners on social sciences.",
+    "notes": "Economics and Social Science Services | economics, social sciences, surveys"
   },
   {
     "id": "ec-03",
     "target": "EC",
+    "expectedLevel": "05",
     "title": "Economics Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to economics and social science services, while monitoring accordings delivery against departmental requirements.",
-    "notes": "Economics and Social Science Services Group | according, according prescribed, accordings"
+    "duties": "Conducts research and develops procedures connected to economics and social science services, while monitoring surveys delivery against departmental requirements.",
+    "notes": "Economics and Social Science Services | economics, social sciences, surveys"
   },
   {
     "id": "ec-04",
     "target": "EC",
+    "expectedLevel": "06",
     "title": "Economics Scientist Coordinator",
-    "duties": "Provides operational support for economics and social science services, resolves issues, and maintains records, guidance, and reporting on analysis.",
-    "notes": "Economics and Social Science Services Group | according, according prescribed, accordings"
+    "duties": "Provides operational support for economics and social science services, resolves issues, and maintains records, guidance, and reporting on statistical methods.",
+    "notes": "Economics and Social Science Services | economics, social sciences, surveys"
   },
   {
     "id": "ed-01",
     "target": "ED",
     "title": "Education Officer",
-    "duties": "Leads analysis related to education, prepares recommendations, and supports academic planning with clear written briefings.",
-    "notes": "Education | academic, academic training, academics"
+    "duties": "Leads analysis related to education, prepares recommendations, and supports education planning with clear written briefings.",
+    "notes": "Education | education, teaching, student counselling"
   },
   {
     "id": "ed-02",
     "target": "ED",
     "title": "Senior Education Officer",
-    "duties": "Coordinates work tied to education, reviews files, and provides advice to internal clients and partners on academic training.",
-    "notes": "Education | academic, academic training, academics"
+    "duties": "Coordinates work tied to education, reviews files, and provides advice to internal clients and partners on teaching.",
+    "notes": "Education | education, teaching, student counselling"
   },
   {
     "id": "ed-03",
     "target": "ED",
     "title": "Education Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to education, while monitoring academics delivery against departmental requirements.",
-    "notes": "Education | academic, academic training, academics"
+    "duties": "Conducts research and develops procedures connected to education, while monitoring student counselling delivery against departmental requirements.",
+    "notes": "Education | education, teaching, student counselling"
   },
   {
     "id": "ed-04",
     "target": "ED",
     "title": "Education Officer Coordinator",
-    "duties": "Provides operational support for education, resolves issues, and maintains records, guidance, and reporting on accordance.",
-    "notes": "Education | academic, academic training, academics"
+    "duties": "Provides operational support for education, resolves issues, and maintains records, guidance, and reporting on adult education.",
+    "notes": "Education | education, teaching, student counselling"
   },
   {
     "id": "eg-01",
     "target": "EG",
+    "expectedLevel": "02",
     "title": "Engineer",
-    "duties": "Leads analysis related to engineering and scientific support, prepares recommendations, and supports analysis planning with clear written briefings.",
-    "notes": "Engineering and Scientific Support | analysis, analysis professional, engineer"
+    "duties": "Leads analysis related to engineering and scientific support, prepares recommendations, and supports engineering support planning with clear written briefings.",
+    "notes": "Engineering and Scientific Support | engineering support, scientific support, inspections"
   },
   {
     "id": "eg-02",
     "target": "EG",
+    "expectedLevel": "03",
     "title": "Senior Engineer",
-    "duties": "Coordinates work tied to engineering and scientific support, reviews files, and provides advice to internal clients and partners on analysis professional.",
-    "notes": "Engineering and Scientific Support | analysis, analysis professional, engineer"
+    "duties": "Coordinates work tied to engineering and scientific support, reviews files, and provides advice to internal clients and partners on scientific support.",
+    "notes": "Engineering and Scientific Support | engineering support, scientific support, inspections"
   },
   {
     "id": "eg-03",
     "target": "EG",
+    "expectedLevel": "04",
     "title": "Engineer Advisor",
-    "duties": "Conducts research and develops procedures connected to engineering and scientific support, while monitoring engineer delivery against departmental requirements.",
-    "notes": "Engineering and Scientific Support | analysis, analysis professional, engineer"
+    "duties": "Conducts research and develops procedures connected to engineering and scientific support, while monitoring inspections delivery against departmental requirements.",
+    "notes": "Engineering and Scientific Support | engineering support, scientific support, inspections"
   },
   {
     "id": "eg-04",
     "target": "EG",
+    "expectedLevel": "05",
     "title": "Engineer Coordinator",
-    "duties": "Provides operational support for engineering and scientific support, resolves issues, and maintains records, guidance, and reporting on engineering.",
-    "notes": "Engineering and Scientific Support | analysis, analysis professional, engineer"
+    "duties": "Provides operational support for engineering and scientific support, resolves issues, and maintains records, guidance, and reporting on testing.",
+    "notes": "Engineering and Scientific Support | engineering support, scientific support, inspections"
   },
   {
     "id": "el-01",
     "target": "EL",
     "title": "Electronics Officer",
-    "duties": "Leads analysis related to electronics, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Electronics | allocat, allocate, allocate point"
+    "duties": "Leads analysis related to electronics, prepares recommendations, and supports electronics systems planning with clear written briefings.",
+    "notes": "Electronics | electronics systems, telecommunications equipment, radio maintenance"
   },
   {
     "id": "el-02",
     "target": "EL",
     "title": "Senior Electronics Officer",
-    "duties": "Coordinates work tied to electronics, reviews files, and provides advice to internal clients and partners on allocate.",
-    "notes": "Electronics | allocat, allocate, allocate point"
+    "duties": "Coordinates work tied to electronics, reviews files, and provides advice to internal clients and partners on telecommunications equipment.",
+    "notes": "Electronics | electronics systems, telecommunications equipment, radio maintenance"
   },
   {
     "id": "el-03",
     "target": "EL",
     "title": "Electronics Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to electronics, while monitoring allocate point delivery against departmental requirements.",
-    "notes": "Electronics | allocat, allocate, allocate point"
+    "duties": "Conducts research and develops procedures connected to electronics, while monitoring radio maintenance delivery against departmental requirements.",
+    "notes": "Electronics | electronics systems, telecommunications equipment, radio maintenance"
   },
   {
     "id": "el-04",
     "target": "EL",
     "title": "Electronics Officer Coordinator",
-    "duties": "Provides operational support for electronics, resolves issues, and maintains records, guidance, and reporting on allocated.",
-    "notes": "Electronics | allocat, allocate, allocate point"
+    "duties": "Provides operational support for electronics, resolves issues, and maintains records, guidance, and reporting on electronic maintenance.",
+    "notes": "Electronics | electronics systems, telecommunications equipment, radio maintenance"
   },
   {
     "id": "en-eng-01",
     "target": "EN-ENG",
+    "expectedLevel": "01",
     "title": "Engineer",
-    "duties": "Leads analysis related to engineering and land survey - engineering sub-, prepares recommendations, and supports act psra planning with clear written briefings.",
-    "notes": "Engineering and land survey - Engineering sub-group | act psra, affect, affect extent"
+    "duties": "Leads analysis related to engineering and land survey - engineering sub-, prepares recommendations, and supports professional engineering planning with clear written briefings.",
+    "notes": "Engineering and land survey - Engineering sub-group | professional engineering, engineering design, engineering project authority"
   },
   {
     "id": "en-eng-02",
     "target": "EN-ENG",
+    "expectedLevel": "02",
     "title": "Senior Engineer",
-    "duties": "Coordinates work tied to engineering and land survey - engineering sub-, reviews files, and provides advice to internal clients and partners on affect.",
-    "notes": "Engineering and land survey - Engineering sub-group | act psra, affect, affect extent"
+    "duties": "Coordinates work tied to engineering and land survey - engineering sub-, reviews files, and provides advice to internal clients and partners on engineering design.",
+    "notes": "Engineering and land survey - Engineering sub-group | professional engineering, engineering design, engineering project authority"
   },
   {
     "id": "en-eng-03",
     "target": "EN-ENG",
+    "expectedLevel": "03",
     "title": "Engineer Advisor",
-    "duties": "Conducts research and develops procedures connected to engineering and land survey - engineering sub-, while monitoring affect extent delivery against departmental requirements.",
-    "notes": "Engineering and land survey - Engineering sub-group | act psra, affect, affect extent"
+    "duties": "Conducts research and develops procedures connected to engineering and land survey - engineering sub-, while monitoring engineering project authority delivery against departmental requirements.",
+    "notes": "Engineering and land survey - Engineering sub-group | professional engineering, engineering design, engineering project authority"
   },
   {
     "id": "en-eng-04",
     "target": "EN-ENG",
+    "expectedLevel": "04",
     "title": "Engineer Coordinator",
-    "duties": "Provides operational support for engineering and land survey - engineering sub-, resolves issues, and maintains records, guidance, and reporting on affects.",
-    "notes": "Engineering and land survey - Engineering sub-group | act psra, affect, affect extent"
+    "duties": "Provides operational support for engineering and land survey - engineering sub-, resolves issues, and maintains records, guidance, and reporting on engineering analysis.",
+    "notes": "Engineering and land survey - Engineering sub-group | professional engineering, engineering design, engineering project authority"
   },
   {
     "id": "en-sur-01",
     "target": "EN-SUR",
     "title": "Engineer",
-    "duties": "Leads analysis related to engineering and land survey - land survey sub-, prepares recommendations, and supports author planning with clear written briefings.",
-    "notes": "Engineering and land survey - Land survey sub-group | author, authority, authoritys"
+    "duties": "Leads analysis related to engineering and land survey - land survey sub-, prepares recommendations, and supports land survey planning with clear written briefings.",
+    "notes": "Engineering and land survey - Land survey sub-group | land survey, geodetic survey, cadastral survey"
   },
   {
     "id": "en-sur-02",
     "target": "EN-SUR",
     "title": "Senior Engineer",
-    "duties": "Coordinates work tied to engineering and land survey - land survey sub-, reviews files, and provides advice to internal clients and partners on authority.",
-    "notes": "Engineering and land survey - Land survey sub-group | author, authority, authoritys"
+    "duties": "Coordinates work tied to engineering and land survey - land survey sub-, reviews files, and provides advice to internal clients and partners on geodetic survey.",
+    "notes": "Engineering and land survey - Land survey sub-group | land survey, geodetic survey, cadastral survey"
   },
   {
     "id": "en-sur-03",
     "target": "EN-SUR",
     "title": "Engineer Advisor",
-    "duties": "Conducts research and develops procedures connected to engineering and land survey - land survey sub-, while monitoring authoritys delivery against departmental requirements.",
-    "notes": "Engineering and land survey - Land survey sub-group | author, authority, authoritys"
+    "duties": "Conducts research and develops procedures connected to engineering and land survey - land survey sub-, while monitoring cadastral survey delivery against departmental requirements.",
+    "notes": "Engineering and land survey - Land survey sub-group | land survey, geodetic survey, cadastral survey"
   },
   {
     "id": "en-sur-04",
     "target": "EN-SUR",
     "title": "Engineer Coordinator",
-    "duties": "Provides operational support for engineering and land survey - land survey sub-, resolves issues, and maintains records, guidance, and reporting on cadastral.",
-    "notes": "Engineering and land survey - Land survey sub-group | author, authority, authoritys"
+    "duties": "Provides operational support for engineering and land survey - land survey sub-, resolves issues, and maintains records, guidance, and reporting on professional survey authority.",
+    "notes": "Engineering and land survey - Land survey sub-group | land survey, geodetic survey, cadastral survey"
   },
   {
     "id": "eu-01",
     "target": "EU",
     "title": "Educational Officer",
-    "duties": "Leads analysis related to educational support, prepares recommendations, and supports aide language planning with clear written briefings.",
-    "notes": "Educational Support | aide language, aides, allocat"
+    "duties": "Leads analysis related to educational support, prepares recommendations, and supports educational support planning with clear written briefings.",
+    "notes": "Educational Support | educational support, classroom assistance, lab education assistance"
   },
   {
     "id": "eu-02",
     "target": "EU",
     "title": "Senior Educational Officer",
-    "duties": "Coordinates work tied to educational support, reviews files, and provides advice to internal clients and partners on aides.",
-    "notes": "Educational Support | aide language, aides, allocat"
+    "duties": "Coordinates work tied to educational support, reviews files, and provides advice to internal clients and partners on classroom assistance.",
+    "notes": "Educational Support | educational support, classroom assistance, lab education assistance"
   },
   {
     "id": "eu-03",
     "target": "EU",
     "title": "Educational Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to educational support, while monitoring allocat delivery against departmental requirements.",
-    "notes": "Educational Support | aide language, aides, allocat"
+    "duties": "Conducts research and develops procedures connected to educational support, while monitoring lab education assistance delivery against departmental requirements.",
+    "notes": "Educational Support | educational support, classroom assistance, lab education assistance"
   },
   {
     "id": "eu-04",
     "target": "EU",
     "title": "Educational Officer Coordinator",
-    "duties": "Provides operational support for educational support, resolves issues, and maintains records, guidance, and reporting on allocated.",
-    "notes": "Educational Support | aide language, aides, allocat"
+    "duties": "Provides operational support for educational support, resolves issues, and maintains records, guidance, and reporting on training delivery support.",
+    "notes": "Educational Support | educational support, classroom assistance, lab education assistance"
   },
   {
     "id": "ex-01",
     "target": "EX",
     "title": "Executive Officer",
-    "duties": "Leads analysis related to executive (ex) 2022, prepares recommendations, and supports act parliament planning with clear written briefings.",
-    "notes": "Executive (EX) Group 2022 | act parliament, activities, advis"
+    "duties": "Leads analysis related to executive, prepares recommendations, and supports executive management planning with clear written briefings.",
+    "notes": "Executive | executive management, executive policy, departmental direction"
   },
   {
     "id": "ex-02",
     "target": "EX",
     "title": "Senior Executive Officer",
-    "duties": "Coordinates work tied to executive (ex) 2022, reviews files, and provides advice to internal clients and partners on activities.",
-    "notes": "Executive (EX) Group 2022 | act parliament, activities, advis"
+    "duties": "Coordinates work tied to executive, reviews files, and provides advice to internal clients and partners on executive policy.",
+    "notes": "Executive | executive management, executive policy, departmental direction"
   },
   {
     "id": "ex-03",
     "target": "EX",
     "title": "Executive Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to executive (ex) 2022, while monitoring advis delivery against departmental requirements.",
-    "notes": "Executive (EX) Group 2022 | act parliament, activities, advis"
+    "duties": "Conducts research and develops procedures connected to executive, while monitoring departmental direction delivery against departmental requirements.",
+    "notes": "Executive | executive management, executive policy, departmental direction"
   },
   {
     "id": "ex-04",
     "target": "EX",
     "title": "Executive Officer Coordinator",
-    "duties": "Provides operational support for executive (ex) 2022, resolves issues, and maintains records, guidance, and reporting on advisor.",
-    "notes": "Executive (EX) Group 2022 | act parliament, activities, advis"
+    "duties": "Provides operational support for executive, resolves issues, and maintains records, guidance, and reporting on agency direction.",
+    "notes": "Executive | executive management, executive policy, departmental direction"
   },
   {
     "id": "fb-01",
     "target": "FB",
+    "expectedLevel": "02",
     "title": "Border Officer",
-    "duties": "Leads analysis related to border services, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Border Services | activities, activities directed, admissibil"
+    "duties": "Leads analysis related to border services, prepares recommendations, and supports border services planning with clear written briefings.",
+    "notes": "Border Services | border services, inspection of people, inspection of goods"
   },
   {
     "id": "fb-02",
     "target": "FB",
+    "expectedLevel": "03",
     "title": "Senior Border Officer",
-    "duties": "Coordinates work tied to border services, reviews files, and provides advice to internal clients and partners on activities directed.",
-    "notes": "Border Services | activities, activities directed, admissibil"
+    "duties": "Coordinates work tied to border services, reviews files, and provides advice to internal clients and partners on inspection of people.",
+    "notes": "Border Services | border services, inspection of people, inspection of goods"
   },
   {
     "id": "fb-03",
     "target": "FB",
+    "expectedLevel": "04",
     "title": "Border Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to border services, while monitoring admissibil delivery against departmental requirements.",
-    "notes": "Border Services | activities, activities directed, admissibil"
+    "duties": "Conducts research and develops procedures connected to border services, while monitoring inspection of goods delivery against departmental requirements.",
+    "notes": "Border Services | border services, inspection of people, inspection of goods"
   },
   {
     "id": "fb-04",
     "target": "FB",
+    "expectedLevel": "05",
     "title": "Border Officer Coordinator",
-    "duties": "Provides operational support for border services, resolves issues, and maintains records, guidance, and reporting on admissibility.",
-    "notes": "Border Services | activities, activities directed, admissibil"
+    "duties": "Provides operational support for border services, resolves issues, and maintains records, guidance, and reporting on people entering canada.",
+    "notes": "Border Services | border services, inspection of people, inspection of goods"
   },
   {
     "id": "fo-01",
     "target": "FO",
     "title": "Forestry Officer",
-    "duties": "Leads analysis related to forestry, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Forestry | allocat, allocated, allocated forestry"
+    "duties": "Leads analysis related to forestry, prepares recommendations, and supports professional forestry planning with clear written briefings.",
+    "notes": "Forestry | professional forestry, forest management, silviculture"
   },
   {
     "id": "fo-02",
     "target": "FO",
     "title": "Senior Forestry Officer",
-    "duties": "Coordinates work tied to forestry, reviews files, and provides advice to internal clients and partners on allocated.",
-    "notes": "Forestry | allocat, allocated, allocated forestry"
+    "duties": "Coordinates work tied to forestry, reviews files, and provides advice to internal clients and partners on forest management.",
+    "notes": "Forestry | professional forestry, forest management, silviculture"
   },
   {
     "id": "fo-03",
     "target": "FO",
     "title": "Forestry Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to forestry, while monitoring allocated forestry delivery against departmental requirements.",
-    "notes": "Forestry | allocat, allocated, allocated forestry"
+    "duties": "Conducts research and develops procedures connected to forestry, while monitoring silviculture delivery against departmental requirements.",
+    "notes": "Forestry | professional forestry, forest management, silviculture"
   },
   {
     "id": "fo-04",
     "target": "FO",
     "title": "Forestry Officer Coordinator",
-    "duties": "Provides operational support for forestry, resolves issues, and maintains records, guidance, and reporting on allocateds.",
-    "notes": "Forestry | allocat, allocated, allocated forestry"
+    "duties": "Provides operational support for forestry, resolves issues, and maintains records, guidance, and reporting on forest science.",
+    "notes": "Forestry | professional forestry, forest management, silviculture"
   },
   {
     "id": "fr-01",
     "target": "FR",
     "title": "Firefighter",
-    "duties": "Leads analysis related to firefighters, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Firefighters | allocat, allocate, allocate point"
+    "duties": "Leads analysis related to firefighters, prepares recommendations, and supports firefighting operations planning with clear written briefings.",
+    "notes": "Firefighters | firefighting operations, fire chiefs, emergency response"
   },
   {
     "id": "fr-02",
     "target": "FR",
     "title": "Senior Firefighter",
-    "duties": "Coordinates work tied to firefighters, reviews files, and provides advice to internal clients and partners on allocate.",
-    "notes": "Firefighters | allocat, allocate, allocate point"
+    "duties": "Coordinates work tied to firefighters, reviews files, and provides advice to internal clients and partners on fire chiefs.",
+    "notes": "Firefighters | firefighting operations, fire chiefs, emergency response"
   },
   {
     "id": "fr-03",
     "target": "FR",
     "title": "Firefighter Advisor",
-    "duties": "Conducts research and develops procedures connected to firefighters, while monitoring allocate point delivery against departmental requirements.",
-    "notes": "Firefighters | allocat, allocate, allocate point"
+    "duties": "Conducts research and develops procedures connected to firefighters, while monitoring emergency response delivery against departmental requirements.",
+    "notes": "Firefighters | firefighting operations, fire chiefs, emergency response"
   },
   {
     "id": "fr-04",
     "target": "FR",
     "title": "Firefighter Coordinator",
-    "duties": "Provides operational support for firefighters, resolves issues, and maintains records, guidance, and reporting on allocated.",
-    "notes": "Firefighters | allocat, allocate, allocate point"
+    "duties": "Provides operational support for firefighters, resolves issues, and maintains records, guidance, and reporting on fire services.",
+    "notes": "Firefighters | firefighting operations, fire chiefs, emergency response"
   },
   {
     "id": "fs-01",
     "target": "FS",
     "title": "Foreign Officer",
-    "duties": "Leads analysis related to foreign service, prepares recommendations, and supports abroad planning with clear written briefings.",
-    "notes": "Foreign service | abroad, abroads, activities"
+    "duties": "Leads analysis related to foreign service, prepares recommendations, and supports foreign service planning with clear written briefings.",
+    "notes": "Foreign Service | foreign service, international relations, trade diplomacy"
   },
   {
     "id": "fs-02",
     "target": "FS",
     "title": "Senior Foreign Officer",
-    "duties": "Coordinates work tied to foreign service, reviews files, and provides advice to internal clients and partners on abroads.",
-    "notes": "Foreign service | abroad, abroads, activities"
+    "duties": "Coordinates work tied to foreign service, reviews files, and provides advice to internal clients and partners on international relations.",
+    "notes": "Foreign Service | foreign service, international relations, trade diplomacy"
   },
   {
     "id": "fs-03",
     "target": "FS",
     "title": "Foreign Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to foreign service, while monitoring activities delivery against departmental requirements.",
-    "notes": "Foreign service | abroad, abroads, activities"
+    "duties": "Conducts research and develops procedures connected to foreign service, while monitoring trade diplomacy delivery against departmental requirements.",
+    "notes": "Foreign Service | foreign service, international relations, trade diplomacy"
   },
   {
     "id": "fs-04",
     "target": "FS",
     "title": "Foreign Officer Coordinator",
-    "duties": "Provides operational support for foreign service, resolves issues, and maintains records, guidance, and reporting on activities directed.",
-    "notes": "Foreign service | abroad, abroads, activities"
+    "duties": "Provides operational support for foreign service, resolves issues, and maintains records, guidance, and reporting on consular work.",
+    "notes": "Foreign Service | foreign service, international relations, trade diplomacy"
   },
   {
     "id": "gl-01",
     "target": "GL",
     "title": "General Officer",
-    "duties": "Leads analysis related to general labour and trades, prepares recommendations, and supports alphabetical planning with clear written briefings.",
-    "notes": "General Labour and Trades | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Leads analysis related to general labour and trades, prepares recommendations, and supports trades planning with clear written briefings.",
+    "notes": "General Labour and Trades | trades, maintenance, repair"
   },
   {
     "id": "gl-02",
     "target": "GL",
     "title": "Senior General Officer",
-    "duties": "Coordinates work tied to general labour and trades, reviews files, and provides advice to internal clients and partners on alphabetical order.",
-    "notes": "General Labour and Trades | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Coordinates work tied to general labour and trades, reviews files, and provides advice to internal clients and partners on maintenance.",
+    "notes": "General Labour and Trades | trades, maintenance, repair"
   },
   {
     "id": "gl-03",
     "target": "GL",
     "title": "General Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to general labour and trades, while monitoring alphabeticals delivery against departmental requirements.",
-    "notes": "General Labour and Trades | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Conducts research and develops procedures connected to general labour and trades, while monitoring repair delivery against departmental requirements.",
+    "notes": "General Labour and Trades | trades, maintenance, repair"
   },
   {
     "id": "gl-04",
     "target": "GL",
     "title": "General Officer Coordinator",
-    "duties": "Provides operational support for general labour and trades, resolves issues, and maintains records, guidance, and reporting on construction.",
-    "notes": "General Labour and Trades | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Provides operational support for general labour and trades, resolves issues, and maintains records, guidance, and reporting on labour.",
+    "notes": "General Labour and Trades | trades, maintenance, repair"
   },
   {
     "id": "gs-01",
     "target": "GS",
     "title": "General Officer",
-    "duties": "Leads analysis related to general services, prepares recommendations, and supports alphabetical planning with clear written briefings.",
-    "notes": "General Services | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Leads analysis related to general services, prepares recommendations, and supports operational services planning with clear written briefings.",
+    "notes": "General Services | operational services, custodial, food services"
   },
   {
     "id": "gs-02",
     "target": "GS",
     "title": "Senior General Officer",
-    "duties": "Coordinates work tied to general services, reviews files, and provides advice to internal clients and partners on alphabetical order.",
-    "notes": "General Services | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Coordinates work tied to general services, reviews files, and provides advice to internal clients and partners on custodial.",
+    "notes": "General Services | operational services, custodial, food services"
   },
   {
     "id": "gs-03",
     "target": "GS",
     "title": "General Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to general services, while monitoring alphabeticals delivery against departmental requirements.",
-    "notes": "General Services | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Conducts research and develops procedures connected to general services, while monitoring food services delivery against departmental requirements.",
+    "notes": "General Services | operational services, custodial, food services"
   },
   {
     "id": "gs-04",
     "target": "GS",
     "title": "General Officer Coordinator",
-    "duties": "Provides operational support for general services, resolves issues, and maintains records, guidance, and reporting on custodial.",
-    "notes": "General Services | alphabetical, alphabetical order, alphabeticals"
+    "duties": "Provides operational support for general services, resolves issues, and maintains records, guidance, and reporting on stores.",
+    "notes": "General Services | operational services, custodial, food services"
   },
   {
     "id": "gt-01",
     "target": "GT",
+    "expectedLevel": "02",
     "title": "General Officer",
-    "duties": "Leads analysis related to general technical, prepares recommendations, and supports applied planning with clear written briefings.",
-    "notes": "General Technical | applied, applied technical, applieds"
+    "duties": "Leads analysis related to general technical, prepares recommendations, and supports general technical work planning with clear written briefings.",
+    "notes": "General Technical | general technical work, technical inspection, technical support"
   },
   {
     "id": "gt-02",
     "target": "GT",
+    "expectedLevel": "03",
     "title": "Senior General Officer",
-    "duties": "Coordinates work tied to general technical, reviews files, and provides advice to internal clients and partners on applied technical.",
-    "notes": "General Technical | applied, applied technical, applieds"
+    "duties": "Coordinates work tied to general technical, reviews files, and provides advice to internal clients and partners on technical inspection.",
+    "notes": "General Technical | general technical work, technical inspection, technical support"
   },
   {
     "id": "gt-03",
     "target": "GT",
+    "expectedLevel": "04",
     "title": "General Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to general technical, while monitoring applieds delivery against departmental requirements.",
-    "notes": "General Technical | applied, applied technical, applieds"
+    "duties": "Conducts research and develops procedures connected to general technical, while monitoring technical support delivery against departmental requirements.",
+    "notes": "General Technical | general technical work, technical inspection, technical support"
   },
   {
     "id": "gt-04",
     "target": "GT",
+    "expectedLevel": "05",
     "title": "General Officer Coordinator",
-    "duties": "Provides operational support for general technical, resolves issues, and maintains records, guidance, and reporting on cover.",
-    "notes": "General Technical | applied, applied technical, applieds"
+    "duties": "Provides operational support for general technical, resolves issues, and maintains records, guidance, and reporting on applied technical operations.",
+    "notes": "General Technical | general technical work, technical inspection, technical support"
   },
   {
     "id": "hp-01",
     "target": "HP",
     "title": "Heating, Officer",
-    "duties": "Leads analysis related to heating, power and stationary plan operation, prepares recommendations, and supports boiler planning with clear written briefings.",
-    "notes": "Heating, Power and Stationary Plan Operation | boiler, boiler refrigeration, boilers"
+    "duties": "Leads analysis related to heating, power and stationary plant operation, prepares recommendations, and supports heating plant planning with clear written briefings.",
+    "notes": "Heating, Power and Stationary Plant Operation | heating plant, power plant, stationary engineer"
   },
   {
     "id": "hp-02",
     "target": "HP",
     "title": "Senior Heating, Officer",
-    "duties": "Coordinates work tied to heating, power and stationary plan operation, reviews files, and provides advice to internal clients and partners on boiler refrigeration.",
-    "notes": "Heating, Power and Stationary Plan Operation | boiler, boiler refrigeration, boilers"
+    "duties": "Coordinates work tied to heating, power and stationary plant operation, reviews files, and provides advice to internal clients and partners on power plant.",
+    "notes": "Heating, Power and Stationary Plant Operation | heating plant, power plant, stationary engineer"
   },
   {
     "id": "hp-03",
     "target": "HP",
     "title": "Heating, Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to heating, power and stationary plan operation, while monitoring boilers delivery against departmental requirements.",
-    "notes": "Heating, Power and Stationary Plan Operation | boiler, boiler refrigeration, boilers"
+    "duties": "Conducts research and develops procedures connected to heating, power and stationary plant operation, while monitoring stationary engineer delivery against departmental requirements.",
+    "notes": "Heating, Power and Stationary Plant Operation | heating plant, power plant, stationary engineer"
   },
   {
     "id": "hp-04",
     "target": "HP",
     "title": "Heating, Officer Coordinator",
-    "duties": "Provides operational support for heating, power and stationary plan operation, resolves issues, and maintains records, guidance, and reporting on engine.",
-    "notes": "Heating, Power and Stationary Plan Operation | boiler, boiler refrigeration, boilers"
+    "duties": "Provides operational support for heating, power and stationary plant operation, resolves issues, and maintains records, guidance, and reporting on boiler operations.",
+    "notes": "Heating, Power and Stationary Plant Operation | heating plant, power plant, stationary engineer"
   },
   {
     "id": "hr-01",
     "target": "HR",
     "title": "Historical Scientist",
-    "duties": "Leads analysis related to historical research, prepares recommendations, and supports analysis planning with clear written briefings.",
-    "notes": "Historical Research | analysis, analysis heritage, archival"
+    "duties": "Leads analysis related to historical research, prepares recommendations, and supports historical research planning with clear written briefings.",
+    "notes": "Historical Research | historical research, archival analysis, heritage historical studies"
   },
   {
     "id": "hr-02",
     "target": "HR",
     "title": "Senior Historical Scientist",
-    "duties": "Coordinates work tied to historical research, reviews files, and provides advice to internal clients and partners on analysis heritage.",
-    "notes": "Historical Research | analysis, analysis heritage, archival"
+    "duties": "Coordinates work tied to historical research, reviews files, and provides advice to internal clients and partners on archival analysis.",
+    "notes": "Historical Research | historical research, archival analysis, heritage historical studies"
   },
   {
     "id": "hr-03",
     "target": "HR",
     "title": "Historical Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to historical research, while monitoring archival delivery against departmental requirements.",
-    "notes": "Historical Research | analysis, analysis heritage, archival"
+    "duties": "Conducts research and develops procedures connected to historical research, while monitoring heritage historical studies delivery against departmental requirements.",
+    "notes": "Historical Research | historical research, archival analysis, heritage historical studies"
   },
   {
     "id": "hr-04",
     "target": "HR",
     "title": "Historical Scientist Coordinator",
-    "duties": "Provides operational support for historical research, resolves issues, and maintains records, guidance, and reporting on archival historical.",
-    "notes": "Historical Research | analysis, analysis heritage, archival"
+    "duties": "Provides operational support for historical research, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Historical Research | historical research, archival analysis, heritage historical studies"
   },
   {
     "id": "is-01",
     "target": "IS",
     "title": "Information Officer",
-    "duties": "Leads analysis related to information services, prepares recommendations, and supports advisory planning with clear written briefings.",
-    "notes": "Information Services | advisory, advisory publishing, advisorys"
+    "duties": "Leads analysis related to information services, prepares recommendations, and supports public information planning with clear written briefings.",
+    "notes": "Information Services | public information, media relations, communications advisory"
   },
   {
     "id": "is-02",
     "target": "IS",
     "title": "Senior Information Officer",
-    "duties": "Coordinates work tied to information services, reviews files, and provides advice to internal clients and partners on advisory publishing.",
-    "notes": "Information Services | advisory, advisory publishing, advisorys"
+    "duties": "Coordinates work tied to information services, reviews files, and provides advice to internal clients and partners on media relations.",
+    "notes": "Information Services | public information, media relations, communications advisory"
   },
   {
     "id": "is-03",
     "target": "IS",
     "title": "Information Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to information services, while monitoring advisorys delivery against departmental requirements.",
-    "notes": "Information Services | advisory, advisory publishing, advisorys"
+    "duties": "Conducts research and develops procedures connected to information services, while monitoring communications advisory delivery against departmental requirements.",
+    "notes": "Information Services | public information, media relations, communications advisory"
   },
   {
     "id": "is-04",
     "target": "IS",
     "title": "Information Officer Coordinator",
-    "duties": "Provides operational support for information services, resolves issues, and maintains records, guidance, and reporting on affair.",
-    "notes": "Information Services | advisory, advisory publishing, advisorys"
+    "duties": "Provides operational support for information services, resolves issues, and maintains records, guidance, and reporting on publishing.",
+    "notes": "Information Services | public information, media relations, communications advisory"
   },
   {
     "id": "it-01",
     "target": "IT",
+    "expectedLevel": "01",
     "title": "Information Officer",
-    "duties": "Leads analysis related to information technology, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Information Technology | activities, activities central, activities directed"
+    "duties": "Leads analysis related to information technology, prepares recommendations, and supports information technology planning with clear written briefings.",
+    "notes": "Information Technology | information technology, computer systems, it systems"
   },
   {
     "id": "it-02",
     "target": "IT",
+    "expectedLevel": "02",
     "title": "Senior Information Officer",
-    "duties": "Coordinates work tied to information technology, reviews files, and provides advice to internal clients and partners on activities central.",
-    "notes": "Information Technology | activities, activities central, activities directed"
+    "duties": "Coordinates work tied to information technology, reviews files, and provides advice to internal clients and partners on computer systems.",
+    "notes": "Information Technology | information technology, computer systems, it systems"
   },
   {
     "id": "it-03",
     "target": "IT",
+    "expectedLevel": "03",
     "title": "Information Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to information technology, while monitoring activities directed delivery against departmental requirements.",
-    "notes": "Information Technology | activities, activities central, activities directed"
+    "duties": "Conducts research and develops procedures connected to information technology, while monitoring it systems delivery against departmental requirements.",
+    "notes": "Information Technology | information technology, computer systems, it systems"
   },
   {
     "id": "it-04",
     "target": "IT",
+    "expectedLevel": "04",
     "title": "Information Officer Coordinator",
-    "duties": "Provides operational support for information technology, resolves issues, and maintains records, guidance, and reporting on administrative.",
-    "notes": "Information Technology | activities, activities central, activities directed"
+    "duties": "Provides operational support for information technology, resolves issues, and maintains records, guidance, and reporting on infrastructure.",
+    "notes": "Information Technology | information technology, computer systems, it systems"
   },
   {
     "id": "lc-01",
     "target": "LC",
     "title": "Law Officer",
-    "duties": "Leads analysis related to law management, prepares recommendations, and supports accountabil planning with clear written briefings.",
-    "notes": "Law Management Group | accountabil, accountability, accountability exercising"
+    "duties": "Leads analysis related to law management, prepares recommendations, and supports law management planning with clear written briefings.",
+    "notes": "Law Management | law management, legal functions, legal management"
   },
   {
     "id": "lc-02",
     "target": "LC",
     "title": "Senior Law Officer",
-    "duties": "Coordinates work tied to law management, reviews files, and provides advice to internal clients and partners on accountability.",
-    "notes": "Law Management Group | accountabil, accountability, accountability exercising"
+    "duties": "Coordinates work tied to law management, reviews files, and provides advice to internal clients and partners on legal functions.",
+    "notes": "Law Management | law management, legal functions, legal management"
   },
   {
     "id": "lc-03",
     "target": "LC",
     "title": "Law Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to law management, while monitoring accountability exercising delivery against departmental requirements.",
-    "notes": "Law Management Group | accountabil, accountability, accountability exercising"
+    "duties": "Conducts research and develops procedures connected to law management, while monitoring legal management delivery against departmental requirements.",
+    "notes": "Law Management | law management, legal functions, legal management"
   },
   {
     "id": "lc-04",
     "target": "LC",
     "title": "Law Officer Coordinator",
-    "duties": "Provides operational support for law management, resolves issues, and maintains records, guidance, and reporting on accountabilitys.",
-    "notes": "Law Management Group | accountabil, accountability, accountability exercising"
+    "duties": "Provides operational support for law management, resolves issues, and maintains records, guidance, and reporting on legal advice management.",
+    "notes": "Law Management | law management, legal functions, legal management"
   },
   {
     "id": "li-01",
     "target": "LI",
     "title": "Lightkeepers Officer",
-    "duties": "Leads analysis related to lightkeepers, prepares recommendations, and supports aid stations planning with clear written briefings.",
-    "notes": "Lightkeepers | aid stations, allocat, allocated"
+    "duties": "Leads analysis related to lightkeepers, prepares recommendations, and supports lighthouse operations planning with clear written briefings.",
+    "notes": "Lightkeepers | lighthouse operations, lightkeeper duties, marine navigational aid stations"
   },
   {
     "id": "li-02",
     "target": "LI",
     "title": "Senior Lightkeepers Officer",
-    "duties": "Coordinates work tied to lightkeepers, reviews files, and provides advice to internal clients and partners on allocat.",
-    "notes": "Lightkeepers | aid stations, allocat, allocated"
+    "duties": "Coordinates work tied to lightkeepers, reviews files, and provides advice to internal clients and partners on lightkeeper duties.",
+    "notes": "Lightkeepers | lighthouse operations, lightkeeper duties, marine navigational aid stations"
   },
   {
     "id": "li-03",
     "target": "LI",
     "title": "Lightkeepers Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to lightkeepers, while monitoring allocated delivery against departmental requirements.",
-    "notes": "Lightkeepers | aid stations, allocat, allocated"
+    "duties": "Conducts research and develops procedures connected to lightkeepers, while monitoring marine navigational aid stations delivery against departmental requirements.",
+    "notes": "Lightkeepers | lighthouse operations, lightkeeper duties, marine navigational aid stations"
   },
   {
     "id": "li-04",
     "target": "LI",
     "title": "Lightkeepers Officer Coordinator",
-    "duties": "Provides operational support for lightkeepers, resolves issues, and maintains records, guidance, and reporting on allocated light.",
-    "notes": "Lightkeepers | aid stations, allocat, allocated"
+    "duties": "Provides operational support for lightkeepers, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Lightkeepers | lighthouse operations, lightkeeper duties, marine navigational aid stations"
   },
   {
     "id": "lp-01",
     "target": "LP",
     "title": "Law Officer",
-    "duties": "Leads analysis related to law practitioner, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Law Practitioner | administr, administration, administration must"
+    "duties": "Leads analysis related to law practitioner, prepares recommendations, and supports law practitioner planning with clear written briefings.",
+    "notes": "Law Practitioner | law practitioner, legal advice, legal documents"
   },
   {
     "id": "lp-02",
     "target": "LP",
     "title": "Senior Law Officer",
-    "duties": "Coordinates work tied to law practitioner, reviews files, and provides advice to internal clients and partners on administration.",
-    "notes": "Law Practitioner | administr, administration, administration must"
+    "duties": "Coordinates work tied to law practitioner, reviews files, and provides advice to internal clients and partners on legal advice.",
+    "notes": "Law Practitioner | law practitioner, legal advice, legal documents"
   },
   {
     "id": "lp-03",
     "target": "LP",
     "title": "Law Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to law practitioner, while monitoring administration must delivery against departmental requirements.",
-    "notes": "Law Practitioner | administr, administration, administration must"
+    "duties": "Conducts research and develops procedures connected to law practitioner, while monitoring legal documents delivery against departmental requirements.",
+    "notes": "Law Practitioner | law practitioner, legal advice, legal documents"
   },
   {
     "id": "lp-04",
     "target": "LP",
     "title": "Law Officer Coordinator",
-    "duties": "Provides operational support for law practitioner, resolves issues, and maintains records, guidance, and reporting on administrations.",
-    "notes": "Law Practitioner | administr, administration, administration must"
+    "duties": "Provides operational support for law practitioner, resolves issues, and maintains records, guidance, and reporting on drafting legislation.",
+    "notes": "Law Practitioner | law practitioner, legal advice, legal documents"
   },
   {
     "id": "ls-01",
     "target": "LS",
     "title": "Librarian",
-    "duties": "Leads analysis related to library science, prepares recommendations, and supports catalogu planning with clear written briefings.",
-    "notes": "Library Science | catalogu, cataloguing, cataloguing reference"
+    "duties": "Leads analysis related to library science, prepares recommendations, and supports professional library science planning with clear written briefings.",
+    "notes": "Library Science | professional library science, cataloguing, reference"
   },
   {
     "id": "ls-02",
     "target": "LS",
     "title": "Senior Librarian",
     "duties": "Coordinates work tied to library science, reviews files, and provides advice to internal clients and partners on cataloguing.",
-    "notes": "Library Science | catalogu, cataloguing, cataloguing reference"
+    "notes": "Library Science | professional library science, cataloguing, reference"
   },
   {
     "id": "ls-03",
     "target": "LS",
     "title": "Librarian Advisor",
-    "duties": "Conducts research and develops procedures connected to library science, while monitoring cataloguing reference delivery against departmental requirements.",
-    "notes": "Library Science | catalogu, cataloguing, cataloguing reference"
+    "duties": "Conducts research and develops procedures connected to library science, while monitoring reference delivery against departmental requirements.",
+    "notes": "Library Science | professional library science, cataloguing, reference"
   },
   {
     "id": "ls-04",
     "target": "LS",
     "title": "Librarian Coordinator",
-    "duties": "Provides operational support for library science, resolves issues, and maintains records, guidance, and reporting on cataloguings.",
-    "notes": "Library Science | catalogu, cataloguing, cataloguing reference"
+    "duties": "Provides operational support for library science, resolves issues, and maintains records, guidance, and reporting on collections.",
+    "notes": "Library Science | professional library science, cataloguing, reference"
   },
   {
     "id": "ma-01",
     "target": "MA",
     "title": "Mathematics Scientist",
-    "duties": "Leads analysis related to mathematics, prepares recommendations, and supports accept planning with clear written briefings.",
-    "notes": "Mathematics | accept, accepted, mathematic"
+    "duties": "Leads analysis related to mathematics, prepares recommendations, and supports mathematics planning with clear written briefings.",
+    "notes": "Mathematics | mathematics, statistics, statistical methods"
   },
   {
     "id": "ma-02",
     "target": "MA",
     "title": "Senior Mathematics Scientist",
-    "duties": "Coordinates work tied to mathematics, reviews files, and provides advice to internal clients and partners on accepted.",
-    "notes": "Mathematics | accept, accepted, mathematic"
+    "duties": "Coordinates work tied to mathematics, reviews files, and provides advice to internal clients and partners on statistics.",
+    "notes": "Mathematics | mathematics, statistics, statistical methods"
   },
   {
     "id": "ma-03",
     "target": "MA",
     "title": "Mathematics Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to mathematics, while monitoring mathematic delivery against departmental requirements.",
-    "notes": "Mathematics | accept, accepted, mathematic"
+    "duties": "Conducts research and develops procedures connected to mathematics, while monitoring statistical methods delivery against departmental requirements.",
+    "notes": "Mathematics | mathematics, statistics, statistical methods"
   },
   {
     "id": "ma-04",
     "target": "MA",
     "title": "Mathematics Scientist Coordinator",
-    "duties": "Provides operational support for mathematics, resolves issues, and maintains records, guidance, and reporting on mathematics.",
-    "notes": "Mathematics | accept, accepted, mathematic"
+    "duties": "Provides operational support for mathematics, resolves issues, and maintains records, guidance, and reporting on modelling.",
+    "notes": "Mathematics | mathematics, statistics, statistical methods"
   },
   {
     "id": "md-01",
     "target": "MD",
-    "title": "Medecine Officer",
-    "duties": "Leads analysis related to medecine, prepares recommendations, and supports applic planning with clear written briefings.",
-    "notes": "Medecine | applic, application, application comprehensive"
+    "title": "Medical Officer",
+    "duties": "Leads analysis related to medicine, prepares recommendations, and supports medicine planning with clear written briefings.",
+    "notes": "Medicine | medicine, medical officer, medical specialist"
   },
   {
     "id": "md-02",
     "target": "MD",
-    "title": "Senior Medecine Officer",
-    "duties": "Coordinates work tied to medecine, reviews files, and provides advice to internal clients and partners on application.",
-    "notes": "Medecine | applic, application, application comprehensive"
+    "title": "Senior Medical Officer",
+    "duties": "Coordinates work tied to medicine, reviews files, and provides advice to internal clients and partners on medical officer.",
+    "notes": "Medicine | medicine, medical officer, medical specialist"
   },
   {
     "id": "md-03",
     "target": "MD",
-    "title": "Medecine Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to medecine, while monitoring application comprehensive delivery against departmental requirements.",
-    "notes": "Medecine | applic, application, application comprehensive"
+    "title": "Medical Officer Advisor",
+    "duties": "Conducts research and develops procedures connected to medicine, while monitoring medical specialist delivery against departmental requirements.",
+    "notes": "Medicine | medicine, medical officer, medical specialist"
   },
   {
     "id": "md-04",
     "target": "MD",
-    "title": "Medecine Officer Coordinator",
-    "duties": "Provides operational support for medecine, resolves issues, and maintains records, guidance, and reporting on applications.",
-    "notes": "Medecine | applic, application, application comprehensive"
+    "title": "Medical Officer Coordinator",
+    "duties": "Provides operational support for medicine, resolves issues, and maintains records, guidance, and reporting on physician work.",
+    "notes": "Medicine | medicine, medical officer, medical specialist"
   },
   {
     "id": "mt-01",
     "target": "MT",
     "title": "Meteorology Officer",
-    "duties": "Leads analysis related to meteorology - canada.ca, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Meteorology - Canada.ca | activities, advice, advice application"
+    "duties": "Leads analysis related to meteorology, prepares recommendations, and supports meteorology planning with clear written briefings.",
+    "notes": "Meteorology | meteorology, weather services, atmospheric science"
   },
   {
     "id": "mt-02",
     "target": "MT",
     "title": "Senior Meteorology Officer",
-    "duties": "Coordinates work tied to meteorology - canada.ca, reviews files, and provides advice to internal clients and partners on advice.",
-    "notes": "Meteorology - Canada.ca | activities, advice, advice application"
+    "duties": "Coordinates work tied to meteorology, reviews files, and provides advice to internal clients and partners on weather services.",
+    "notes": "Meteorology | meteorology, weather services, atmospheric science"
   },
   {
     "id": "mt-03",
     "target": "MT",
     "title": "Meteorology Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to meteorology - canada.ca, while monitoring advice application delivery against departmental requirements.",
-    "notes": "Meteorology - Canada.ca | activities, advice, advice application"
+    "duties": "Conducts research and develops procedures connected to meteorology, while monitoring atmospheric science delivery against departmental requirements.",
+    "notes": "Meteorology | meteorology, weather services, atmospheric science"
   },
   {
     "id": "mt-04",
     "target": "MT",
     "title": "Meteorology Officer Coordinator",
-    "duties": "Provides operational support for meteorology - canada.ca, resolves issues, and maintains records, guidance, and reporting on advice programs.",
-    "notes": "Meteorology - Canada.ca | activities, advice, advice application"
+    "duties": "Provides operational support for meteorology, resolves issues, and maintains records, guidance, and reporting on weather forecasting.",
+    "notes": "Meteorology | meteorology, weather services, atmospheric science"
   },
   {
     "id": "nd-01",
     "target": "ND",
     "title": "Nutrition Officer",
-    "duties": "Leads analysis related to nutrition and dietetics, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Nutrition and Dietetics | activities, advice, advice fields"
+    "duties": "Leads analysis related to nutrition and dietetics, prepares recommendations, and supports nutrition planning with clear written briefings.",
+    "notes": "Nutrition and Dietetics | nutrition, dietetics, dietitian services"
   },
   {
     "id": "nd-02",
     "target": "ND",
     "title": "Senior Nutrition Officer",
-    "duties": "Coordinates work tied to nutrition and dietetics, reviews files, and provides advice to internal clients and partners on advice.",
-    "notes": "Nutrition and Dietetics | activities, advice, advice fields"
+    "duties": "Coordinates work tied to nutrition and dietetics, reviews files, and provides advice to internal clients and partners on dietetics.",
+    "notes": "Nutrition and Dietetics | nutrition, dietetics, dietitian services"
   },
   {
     "id": "nd-03",
     "target": "ND",
     "title": "Nutrition Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to nutrition and dietetics, while monitoring advice fields delivery against departmental requirements.",
-    "notes": "Nutrition and Dietetics | activities, advice, advice fields"
+    "duties": "Conducts research and develops procedures connected to nutrition and dietetics, while monitoring dietitian services delivery against departmental requirements.",
+    "notes": "Nutrition and Dietetics | nutrition, dietetics, dietitian services"
   },
   {
     "id": "nd-04",
     "target": "ND",
     "title": "Nutrition Officer Coordinator",
-    "duties": "Provides operational support for nutrition and dietetics, resolves issues, and maintains records, guidance, and reporting on advices.",
-    "notes": "Nutrition and Dietetics | activities, advice, advice fields"
+    "duties": "Provides operational support for nutrition and dietetics, resolves issues, and maintains records, guidance, and reporting on home economics.",
+    "notes": "Nutrition and Dietetics | nutrition, dietetics, dietitian services"
   },
   {
     "id": "nu-01",
     "target": "NU",
     "title": "Nurse",
-    "duties": "Leads analysis related to nursing - canada.ca, prepares recommendations, and supports accommodate planning with clear written briefings.",
-    "notes": "Nursing - Canada.ca | accommodate, accommodate carried, accommodates"
+    "duties": "Leads analysis related to nursing, prepares recommendations, and supports nursing planning with clear written briefings.",
+    "notes": "Nursing | nursing, hospital nursing, community health nursing"
   },
   {
     "id": "nu-02",
     "target": "NU",
     "title": "Senior Nurse",
-    "duties": "Coordinates work tied to nursing - canada.ca, reviews files, and provides advice to internal clients and partners on accommodate carried.",
-    "notes": "Nursing - Canada.ca | accommodate, accommodate carried, accommodates"
+    "duties": "Coordinates work tied to nursing, reviews files, and provides advice to internal clients and partners on hospital nursing.",
+    "notes": "Nursing | nursing, hospital nursing, community health nursing"
   },
   {
     "id": "nu-03",
     "target": "NU",
     "title": "Nurse Advisor",
-    "duties": "Conducts research and develops procedures connected to nursing - canada.ca, while monitoring accommodates delivery against departmental requirements.",
-    "notes": "Nursing - Canada.ca | accommodate, accommodate carried, accommodates"
+    "duties": "Conducts research and develops procedures connected to nursing, while monitoring community health nursing delivery against departmental requirements.",
+    "notes": "Nursing | nursing, hospital nursing, community health nursing"
   },
   {
     "id": "nu-04",
     "target": "NU",
     "title": "Nurse Coordinator",
-    "duties": "Provides operational support for nursing - canada.ca, resolves issues, and maintains records, guidance, and reporting on activities.",
-    "notes": "Nursing - Canada.ca | accommodate, accommodate carried, accommodates"
+    "duties": "Provides operational support for nursing, resolves issues, and maintains records, guidance, and reporting on medical adjudicator nursing.",
+    "notes": "Nursing | nursing, hospital nursing, community health nursing"
   },
   {
     "id": "oe-01",
     "target": "OE",
     "title": "Office Officer",
-    "duties": "Leads analysis related to office equipment, prepares recommendations, and supports bookkeep planning with clear written briefings.",
-    "notes": "Office Equipment | bookkeep, bookkeeping, bookkeeping calculating"
+    "duties": "Leads analysis related to office equipment, prepares recommendations, and supports office equipment operation planning with clear written briefings.",
+    "notes": "Office Equipment | office equipment operation, duplicating, mail equipment"
   },
   {
     "id": "oe-02",
     "target": "OE",
     "title": "Senior Office Officer",
-    "duties": "Coordinates work tied to office equipment, reviews files, and provides advice to internal clients and partners on bookkeeping.",
-    "notes": "Office Equipment | bookkeep, bookkeeping, bookkeeping calculating"
+    "duties": "Coordinates work tied to office equipment, reviews files, and provides advice to internal clients and partners on duplicating.",
+    "notes": "Office Equipment | office equipment operation, duplicating, mail equipment"
   },
   {
     "id": "oe-03",
     "target": "OE",
     "title": "Office Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to office equipment, while monitoring bookkeeping calculating delivery against departmental requirements.",
-    "notes": "Office Equipment | bookkeep, bookkeeping, bookkeeping calculating"
+    "duties": "Conducts research and develops procedures connected to office equipment, while monitoring mail equipment delivery against departmental requirements.",
+    "notes": "Office Equipment | office equipment operation, duplicating, mail equipment"
   },
   {
     "id": "oe-04",
     "target": "OE",
     "title": "Office Officer Coordinator",
-    "duties": "Provides operational support for office equipment, resolves issues, and maintains records, guidance, and reporting on bookkeepings.",
-    "notes": "Office Equipment | bookkeep, bookkeeping, bookkeeping calculating"
+    "duties": "Provides operational support for office equipment, resolves issues, and maintains records, guidance, and reporting on bookkeeping equipment.",
+    "notes": "Office Equipment | office equipment operation, duplicating, mail equipment"
   },
   {
     "id": "om-01",
     "target": "OM",
     "title": "Organization Officer",
-    "duties": "Leads analysis related to organization and methods, prepares recommendations, and supports administrative planning with clear written briefings.",
-    "notes": "Organization and Methods | administrative, administrative analysis, administratives"
+    "duties": "Leads analysis related to organization and methods, prepares recommendations, and supports organization and methods planning with clear written briefings.",
+    "notes": "Organization and Methods | organization and methods, work study, process improvement"
   },
   {
     "id": "om-02",
     "target": "OM",
     "title": "Senior Organization Officer",
-    "duties": "Coordinates work tied to organization and methods, reviews files, and provides advice to internal clients and partners on administrative analysis.",
-    "notes": "Organization and Methods | administrative, administrative analysis, administratives"
+    "duties": "Coordinates work tied to organization and methods, reviews files, and provides advice to internal clients and partners on work study.",
+    "notes": "Organization and Methods | organization and methods, work study, process improvement"
   },
   {
     "id": "om-03",
     "target": "OM",
     "title": "Organization Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to organization and methods, while monitoring administratives delivery against departmental requirements.",
-    "notes": "Organization and Methods | administrative, administrative analysis, administratives"
+    "duties": "Conducts research and develops procedures connected to organization and methods, while monitoring process improvement delivery against departmental requirements.",
+    "notes": "Organization and Methods | organization and methods, work study, process improvement"
   },
   {
     "id": "om-04",
     "target": "OM",
     "title": "Organization Officer Coordinator",
-    "duties": "Provides operational support for organization and methods, resolves issues, and maintains records, guidance, and reporting on analysis.",
-    "notes": "Organization and Methods | administrative, administrative analysis, administratives"
+    "duties": "Provides operational support for organization and methods, resolves issues, and maintains records, guidance, and reporting on administrative systems analysis.",
+    "notes": "Organization and Methods | organization and methods, work study, process improvement"
   },
   {
     "id": "op-01",
     "target": "OP",
     "title": "Occupational Officer",
-    "duties": "Leads analysis related to occupational and physical therapy, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Occupational and Physical Therapy | allocat, allocated, allocated physical"
+    "duties": "Leads analysis related to occupational and physical therapy, prepares recommendations, and supports occupational therapy planning with clear written briefings.",
+    "notes": "Occupational and Physical Therapy | occupational therapy, physical therapy, rehabilitation professional services"
   },
   {
     "id": "op-02",
     "target": "OP",
     "title": "Senior Occupational Officer",
-    "duties": "Coordinates work tied to occupational and physical therapy, reviews files, and provides advice to internal clients and partners on allocated.",
-    "notes": "Occupational and Physical Therapy | allocat, allocated, allocated physical"
+    "duties": "Coordinates work tied to occupational and physical therapy, reviews files, and provides advice to internal clients and partners on physical therapy.",
+    "notes": "Occupational and Physical Therapy | occupational therapy, physical therapy, rehabilitation professional services"
   },
   {
     "id": "op-03",
     "target": "OP",
     "title": "Occupational Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to occupational and physical therapy, while monitoring allocated physical delivery against departmental requirements.",
-    "notes": "Occupational and Physical Therapy | allocat, allocated, allocated physical"
+    "duties": "Conducts research and develops procedures connected to occupational and physical therapy, while monitoring rehabilitation professional services delivery against departmental requirements.",
+    "notes": "Occupational and Physical Therapy | occupational therapy, physical therapy, rehabilitation professional services"
   },
   {
     "id": "op-04",
     "target": "OP",
     "title": "Occupational Officer Coordinator",
-    "duties": "Provides operational support for occupational and physical therapy, resolves issues, and maintains records, guidance, and reporting on allocateds.",
-    "notes": "Occupational and Physical Therapy | allocat, allocated, allocated physical"
+    "duties": "Provides operational support for occupational and physical therapy, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Occupational and Physical Therapy | occupational therapy, physical therapy, rehabilitation professional services"
   },
   {
     "id": "pc-01",
     "target": "PC",
     "title": "Physical Scientist",
-    "duties": "Leads analysis related to physical sciences, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Physical Sciences | activities, activities each, allocat"
+    "duties": "Leads analysis related to physical sciences, prepares recommendations, and supports physical sciences planning with clear written briefings.",
+    "notes": "Physical Sciences | physical sciences, geology, meteorology"
   },
   {
     "id": "pc-02",
     "target": "PC",
     "title": "Senior Physical Scientist",
-    "duties": "Coordinates work tied to physical sciences, reviews files, and provides advice to internal clients and partners on activities each.",
-    "notes": "Physical Sciences | activities, activities each, allocat"
+    "duties": "Coordinates work tied to physical sciences, reviews files, and provides advice to internal clients and partners on geology.",
+    "notes": "Physical Sciences | physical sciences, geology, meteorology"
   },
   {
     "id": "pc-03",
     "target": "PC",
     "title": "Physical Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to physical sciences, while monitoring allocat delivery against departmental requirements.",
-    "notes": "Physical Sciences | activities, activities each, allocat"
+    "duties": "Conducts research and develops procedures connected to physical sciences, while monitoring meteorology delivery against departmental requirements.",
+    "notes": "Physical Sciences | physical sciences, geology, meteorology"
   },
   {
     "id": "pc-04",
     "target": "PC",
     "title": "Physical Scientist Coordinator",
-    "duties": "Provides operational support for physical sciences, resolves issues, and maintains records, guidance, and reporting on allocated.",
-    "notes": "Physical Sciences | activities, activities each, allocat"
+    "duties": "Provides operational support for physical sciences, resolves issues, and maintains records, guidance, and reporting on oceanography.",
+    "notes": "Physical Sciences | physical sciences, geology, meteorology"
   },
   {
     "id": "pe-01",
     "target": "PE",
+    "expectedLevel": "01",
     "title": "Human Resources Advisor",
-    "duties": "Leads analysis related to personnel administration, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Personnel Administration | administr, administration, administration staffing"
+    "duties": "Leads analysis related to personnel administration, prepares recommendations, and supports human resources planning with clear written briefings.",
+    "notes": "Personnel Administration | human resources, personnel administration, staffing"
   },
   {
     "id": "pe-02",
     "target": "PE",
+    "expectedLevel": "02",
     "title": "Senior Human Resources Advisor",
-    "duties": "Coordinates work tied to personnel administration, reviews files, and provides advice to internal clients and partners on administration.",
-    "notes": "Personnel Administration | administr, administration, administration staffing"
+    "duties": "Coordinates work tied to personnel administration, reviews files, and provides advice to internal clients and partners on personnel administration.",
+    "notes": "Personnel Administration | human resources, personnel administration, staffing"
   },
   {
     "id": "pe-03",
     "target": "PE",
+    "expectedLevel": "03",
     "title": "Human Resources Advisor Advisor",
-    "duties": "Conducts research and develops procedures connected to personnel administration, while monitoring administration staffing delivery against departmental requirements.",
-    "notes": "Personnel Administration | administr, administration, administration staffing"
+    "duties": "Conducts research and develops procedures connected to personnel administration, while monitoring staffing delivery against departmental requirements.",
+    "notes": "Personnel Administration | human resources, personnel administration, staffing"
   },
   {
     "id": "pe-04",
     "target": "PE",
+    "expectedLevel": "04",
     "title": "Human Resources Advisor Coordinator",
-    "duties": "Provides operational support for personnel administration, resolves issues, and maintains records, guidance, and reporting on administrations.",
-    "notes": "Personnel Administration | administr, administration, administration staffing"
+    "duties": "Provides operational support for personnel administration, resolves issues, and maintains records, guidance, and reporting on classification.",
+    "notes": "Personnel Administration | human resources, personnel administration, staffing"
   },
   {
     "id": "pg-01",
     "target": "PG",
+    "expectedLevel": "01",
     "title": "Procurement Officer",
-    "duties": "Leads analysis related to purchase and supply, prepares recommendations, and supports chain planning with clear written briefings.",
-    "notes": "Purchase and Supply | chain, chains, contract"
+    "duties": "Leads analysis related to purchase and supply, prepares recommendations, and supports procurement planning with clear written briefings.",
+    "notes": "Purchase and Supply | procurement, contracting, materiel management"
   },
   {
     "id": "pg-02",
     "target": "PG",
+    "expectedLevel": "02",
     "title": "Senior Procurement Officer",
-    "duties": "Coordinates work tied to purchase and supply, reviews files, and provides advice to internal clients and partners on chains.",
-    "notes": "Purchase and Supply | chain, chains, contract"
+    "duties": "Coordinates work tied to purchase and supply, reviews files, and provides advice to internal clients and partners on contracting.",
+    "notes": "Purchase and Supply | procurement, contracting, materiel management"
   },
   {
     "id": "pg-03",
     "target": "PG",
+    "expectedLevel": "03",
     "title": "Procurement Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to purchase and supply, while monitoring contract delivery against departmental requirements.",
-    "notes": "Purchase and Supply | chain, chains, contract"
+    "duties": "Conducts research and develops procedures connected to purchase and supply, while monitoring materiel management delivery against departmental requirements.",
+    "notes": "Purchase and Supply | procurement, contracting, materiel management"
   },
   {
     "id": "pg-04",
     "target": "PG",
+    "expectedLevel": "04",
     "title": "Procurement Officer Coordinator",
-    "duties": "Provides operational support for purchase and supply, resolves issues, and maintains records, guidance, and reporting on contracting.",
-    "notes": "Purchase and Supply | chain, chains, contract"
+    "duties": "Provides operational support for purchase and supply, resolves issues, and maintains records, guidance, and reporting on purchasing.",
+    "notes": "Purchase and Supply | procurement, contracting, materiel management"
   },
   {
     "id": "ph-01",
     "target": "PH",
     "title": "Pharmacist",
-    "duties": "Leads analysis related to pharmacy, prepares recommendations, and supports advisory planning with clear written briefings.",
-    "notes": "Pharmacy | advisory, advisory regulatory, advisorys"
+    "duties": "Leads analysis related to pharmacy, prepares recommendations, and supports pharmacy planning with clear written briefings.",
+    "notes": "Pharmacy | pharmacy, dispensing, pharmaceutical advisory"
   },
   {
     "id": "ph-02",
     "target": "PH",
     "title": "Senior Pharmacist",
-    "duties": "Coordinates work tied to pharmacy, reviews files, and provides advice to internal clients and partners on advisory regulatory.",
-    "notes": "Pharmacy | advisory, advisory regulatory, advisorys"
+    "duties": "Coordinates work tied to pharmacy, reviews files, and provides advice to internal clients and partners on dispensing.",
+    "notes": "Pharmacy | pharmacy, dispensing, pharmaceutical advisory"
   },
   {
     "id": "ph-03",
     "target": "PH",
     "title": "Pharmacist Advisor",
-    "duties": "Conducts research and develops procedures connected to pharmacy, while monitoring advisorys delivery against departmental requirements.",
-    "notes": "Pharmacy | advisory, advisory regulatory, advisorys"
+    "duties": "Conducts research and develops procedures connected to pharmacy, while monitoring pharmaceutical advisory delivery against departmental requirements.",
+    "notes": "Pharmacy | pharmacy, dispensing, pharmaceutical advisory"
   },
   {
     "id": "ph-04",
     "target": "PH",
     "title": "Pharmacist Coordinator",
-    "duties": "Provides operational support for pharmacy, resolves issues, and maintains records, guidance, and reporting on agencie.",
-    "notes": "Pharmacy | advisory, advisory regulatory, advisorys"
+    "duties": "Provides operational support for pharmacy, resolves issues, and maintains records, guidance, and reporting on pharmaceutical regulatory functions.",
+    "notes": "Pharmacy | pharmacy, dispensing, pharmaceutical advisory"
   },
   {
     "id": "pi-01",
     "target": "PI",
     "title": "Inspector",
-    "duties": "Leads analysis related to primary products inspection, prepares recommendations, and supports addition planning with clear written briefings.",
-    "notes": "Primary Products Inspection | addition, addition grain, additions"
+    "duties": "Leads analysis related to primary products inspection, prepares recommendations, and supports primary products inspection planning with clear written briefings.",
+    "notes": "Primary Products Inspection | primary products inspection, agricultural inspection, food inspection"
   },
   {
     "id": "pi-02",
     "target": "PI",
     "title": "Senior Inspector",
-    "duties": "Coordinates work tied to primary products inspection, reviews files, and provides advice to internal clients and partners on addition grain.",
-    "notes": "Primary Products Inspection | addition, addition grain, additions"
+    "duties": "Coordinates work tied to primary products inspection, reviews files, and provides advice to internal clients and partners on agricultural inspection.",
+    "notes": "Primary Products Inspection | primary products inspection, agricultural inspection, food inspection"
   },
   {
     "id": "pi-03",
     "target": "PI",
     "title": "Inspector Advisor",
-    "duties": "Conducts research and develops procedures connected to primary products inspection, while monitoring additions delivery against departmental requirements.",
-    "notes": "Primary Products Inspection | addition, addition grain, additions"
+    "duties": "Conducts research and develops procedures connected to primary products inspection, while monitoring food inspection delivery against departmental requirements.",
+    "notes": "Primary Products Inspection | primary products inspection, agricultural inspection, food inspection"
   },
   {
     "id": "pi-04",
     "target": "PI",
     "title": "Inspector Coordinator",
-    "duties": "Provides operational support for primary products inspection, resolves issues, and maintains records, guidance, and reporting on agricultural.",
-    "notes": "Primary Products Inspection | addition, addition grain, additions"
+    "duties": "Provides operational support for primary products inspection, resolves issues, and maintains records, guidance, and reporting on fish inspection.",
+    "notes": "Primary Products Inspection | primary products inspection, agricultural inspection, food inspection"
   },
   {
     "id": "pm-01",
     "target": "PM",
+    "expectedLevel": "01",
     "title": "Program Officer",
-    "duties": "Leads analysis related to programme administration, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Programme Administration | administr, administration, administration service"
+    "duties": "Leads analysis related to programme administration, prepares recommendations, and supports program administration planning with clear written briefings.",
+    "notes": "Programme Administration | program administration, service delivery, benefits"
   },
   {
     "id": "pm-02",
     "target": "PM",
+    "expectedLevel": "03",
     "title": "Senior Program Officer",
-    "duties": "Coordinates work tied to programme administration, reviews files, and provides advice to internal clients and partners on administration.",
-    "notes": "Programme Administration | administr, administration, administration service"
+    "duties": "Coordinates work tied to programme administration, reviews files, and provides advice to internal clients and partners on service delivery.",
+    "notes": "Programme Administration | program administration, service delivery, benefits"
   },
   {
     "id": "pm-03",
     "target": "PM",
+    "expectedLevel": "04",
     "title": "Program Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to programme administration, while monitoring administration service delivery against departmental requirements.",
-    "notes": "Programme Administration | administr, administration, administration service"
+    "duties": "Conducts research and develops procedures connected to programme administration, while monitoring benefits delivery against departmental requirements.",
+    "notes": "Programme Administration | program administration, service delivery, benefits"
   },
   {
     "id": "pm-04",
     "target": "PM",
+    "expectedLevel": "05",
     "title": "Program Officer Coordinator",
-    "duties": "Provides operational support for programme administration, resolves issues, and maintains records, guidance, and reporting on administrations.",
-    "notes": "Programme Administration | administr, administration, administration service"
+    "duties": "Provides operational support for programme administration, resolves issues, and maintains records, guidance, and reporting on grants.",
+    "notes": "Programme Administration | program administration, service delivery, benefits"
   },
   {
     "id": "po-01",
     "target": "PO",
     "title": "Operations Officer",
-    "duties": "Leads analysis related to police operations support, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Police Operations Support | activities, activities recording, activities specifications"
+    "duties": "Leads analysis related to police operations support, prepares recommendations, and supports police operations support planning with clear written briefings.",
+    "notes": "Police Operations Support | police operations support, telecommunications operations, police communications"
   },
   {
     "id": "po-02",
     "target": "PO",
     "title": "Senior Operations Officer",
-    "duties": "Coordinates work tied to police operations support, reviews files, and provides advice to internal clients and partners on activities recording.",
-    "notes": "Police Operations Support | activities, activities recording, activities specifications"
+    "duties": "Coordinates work tied to police operations support, reviews files, and provides advice to internal clients and partners on telecommunications operations.",
+    "notes": "Police Operations Support | police operations support, telecommunications operations, police communications"
   },
   {
     "id": "po-03",
     "target": "PO",
     "title": "Operations Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to police operations support, while monitoring activities specifications delivery against departmental requirements.",
-    "notes": "Police Operations Support | activities, activities recording, activities specifications"
+    "duties": "Conducts research and develops procedures connected to police operations support, while monitoring police communications delivery against departmental requirements.",
+    "notes": "Police Operations Support | police operations support, telecommunications operations, police communications"
   },
   {
     "id": "po-04",
     "target": "PO",
     "title": "Operations Officer Coordinator",
-    "duties": "Provides operational support for police operations support, resolves issues, and maintains records, guidance, and reporting on advisory.",
-    "notes": "Police Operations Support | activities, activities recording, activities specifications"
+    "duties": "Provides operational support for police operations support, resolves issues, and maintains records, guidance, and reporting on lawful interception.",
+    "notes": "Police Operations Support | police operations support, telecommunications operations, police communications"
   },
   {
     "id": "pr-01",
     "target": "PR",
     "title": "Printing Officer",
-    "duties": "Leads analysis related to printing services, prepares recommendations, and supports bindery planning with clear written briefings.",
-    "notes": "Printing Services | bindery, bindery press, binderys"
+    "duties": "Leads analysis related to printing services, prepares recommendations, and supports printing operations planning with clear written briefings.",
+    "notes": "Printing Services | printing operations, print production, bindery"
   },
   {
     "id": "pr-02",
     "target": "PR",
     "title": "Senior Printing Officer",
-    "duties": "Coordinates work tied to printing services, reviews files, and provides advice to internal clients and partners on bindery press.",
-    "notes": "Printing Services | bindery, bindery press, binderys"
+    "duties": "Coordinates work tied to printing services, reviews files, and provides advice to internal clients and partners on print production.",
+    "notes": "Printing Services | printing operations, print production, bindery"
   },
   {
     "id": "pr-03",
     "target": "PR",
     "title": "Printing Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to printing services, while monitoring binderys delivery against departmental requirements.",
-    "notes": "Printing Services | bindery, bindery press, binderys"
+    "duties": "Conducts research and develops procedures connected to printing services, while monitoring bindery delivery against departmental requirements.",
+    "notes": "Printing Services | printing operations, print production, bindery"
   },
   {
     "id": "pr-04",
     "target": "PR",
     "title": "Printing Officer Coordinator",
-    "duties": "Provides operational support for printing services, resolves issues, and maintains records, guidance, and reporting on operation.",
-    "notes": "Printing Services | bindery, bindery press, binderys"
+    "duties": "Provides operational support for printing services, resolves issues, and maintains records, guidance, and reporting on press operations.",
+    "notes": "Printing Services | printing operations, print production, bindery"
   },
   {
     "id": "ps-01",
     "target": "PS",
     "title": "Psychology Officer",
-    "duties": "Leads analysis related to psychology - canada.ca, prepares recommendations, and supports abilitie planning with clear written briefings.",
-    "notes": "Psychology - Canada.ca | abilitie, abilities, abilities skills"
+    "duties": "Leads analysis related to psychology, prepares recommendations, and supports psychology planning with clear written briefings.",
+    "notes": "Psychology | psychology, psychological assessment, counselling"
   },
   {
     "id": "ps-02",
     "target": "PS",
     "title": "Senior Psychology Officer",
-    "duties": "Coordinates work tied to psychology - canada.ca, reviews files, and provides advice to internal clients and partners on abilities.",
-    "notes": "Psychology - Canada.ca | abilitie, abilities, abilities skills"
+    "duties": "Coordinates work tied to psychology, reviews files, and provides advice to internal clients and partners on psychological assessment.",
+    "notes": "Psychology | psychology, psychological assessment, counselling"
   },
   {
     "id": "ps-03",
     "target": "PS",
     "title": "Psychology Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to psychology - canada.ca, while monitoring abilities skills delivery against departmental requirements.",
-    "notes": "Psychology - Canada.ca | abilitie, abilities, abilities skills"
+    "duties": "Conducts research and develops procedures connected to psychology, while monitoring counselling delivery against departmental requirements.",
+    "notes": "Psychology | psychology, psychological assessment, counselling"
   },
   {
     "id": "ps-04",
     "target": "PS",
     "title": "Psychology Officer Coordinator",
-    "duties": "Provides operational support for psychology - canada.ca, resolves issues, and maintains records, guidance, and reporting on activities.",
-    "notes": "Psychology - Canada.ca | abilitie, abilities, abilities skills"
+    "duties": "Provides operational support for psychology, resolves issues, and maintains records, guidance, and reporting on personnel psychology.",
+    "notes": "Psychology | psychology, psychological assessment, counselling"
   },
   {
     "id": "py-01",
     "target": "PY",
     "title": "Photographer",
-    "duties": "Leads analysis related to photography, prepares recommendations, and supports field planning with clear written briefings.",
-    "notes": "Photography | field, fields, imaging"
+    "duties": "Leads analysis related to photography, prepares recommendations, and supports photography planning with clear written briefings.",
+    "notes": "Photography | photography, imaging, photographic production"
   },
   {
     "id": "py-02",
     "target": "PY",
     "title": "Senior Photographer",
-    "duties": "Coordinates work tied to photography, reviews files, and provides advice to internal clients and partners on fields.",
-    "notes": "Photography | field, fields, imaging"
+    "duties": "Coordinates work tied to photography, reviews files, and provides advice to internal clients and partners on imaging.",
+    "notes": "Photography | photography, imaging, photographic production"
   },
   {
     "id": "py-03",
     "target": "PY",
     "title": "Photographer Advisor",
-    "duties": "Conducts research and develops procedures connected to photography, while monitoring imaging delivery against departmental requirements.",
-    "notes": "Photography | field, fields, imaging"
+    "duties": "Conducts research and develops procedures connected to photography, while monitoring photographic production delivery against departmental requirements.",
+    "notes": "Photography | photography, imaging, photographic production"
   },
   {
     "id": "py-04",
     "target": "PY",
     "title": "Photographer Coordinator",
-    "duties": "Provides operational support for photography, resolves issues, and maintains records, guidance, and reporting on imaging photographic.",
-    "notes": "Photography | field, fields, imaging"
+    "duties": "Provides operational support for photography, resolves issues, and maintains records, guidance, and reporting on photo lab.",
+    "notes": "Photography | photography, imaging, photographic production"
   },
   {
     "id": "ro-01",
     "target": "RO",
     "title": "Operations Officer",
-    "duties": "Leads analysis related to radio operations, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Radio Operations | allocat, allocate, allocate point"
+    "duties": "Leads analysis related to radio operations, prepares recommendations, and supports radio operations planning with clear written briefings.",
+    "notes": "Radio Operations | radio operations, marine radio, aviation radio"
   },
   {
     "id": "ro-02",
     "target": "RO",
     "title": "Senior Operations Officer",
-    "duties": "Coordinates work tied to radio operations, reviews files, and provides advice to internal clients and partners on allocate.",
-    "notes": "Radio Operations | allocat, allocate, allocate point"
+    "duties": "Coordinates work tied to radio operations, reviews files, and provides advice to internal clients and partners on marine radio.",
+    "notes": "Radio Operations | radio operations, marine radio, aviation radio"
   },
   {
     "id": "ro-03",
     "target": "RO",
     "title": "Operations Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to radio operations, while monitoring allocate point delivery against departmental requirements.",
-    "notes": "Radio Operations | allocat, allocate, allocate point"
+    "duties": "Conducts research and develops procedures connected to radio operations, while monitoring aviation radio delivery against departmental requirements.",
+    "notes": "Radio Operations | radio operations, marine radio, aviation radio"
   },
   {
     "id": "ro-04",
     "target": "RO",
     "title": "Operations Officer Coordinator",
-    "duties": "Provides operational support for radio operations, resolves issues, and maintains records, guidance, and reporting on allocated.",
-    "notes": "Radio Operations | allocat, allocate, allocate point"
+    "duties": "Provides operational support for radio operations, resolves issues, and maintains records, guidance, and reporting on communications operations.",
+    "notes": "Radio Operations | radio operations, marine radio, aviation radio"
   },
   {
     "id": "sc-01",
     "target": "SC",
     "title": "Ships' Officer",
-    "duties": "Leads analysis related to ships' crew, prepares recommendations, and supports crew deck planning with clear written briefings.",
-    "notes": "Ships' Crew | crew deck, crews, deck engine"
+    "duties": "Leads analysis related to ships' crew, prepares recommendations, and supports ships crew planning with clear written briefings.",
+    "notes": "Ships' Crew | ships crew, deck operations, engine room operations"
   },
   {
     "id": "sc-02",
     "target": "SC",
     "title": "Senior Ships' Officer",
-    "duties": "Coordinates work tied to ships' crew, reviews files, and provides advice to internal clients and partners on crews.",
-    "notes": "Ships' Crew | crew deck, crews, deck engine"
+    "duties": "Coordinates work tied to ships' crew, reviews files, and provides advice to internal clients and partners on deck operations.",
+    "notes": "Ships' Crew | ships crew, deck operations, engine room operations"
   },
   {
     "id": "sc-03",
     "target": "SC",
     "title": "Ships' Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to ships' crew, while monitoring deck engine delivery against departmental requirements.",
-    "notes": "Ships' Crew | crew deck, crews, deck engine"
+    "duties": "Conducts research and develops procedures connected to ships' crew, while monitoring engine room operations delivery against departmental requirements.",
+    "notes": "Ships' Crew | ships crew, deck operations, engine room operations"
   },
   {
     "id": "sc-04",
     "target": "SC",
     "title": "Ships' Officer Coordinator",
-    "duties": "Provides operational support for ships' crew, resolves issues, and maintains records, guidance, and reporting on decks.",
-    "notes": "Ships' Crew | crew deck, crews, deck engine"
+    "duties": "Provides operational support for ships' crew, resolves issues, and maintains records, guidance, and reporting on marine work.",
+    "notes": "Ships' Crew | ships crew, deck operations, engine room operations"
   },
   {
     "id": "se-01",
     "target": "SE",
     "title": "Scientific Scientist",
-    "duties": "Leads analysis related to scientific research, prepares recommendations, and supports alloc planning with clear written briefings.",
-    "notes": "Scientific Research | alloc, allocation, allocation recommended"
+    "duties": "Leads analysis related to scientific research, prepares recommendations, and supports research scientist planning with clear written briefings.",
+    "notes": "Scientific Research | research scientist, research manager, independent scientific research"
   },
   {
     "id": "se-02",
     "target": "SE",
     "title": "Senior Scientific Scientist",
-    "duties": "Coordinates work tied to scientific research, reviews files, and provides advice to internal clients and partners on allocation.",
-    "notes": "Scientific Research | alloc, allocation, allocation recommended"
+    "duties": "Coordinates work tied to scientific research, reviews files, and provides advice to internal clients and partners on research manager.",
+    "notes": "Scientific Research | research scientist, research manager, independent scientific research"
   },
   {
     "id": "se-03",
     "target": "SE",
     "title": "Scientific Scientist Advisor",
-    "duties": "Conducts research and develops procedures connected to scientific research, while monitoring allocation recommended delivery against departmental requirements.",
-    "notes": "Scientific Research | alloc, allocation, allocation recommended"
+    "duties": "Conducts research and develops procedures connected to scientific research, while monitoring independent scientific research delivery against departmental requirements.",
+    "notes": "Scientific Research | research scientist, research manager, independent scientific research"
   },
   {
     "id": "se-04",
     "target": "SE",
     "title": "Scientific Scientist Coordinator",
-    "duties": "Provides operational support for scientific research, resolves issues, and maintains records, guidance, and reporting on allocations.",
-    "notes": "Scientific Research | alloc, allocation, allocation recommended"
+    "duties": "Provides operational support for scientific research, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Scientific Research | research scientist, research manager, independent scientific research"
   },
   {
     "id": "sg-01",
     "target": "SG",
     "title": "Scientific Officer",
-    "duties": "Leads analysis related to scientific regulation, prepares recommendations, and supports allocate planning with clear written briefings.",
-    "notes": "Scientific Regulation | allocate, allocate point, allocates"
+    "duties": "Leads analysis related to scientific regulation, prepares recommendations, and supports scientific regulation planning with clear written briefings.",
+    "notes": "Scientific Regulation | scientific regulation, patents, regulatory science evaluation"
   },
   {
     "id": "sg-02",
     "target": "SG",
     "title": "Senior Scientific Officer",
-    "duties": "Coordinates work tied to scientific regulation, reviews files, and provides advice to internal clients and partners on allocate point.",
-    "notes": "Scientific Regulation | allocate, allocate point, allocates"
+    "duties": "Coordinates work tied to scientific regulation, reviews files, and provides advice to internal clients and partners on patents.",
+    "notes": "Scientific Regulation | scientific regulation, patents, regulatory science evaluation"
   },
   {
     "id": "sg-03",
     "target": "SG",
     "title": "Scientific Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to scientific regulation, while monitoring allocates delivery against departmental requirements.",
-    "notes": "Scientific Regulation | allocate, allocate point, allocates"
+    "duties": "Conducts research and develops procedures connected to scientific regulation, while monitoring regulatory science evaluation delivery against departmental requirements.",
+    "notes": "Scientific Regulation | scientific regulation, patents, regulatory science evaluation"
   },
   {
     "id": "sg-04",
     "target": "SG",
     "title": "Scientific Officer Coordinator",
-    "duties": "Provides operational support for scientific regulation, resolves issues, and maintains records, guidance, and reporting on analysis.",
-    "notes": "Scientific Regulation | allocate, allocate point, allocates"
+    "duties": "Provides operational support for scientific regulation, resolves issues, and maintains records, guidance, and reporting on scientific review.",
+    "notes": "Scientific Regulation | scientific regulation, patents, regulatory science evaluation"
   },
   {
     "id": "so-01",
     "target": "SO",
     "title": "Ship's Officer",
-    "duties": "Leads analysis related to ship's officers, prepares recommendations, and supports accept planning with clear written briefings.",
-    "notes": "Ship's Officers | accept, accepted, accepted view"
+    "duties": "Leads analysis related to ship's officers, prepares recommendations, and supports ship officers planning with clear written briefings.",
+    "notes": "Ship's Officers | ship officers, masters, mates"
   },
   {
     "id": "so-02",
     "target": "SO",
     "title": "Senior Ship's Officer",
-    "duties": "Coordinates work tied to ship's officers, reviews files, and provides advice to internal clients and partners on accepted.",
-    "notes": "Ship's Officers | accept, accepted, accepted view"
+    "duties": "Coordinates work tied to ship's officers, reviews files, and provides advice to internal clients and partners on masters.",
+    "notes": "Ship's Officers | ship officers, masters, mates"
   },
   {
     "id": "so-03",
     "target": "SO",
     "title": "Ship's Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to ship's officers, while monitoring accepted view delivery against departmental requirements.",
-    "notes": "Ship's Officers | accept, accepted, accepted view"
+    "duties": "Conducts research and develops procedures connected to ship's officers, while monitoring mates delivery against departmental requirements.",
+    "notes": "Ship's Officers | ship officers, masters, mates"
   },
   {
     "id": "so-04",
     "target": "SO",
     "title": "Ship's Officer Coordinator",
-    "duties": "Provides operational support for ship's officers, resolves issues, and maintains records, guidance, and reporting on accepteds.",
-    "notes": "Ship's Officers | accept, accepted, accepted view"
+    "duties": "Provides operational support for ship's officers, resolves issues, and maintains records, guidance, and reporting on marine engineering officers.",
+    "notes": "Ship's Officers | ship officers, masters, mates"
   },
   {
     "id": "sr-01",
     "target": "SR",
     "title": "Ship Officer",
-    "duties": "Leads analysis related to ship repair, prepares recommendations, and supports allocat planning with clear written briefings.",
-    "notes": "Ship Repair | allocat, allocated, allocated labour"
+    "duties": "Leads analysis related to ship repair, prepares recommendations, and supports ship repair trades planning with clear written briefings.",
+    "notes": "Ship Repair | ship repair trades, naval repair, dockyard repair operations"
   },
   {
     "id": "sr-02",
     "target": "SR",
     "title": "Senior Ship Officer",
-    "duties": "Coordinates work tied to ship repair, reviews files, and provides advice to internal clients and partners on allocated.",
-    "notes": "Ship Repair | allocat, allocated, allocated labour"
+    "duties": "Coordinates work tied to ship repair, reviews files, and provides advice to internal clients and partners on naval repair.",
+    "notes": "Ship Repair | ship repair trades, naval repair, dockyard repair operations"
   },
   {
     "id": "sr-03",
     "target": "SR",
     "title": "Ship Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to ship repair, while monitoring allocated labour delivery against departmental requirements.",
-    "notes": "Ship Repair | allocat, allocated, allocated labour"
+    "duties": "Conducts research and develops procedures connected to ship repair, while monitoring dockyard repair operations delivery against departmental requirements.",
+    "notes": "Ship Repair | ship repair trades, naval repair, dockyard repair operations"
   },
   {
     "id": "sr-04",
     "target": "SR",
     "title": "Ship Officer Coordinator",
-    "duties": "Provides operational support for ship repair, resolves issues, and maintains records, guidance, and reporting on allocateds.",
-    "notes": "Ship Repair | allocat, allocated, allocated labour"
+    "duties": "Provides operational support for ship repair, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Ship Repair | ship repair trades, naval repair, dockyard repair operations"
   },
   {
     "id": "st-01",
     "target": "ST",
     "title": "Secretarial, Officer",
-    "duties": "Leads analysis related to secretarial, stenographic, typing, prepares recommendations, and supports changeable planning with clear written briefings.",
-    "notes": "Secretarial, Stenographic, Typing | changeable, changeable font, changeables"
+    "duties": "Leads analysis related to secretarial, stenographic, typing, prepares recommendations, and supports secretarial planning with clear written briefings.",
+    "notes": "Secretarial, Stenographic, Typing | secretarial, stenographic, typing"
   },
   {
     "id": "st-02",
     "target": "ST",
     "title": "Senior Secretarial, Officer",
-    "duties": "Coordinates work tied to secretarial, stenographic, typing, reviews files, and provides advice to internal clients and partners on changeable font.",
-    "notes": "Secretarial, Stenographic, Typing | changeable, changeable font, changeables"
+    "duties": "Coordinates work tied to secretarial, stenographic, typing, reviews files, and provides advice to internal clients and partners on stenographic.",
+    "notes": "Secretarial, Stenographic, Typing | secretarial, stenographic, typing"
   },
   {
     "id": "st-03",
     "target": "ST",
     "title": "Secretarial, Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to secretarial, stenographic, typing, while monitoring changeables delivery against departmental requirements.",
-    "notes": "Secretarial, Stenographic, Typing | changeable, changeable font, changeables"
+    "duties": "Conducts research and develops procedures connected to secretarial, stenographic, typing, while monitoring typing delivery against departmental requirements.",
+    "notes": "Secretarial, Stenographic, Typing | secretarial, stenographic, typing"
   },
   {
     "id": "st-04",
     "target": "ST",
     "title": "Secretarial, Officer Coordinator",
-    "duties": "Provides operational support for secretarial, stenographic, typing, resolves issues, and maintains records, guidance, and reporting on compos.",
-    "notes": "Secretarial, Stenographic, Typing | changeable, changeable font, changeables"
+    "duties": "Provides operational support for secretarial, stenographic, typing, resolves issues, and maintains records, guidance, and reporting on court reporting.",
+    "notes": "Secretarial, Stenographic, Typing | secretarial, stenographic, typing"
   },
   {
     "id": "sw-01",
     "target": "SW",
     "title": "Social Worker",
-    "duties": "Leads analysis related to social work, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Social Work | activities, activities dealing, adjust"
+    "duties": "Leads analysis related to social work, prepares recommendations, and supports social work planning with clear written briefings.",
+    "notes": "Social Work | social work, casework, counselling"
   },
   {
     "id": "sw-02",
     "target": "SW",
     "title": "Senior Social Worker",
-    "duties": "Coordinates work tied to social work, reviews files, and provides advice to internal clients and partners on activities dealing.",
-    "notes": "Social Work | activities, activities dealing, adjust"
+    "duties": "Coordinates work tied to social work, reviews files, and provides advice to internal clients and partners on casework.",
+    "notes": "Social Work | social work, casework, counselling"
   },
   {
     "id": "sw-03",
     "target": "SW",
     "title": "Social Worker Advisor",
-    "duties": "Conducts research and develops procedures connected to social work, while monitoring adjust delivery against departmental requirements.",
-    "notes": "Social Work | activities, activities dealing, adjust"
+    "duties": "Conducts research and develops procedures connected to social work, while monitoring counselling delivery against departmental requirements.",
+    "notes": "Social Work | social work, casework, counselling"
   },
   {
     "id": "sw-04",
     "target": "SW",
     "title": "Social Worker Coordinator",
-    "duties": "Provides operational support for social work, resolves issues, and maintains records, guidance, and reporting on adjustment.",
-    "notes": "Social Work | activities, activities dealing, adjust"
+    "duties": "Provides operational support for social work, resolves issues, and maintains records, guidance, and reporting on social welfare.",
+    "notes": "Social Work | social work, casework, counselling"
   },
   {
     "id": "ti-01",
     "target": "TI",
     "title": "Inspector",
-    "duties": "Leads analysis related to technical inspection, prepares recommendations, and supports assur planning with clear written briefings.",
-    "notes": "Technical Inspection | assur, assurance, assurance inspection"
+    "duties": "Leads analysis related to technical inspection, prepares recommendations, and supports technical inspection planning with clear written briefings.",
+    "notes": "Technical Inspection | technical inspection, quality assurance inspection, standards compliance inspection"
   },
   {
     "id": "ti-02",
     "target": "TI",
     "title": "Senior Inspector",
-    "duties": "Coordinates work tied to technical inspection, reviews files, and provides advice to internal clients and partners on assurance.",
-    "notes": "Technical Inspection | assur, assurance, assurance inspection"
+    "duties": "Coordinates work tied to technical inspection, reviews files, and provides advice to internal clients and partners on quality assurance inspection.",
+    "notes": "Technical Inspection | technical inspection, quality assurance inspection, standards compliance inspection"
   },
   {
     "id": "ti-03",
     "target": "TI",
     "title": "Inspector Advisor",
-    "duties": "Conducts research and develops procedures connected to technical inspection, while monitoring assurance inspection delivery against departmental requirements.",
-    "notes": "Technical Inspection | assur, assurance, assurance inspection"
+    "duties": "Conducts research and develops procedures connected to technical inspection, while monitoring standards compliance inspection delivery against departmental requirements.",
+    "notes": "Technical Inspection | technical inspection, quality assurance inspection, standards compliance inspection"
   },
   {
     "id": "ti-04",
     "target": "TI",
     "title": "Inspector Coordinator",
-    "duties": "Provides operational support for technical inspection, resolves issues, and maintains records, guidance, and reporting on assurances.",
-    "notes": "Technical Inspection | assur, assurance, assurance inspection"
+    "duties": "Provides operational support for technical inspection, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Technical Inspection | technical inspection, quality assurance inspection, standards compliance inspection"
   },
   {
     "id": "tr-01",
     "target": "TR",
     "title": "Translator",
-    "duties": "Leads analysis related to translation, prepares recommendations, and supports bureau planning with clear written briefings.",
-    "notes": "Translation | bureau, bureau de, bureaus"
+    "duties": "Leads analysis related to translation, prepares recommendations, and supports translation planning with clear written briefings.",
+    "notes": "Translation | translation, interpretation, terminology services"
   },
   {
     "id": "tr-02",
     "target": "TR",
     "title": "Senior Translator",
-    "duties": "Coordinates work tied to translation, reviews files, and provides advice to internal clients and partners on bureau de.",
-    "notes": "Translation | bureau, bureau de, bureaus"
+    "duties": "Coordinates work tied to translation, reviews files, and provides advice to internal clients and partners on interpretation.",
+    "notes": "Translation | translation, interpretation, terminology services"
   },
   {
     "id": "tr-03",
     "target": "TR",
     "title": "Translator Advisor",
-    "duties": "Conducts research and develops procedures connected to translation, while monitoring bureaus delivery against departmental requirements.",
-    "notes": "Translation | bureau, bureau de, bureaus"
+    "duties": "Conducts research and develops procedures connected to translation, while monitoring terminology services delivery against departmental requirements.",
+    "notes": "Translation | translation, interpretation, terminology services"
   },
   {
     "id": "tr-04",
     "target": "TR",
     "title": "Translator Coordinator",
-    "duties": "Provides operational support for translation, resolves issues, and maintains records, guidance, and reporting on comme.",
-    "notes": "Translation | bureau, bureau de, bureaus"
+    "duties": "Provides operational support for translation, resolves issues, and maintains records, guidance, and reporting on policy implementation.",
+    "notes": "Translation | translation, interpretation, terminology services"
   },
   {
     "id": "ut-01",
     "target": "UT",
     "title": "Instructor",
-    "duties": "Leads analysis related to university teaching, prepares recommendations, and supports alloc planning with clear written briefings.",
-    "notes": "University Teaching | alloc, allocation, allocation recommended"
+    "duties": "Leads analysis related to university teaching, prepares recommendations, and supports university teaching planning with clear written briefings.",
+    "notes": "University Teaching | university teaching, lecturer, assistant professor"
   },
   {
     "id": "ut-02",
     "target": "UT",
     "title": "Senior Instructor",
-    "duties": "Coordinates work tied to university teaching, reviews files, and provides advice to internal clients and partners on allocation.",
-    "notes": "University Teaching | alloc, allocation, allocation recommended"
+    "duties": "Coordinates work tied to university teaching, reviews files, and provides advice to internal clients and partners on lecturer.",
+    "notes": "University Teaching | university teaching, lecturer, assistant professor"
   },
   {
     "id": "ut-03",
     "target": "UT",
     "title": "Instructor Advisor",
-    "duties": "Conducts research and develops procedures connected to university teaching, while monitoring allocation recommended delivery against departmental requirements.",
-    "notes": "University Teaching | alloc, allocation, allocation recommended"
+    "duties": "Conducts research and develops procedures connected to university teaching, while monitoring assistant professor delivery against departmental requirements.",
+    "notes": "University Teaching | university teaching, lecturer, assistant professor"
   },
   {
     "id": "ut-04",
     "target": "UT",
     "title": "Instructor Coordinator",
-    "duties": "Provides operational support for university teaching, resolves issues, and maintains records, guidance, and reporting on allocations.",
-    "notes": "University Teaching | alloc, allocation, allocation recommended"
+    "duties": "Provides operational support for university teaching, resolves issues, and maintains records, guidance, and reporting on associate professor.",
+    "notes": "University Teaching | university teaching, lecturer, assistant professor"
   },
   {
     "id": "vm-01",
     "target": "VM",
     "title": "Medical Officer",
-    "duties": "Leads analysis related to veterinary medicine, prepares recommendations, and supports achieve planning with clear written briefings.",
-    "notes": "Veterinary Medicine | achieve, achieve objectives, achieves"
+    "duties": "Leads analysis related to veterinary medicine, prepares recommendations, and supports veterinary medicine planning with clear written briefings.",
+    "notes": "Veterinary Medicine | veterinary medicine, animal health, veterinary inspection"
   },
   {
     "id": "vm-02",
     "target": "VM",
     "title": "Senior Medical Officer",
-    "duties": "Coordinates work tied to veterinary medicine, reviews files, and provides advice to internal clients and partners on achieve objectives.",
-    "notes": "Veterinary Medicine | achieve, achieve objectives, achieves"
+    "duties": "Coordinates work tied to veterinary medicine, reviews files, and provides advice to internal clients and partners on animal health.",
+    "notes": "Veterinary Medicine | veterinary medicine, animal health, veterinary inspection"
   },
   {
     "id": "vm-03",
     "target": "VM",
     "title": "Medical Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to veterinary medicine, while monitoring achieves delivery against departmental requirements.",
-    "notes": "Veterinary Medicine | achieve, achieve objectives, achieves"
+    "duties": "Conducts research and develops procedures connected to veterinary medicine, while monitoring veterinary inspection delivery against departmental requirements.",
+    "notes": "Veterinary Medicine | veterinary medicine, animal health, veterinary inspection"
   },
   {
     "id": "vm-04",
     "target": "VM",
     "title": "Medical Officer Coordinator",
-    "duties": "Provides operational support for veterinary medicine, resolves issues, and maintains records, guidance, and reporting on act psra.",
-    "notes": "Veterinary Medicine | achieve, achieve objectives, achieves"
+    "duties": "Provides operational support for veterinary medicine, resolves issues, and maintains records, guidance, and reporting on veterinary advisory work.",
+    "notes": "Veterinary Medicine | veterinary medicine, animal health, veterinary inspection"
   },
   {
     "id": "wp-01",
     "target": "WP",
     "title": "Program Officer",
-    "duties": "Leads analysis related to welfare programmes, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Welfare Programmes Job evaluation standard | activities, activities dealing, activities directed"
+    "duties": "Leads analysis related to welfare programmes, prepares recommendations, and supports welfare programmes planning with clear written briefings.",
+    "notes": "Welfare Programmes | welfare programmes, social development, settlement"
   },
   {
     "id": "wp-02",
     "target": "WP",
     "title": "Senior Program Officer",
-    "duties": "Coordinates work tied to welfare programmes, reviews files, and provides advice to internal clients and partners on activities dealing.",
-    "notes": "Welfare Programmes Job evaluation standard | activities, activities dealing, activities directed"
+    "duties": "Coordinates work tied to welfare programmes, reviews files, and provides advice to internal clients and partners on social development.",
+    "notes": "Welfare Programmes | welfare programmes, social development, settlement"
   },
   {
     "id": "wp-03",
     "target": "WP",
     "title": "Program Officer Advisor",
-    "duties": "Conducts research and develops procedures connected to welfare programmes, while monitoring activities directed delivery against departmental requirements.",
-    "notes": "Welfare Programmes Job evaluation standard | activities, activities dealing, activities directed"
+    "duties": "Conducts research and develops procedures connected to welfare programmes, while monitoring settlement delivery against departmental requirements.",
+    "notes": "Welfare Programmes | welfare programmes, social development, settlement"
   },
   {
     "id": "wp-04",
     "target": "WP",
     "title": "Program Officer Coordinator",
-    "duties": "Provides operational support for welfare programmes, resolves issues, and maintains records, guidance, and reporting on adjust.",
-    "notes": "Welfare Programmes Job evaluation standard | activities, activities dealing, activities directed"
+    "duties": "Provides operational support for welfare programmes, resolves issues, and maintains records, guidance, and reporting on adjustment.",
+    "notes": "Welfare Programmes | welfare programmes, social development, settlement"
   },
   {
     "id": "as-01",
     "target": "AS",
+    "expectedLevel": "01",
     "title": "Administrative Officer",
-    "duties": "Leads analysis related to administrative services, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Administrative Services | administr, administration, administrations"
+    "duties": "Leads analysis related to administrative services, prepares recommendations, and supports administrative services planning with clear written briefings.",
+    "notes": "Administrative Services | administrative services, management support, planning"
   },
   {
     "id": "pm-01",
     "target": "PM",
+    "expectedLevel": "01",
     "title": "Program Officer",
-    "duties": "Leads analysis related to programme administration, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Programme Administration | administr, administration, administration service"
+    "duties": "Leads analysis related to programme administration, prepares recommendations, and supports program administration planning with clear written briefings.",
+    "notes": "Programme Administration | program administration, service delivery, benefits"
   },
   {
     "id": "ec-01",
     "target": "EC",
+    "expectedLevel": "02",
     "title": "Economics Scientist",
-    "duties": "Leads analysis related to economics and social science services, prepares recommendations, and supports according planning with clear written briefings.",
-    "notes": "Economics and Social Science Services Group | according, according prescribed, accordings"
+    "duties": "Leads analysis related to economics and social science services, prepares recommendations, and supports economics planning with clear written briefings.",
+    "notes": "Economics and Social Science Services | economics, social sciences, surveys"
   },
   {
     "id": "pg-01",
     "target": "PG",
+    "expectedLevel": "01",
     "title": "Procurement Officer",
-    "duties": "Leads analysis related to purchase and supply, prepares recommendations, and supports chain planning with clear written briefings.",
-    "notes": "Purchase and Supply | chain, chains, contract"
+    "duties": "Leads analysis related to purchase and supply, prepares recommendations, and supports procurement planning with clear written briefings.",
+    "notes": "Purchase and Supply | procurement, contracting, materiel management"
   },
   {
     "id": "pe-01",
     "target": "PE",
+    "expectedLevel": "01",
     "title": "Human Resources Advisor",
-    "duties": "Leads analysis related to personnel administration, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Personnel Administration | administr, administration, administration staffing"
+    "duties": "Leads analysis related to personnel administration, prepares recommendations, and supports human resources planning with clear written briefings.",
+    "notes": "Personnel Administration | human resources, personnel administration, staffing"
   },
   {
     "id": "ct-01",
     "target": "CT",
     "title": "Financial Management Advisor",
-    "duties": "Leads analysis related to comptrollership, prepares recommendations, and supports accept planning with clear written briefings.",
-    "notes": "Comptrollership Group | accept, accepted, accepted accounting"
+    "duties": "Leads analysis related to comptrollership, prepares recommendations, and supports internal audit planning with clear written briefings.",
+    "notes": "Comptrollership | internal audit, financial management, external audit"
   },
   {
     "id": "co-01",
     "target": "CO",
+    "expectedLevel": "01",
     "title": "Commerce Officer",
-    "duties": "Leads analysis related to commerce, prepares recommendations, and supports analysis planning with clear written briefings.",
-    "notes": "Commerce | analysis, busines, business"
+    "duties": "Leads analysis related to commerce, prepares recommendations, and supports commerce planning with clear written briefings.",
+    "notes": "Commerce | commerce, business development, industrial development"
   },
   {
     "id": "en-eng-01",
     "target": "EN-ENG",
+    "expectedLevel": "01",
     "title": "Engineer",
-    "duties": "Leads analysis related to engineering and land survey - engineering sub-, prepares recommendations, and supports act psra planning with clear written briefings.",
-    "notes": "Engineering and land survey - Engineering sub-group | act psra, affect, affect extent"
+    "duties": "Leads analysis related to engineering and land survey - engineering sub-, prepares recommendations, and supports professional engineering planning with clear written briefings.",
+    "notes": "Engineering and land survey - Engineering sub-group | professional engineering, engineering design, engineering project authority"
   },
   {
     "id": "eg-01",
     "target": "EG",
+    "expectedLevel": "02",
     "title": "Engineer",
-    "duties": "Leads analysis related to engineering and scientific support, prepares recommendations, and supports analysis planning with clear written briefings.",
-    "notes": "Engineering and Scientific Support | analysis, analysis professional, engineer"
+    "duties": "Leads analysis related to engineering and scientific support, prepares recommendations, and supports engineering support planning with clear written briefings.",
+    "notes": "Engineering and Scientific Support | engineering support, scientific support, inspections"
   },
   {
     "id": "is-01",
     "target": "IS",
     "title": "Information Officer",
-    "duties": "Leads analysis related to information services, prepares recommendations, and supports advisory planning with clear written briefings.",
-    "notes": "Information Services | advisory, advisory publishing, advisorys"
+    "duties": "Leads analysis related to information services, prepares recommendations, and supports public information planning with clear written briefings.",
+    "notes": "Information Services | public information, media relations, communications advisory"
   },
   {
     "id": "wp-01",
     "target": "WP",
     "title": "Program Officer",
-    "duties": "Leads analysis related to welfare programmes, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Welfare Programmes Job evaluation standard | activities, activities dealing, activities directed"
+    "duties": "Leads analysis related to welfare programmes, prepares recommendations, and supports welfare programmes planning with clear written briefings.",
+    "notes": "Welfare Programmes | welfare programmes, social development, settlement"
   },
   {
     "id": "cr-01",
     "target": "CR",
+    "expectedLevel": "03",
     "title": "Clerical Officer",
-    "duties": "Leads analysis related to clerical and regulatory, prepares recommendations, and supports administr planning with clear written briefings.",
-    "notes": "Clerical and Regulatory | administr, administration, administrations"
+    "duties": "Leads analysis related to clerical and regulatory, prepares recommendations, and supports clerical processing planning with clear written briefings.",
+    "notes": "Clerical and Regulatory | clerical processing, regulatory clerical work, records"
   },
   {
     "id": "po-01",
     "target": "PO",
     "title": "Operations Officer",
-    "duties": "Leads analysis related to police operations support, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Police Operations Support | activities, activities recording, activities specifications"
+    "duties": "Leads analysis related to police operations support, prepares recommendations, and supports police operations support planning with clear written briefings.",
+    "notes": "Police Operations Support | police operations support, telecommunications operations, police communications"
   },
   {
     "id": "ex-01",
     "target": "EX",
     "title": "Executive Officer",
-    "duties": "Leads analysis related to executive (ex) 2022, prepares recommendations, and supports act parliament planning with clear written briefings.",
-    "notes": "Executive (EX) Group 2022 | act parliament, activities, advis"
+    "duties": "Leads analysis related to executive, prepares recommendations, and supports executive management planning with clear written briefings.",
+    "notes": "Executive | executive management, executive policy, departmental direction"
   },
   {
     "id": "fb-01",
     "target": "FB",
+    "expectedLevel": "02",
     "title": "Border Officer",
-    "duties": "Leads analysis related to border services, prepares recommendations, and supports activities planning with clear written briefings.",
-    "notes": "Border Services | activities, activities directed, admissibil"
+    "duties": "Leads analysis related to border services, prepares recommendations, and supports border services planning with clear written briefings.",
+    "notes": "Border Services | border services, inspection of people, inspection of goods"
   },
   {
     "id": "nu-01",
     "target": "NU",
     "title": "Nurse",
-    "duties": "Leads analysis related to nursing - canada.ca, prepares recommendations, and supports accommodate planning with clear written briefings.",
-    "notes": "Nursing - Canada.ca | accommodate, accommodate carried, accommodates"
+    "duties": "Leads analysis related to nursing, prepares recommendations, and supports nursing planning with clear written briefings.",
+    "notes": "Nursing | nursing, hospital nursing, community health nursing"
   }
 ]

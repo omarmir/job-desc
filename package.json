@@ -8,6 +8,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "validate:jes-index": "bun run scripts/validate_jes_index.ts",
     "bench:build-cases": "bun run scripts/build_benchmark_corpus.ts",
     "bench:models": "bun run scripts/benchmark_models.ts",
     "bench:build-generation-cases": "bun run scripts/build_generation_benchmark_cases.ts",
@@ -25,6 +26,7 @@
   "dependencies": {
     "@huggingface/transformers": "^4.2.0",
     "@nuxt/ui": "^4.7.1",
+    "jszip": "^3.10.1",
     "nuxt": "^4.4.4",
     "tailwindcss": "^4.2.4"
   }

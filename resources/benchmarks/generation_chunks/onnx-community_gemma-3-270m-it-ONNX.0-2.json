@@ -5,7 +5,7 @@
   "family": "Gemma",
   "params": "270M",
   "dtype": "q4f16",
-  "approxDownloadMB": 430,
+  "approxDownloadMB": 280,
   "caseStart": 0,
   "caseCount": 3,
   "caseIds": [

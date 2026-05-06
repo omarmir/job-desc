@@ -1,4 +1,4 @@
-import type { DraftInput } from '~/lib/types'
+import type { DraftInput, DraftSectionKey } from '~/lib/types'
 
 export const JD_SECTION_KEYS = [
   'organizational_context',
@@ -11,6 +11,9 @@ export const JD_SECTION_KEYS = [
 ] as const
 
 export type JobDescriptionSectionKey = (typeof JD_SECTION_KEYS)[number]
+
+const _typeCheck: DraftSectionKey = JD_SECTION_KEYS[0]
+void _typeCheck
 
 export type JobDescriptionSections = Record<JobDescriptionSectionKey, string>
 
@@ -186,4 +189,98 @@ export function formatJobDescriptionTemplate(input: DraftInput, sections: JobDes
     '### Working conditions',
     sections.working_conditions,
   ].join('\n')
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+function formatInlineHtml(value: string): string {
+  const clean = value
+    .replace(/^#{1,6}\s+/, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .trim()
+  const segments: string[] = []
+  const pattern = /(\*\*|__)(.+?)\1/g
+  let cursor = 0
+  let match: RegExpExecArray | null
+
+  while ((match = pattern.exec(clean)) !== null) {
+    if (match.index > cursor) {
+      segments.push(escapeHtml(clean.slice(cursor, match.index)))
+    }
+    segments.push(`<strong>${escapeHtml(match[2] ?? '')}</strong>`)
+    cursor = match.index + match[0].length
+  }
+
+  if (cursor < clean.length) {
+    segments.push(escapeHtml(clean.slice(cursor)))
+  }
+
+  return segments.join('').replace(/\*\*/g, '')
+}
+
+function sectionToHtml(key: JobDescriptionSectionKey, text: string): string {
+  const lines = cleanText(text)
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+
+  if (!lines.length) {
+    return '<p>To be confirmed.</p>'
+  }
+
+  const bulletLines = lines.filter((line) => /^[-*]\s+/.test(line) || /^\d+\.\s+/.test(line))
+  if (key === 'key_activities' || bulletLines.length >= Math.max(2, lines.length - 1)) {
+    const items = lines
+      .map((line) => line.replace(/^[-*]\s+/, '').replace(/^\d+\.\s+/, '').trim())
+      .filter(Boolean)
+      .map((line) => `<li>${formatInlineHtml(line)}</li>`)
+      .join('')
+    return `<ul>${items}</ul>`
+  }
+
+  return lines.map((line) => `<p>${formatInlineHtml(line)}</p>`).join('')
+}
+
+export function formatJobDescriptionHtml(input: DraftInput, sections: JobDescriptionSections): string {
+  const classification = input.fullClassification || `${input.selectedCode} - ${input.selectedTitle}`
+  const infoRows = [
+    ['Position number', 'To be confirmed'],
+    ['Position title', input.jobTitle.trim()],
+    ['Position classification', classification],
+    ['Position Effective date', 'To be confirmed'],
+    ['Job Code', 'To be confirmed'],
+    ['National occupational classification', 'To be confirmed'],
+    ['Department/Agency Name', 'To be confirmed'],
+    ['Geographic location', 'To be confirmed'],
+    ['Organizational component (Branch/Division)', 'To be confirmed'],
+    ['Office code', 'To be confirmed'],
+    ['Language requirements', 'To be confirmed'],
+    ['Linguistic profile', 'To be confirmed'],
+    ['Communications requirements', 'To be confirmed'],
+    ['Security requirements', 'To be confirmed'],
+    ['Supervisor position number', 'To be confirmed'],
+    ['Supervisor position title', 'To be confirmed'],
+    ['Supervisor classification', 'To be confirmed'],
+  ]
+
+  return [
+    '<article class="jd-preview">',
+    '<h2>Part 1: Position information and signatures</h2>',
+    '<table>',
+    '<tbody>',
+    ...infoRows.map(([label, value]) => `<tr><th>${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`),
+    '</tbody>',
+    '</table>',
+    '<h2>Part 2: Job description</h2>',
+    ...JD_SECTION_KEYS.map(
+      (key) => `<section><h3>${escapeHtml(JD_SECTION_LABELS[key])}</h3>${sectionToHtml(key, sections[key])}</section>`,
+    ),
+    '</article>',
+  ].join('')
 }

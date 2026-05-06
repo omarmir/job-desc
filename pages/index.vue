@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { detectBrowserInferenceCapabilities } from '~/lib/browser-capabilities'
 import benchmarkSummary from '~/resources/model_benchmarks.json'
-import generationBenchmarkReport from '~/resources/generation_model_benchmarks.json'
 import { DEFAULT_GENERATION_MODEL_ID, GENERATION_MODEL_CANDIDATES } from '~/lib/generation-model-candidates'
-import type { GenerationBenchmarkResult, RankedMatch } from '~/lib/types'
+import { buildJobDescriptionDocx } from '~/lib/docx-template'
+import { createEmptySections } from '~/lib/job-description-template'
+import type { RankedMatch } from '~/lib/types'
+
+type ReadonlyRankedMatch = Omit<Readonly<RankedMatch>, 'why' | 'levels'> & {
+  readonly why: readonly string[]
+  readonly levels: readonly string[]
+}
 
 useSeoMeta({
   title: 'Job Classification Assistant',
@@ -12,11 +18,12 @@ useSeoMeta({
 })
 
 const runtimeConfig = useRuntimeConfig()
-const { state, analyzeRole } = useJobMatcher()
+const { state, preloadModel, analyzeRole } = useJobMatcher()
 const {
   selectedModel,
   state: generationState,
   setSelectedModel,
+  preloadModel: preloadGenerationModel,
   generateDraft,
 } = useJobDescriptionGenerator()
 
@@ -27,6 +34,7 @@ const SAMPLE_ROLE = {
   generationContext:
     'Branch supports labour-market and affordability policy. Position contributes to Treasury Board and cabinet-style briefing material and provides analytical advice to directors and executives.',
 } as const
+const LEGACY_DEFAULT_GENERATION_MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct'
 
 const formState = reactive({
   jobTitle: SAMPLE_ROLE.jobTitle,
@@ -38,34 +46,31 @@ const validationError = ref('')
 const selectedMatch = ref<RankedMatch | null>(null)
 const browserInferenceNote = ref('')
 const webGpuReady = ref(false)
+const downloadError = ref('')
 
 const selectedBenchmark = computed(() =>
   benchmarkSummary.results.find((result) => result.selected) ?? benchmarkSummary.results[0],
 )
 
-const selectedGenerationBenchmark = computed<GenerationBenchmarkResult | undefined>(() =>
-  generationBenchmarkReport.results.find((result) => result.id === selectedModel.value),
-)
+const retrievalBadge = computed(() => {
+  if (state.progress.stage === 'ready') {
+    return { color: 'success' as const, label: 'Ready' }
+  }
 
-const sortedGenerationBenchmarks = computed(() =>
-  [...generationBenchmarkReport.results].sort((a, b) => b.totalScore - a.totalScore),
-)
+  if (state.progress.stage === 'error') {
+    return { color: 'error' as const, label: 'Error' }
+  }
 
-const benchmarkedGenerationResults = computed(() =>
-  generationBenchmarkReport.results.filter((result) => result.benchmarked),
-)
+  if (state.progress.stage === 'indexing') {
+    return { color: 'warning' as const, label: 'Indexing' }
+  }
 
-const smartestGenerationModelId = computed(() =>
-  [...benchmarkedGenerationResults.value].sort((a, b) => b.totalScore - a.totalScore)[0]?.id,
-)
+  if (state.progress.stage === 'loading') {
+    return { color: 'warning' as const, label: 'Loading' }
+  }
 
-const fastestGenerationModelId = computed(() =>
-  [...benchmarkedGenerationResults.value].sort((a, b) => a.avgDurationMs - b.avgDurationMs)[0]?.id,
-)
-
-const largestGenerationModelId = computed(() =>
-  [...generationBenchmarkReport.results].sort((a, b) => b.approxDownloadMB - a.approxDownloadMB)[0]?.id,
-)
+  return { color: 'warning' as const, label: 'Pending' }
+})
 
 const selectedGenerationModelConfig = computed(() =>
   GENERATION_MODEL_CANDIDATES.find((candidate) => candidate.id === selectedModel.value),
@@ -84,10 +89,6 @@ function confidence(score: number) {
   return `${Math.round(score * 100)}%`
 }
 
-function benchmarkScoreLabel(score: number, benchmarked: boolean) {
-  return benchmarked ? confidence(score) : 'Pending'
-}
-
 function formatBytes(bytes: number) {
   if (!bytes) return '0 MB'
   const mb = bytes / (1024 * 1024)
@@ -96,6 +97,11 @@ function formatBytes(bytes: number) {
   }
 
   return `${(mb / 1024).toFixed(2)} GB`
+}
+
+function onGenerationModelChange(event: Event) {
+  const value = (event.target as HTMLSelectElement).value
+  setSelectedModel(value)
 }
 
 function formatDuration(value: number) {
@@ -125,8 +131,12 @@ async function onSubmit() {
   selectedMatch.value = null
 }
 
-function chooseMatch(match: RankedMatch) {
-  selectedMatch.value = match
+function chooseMatch(match: ReadonlyRankedMatch) {
+  selectedMatch.value = {
+    ...match,
+    why: [...match.why],
+    levels: [...match.levels],
+  }
 }
 
 function loadSample() {
@@ -147,6 +157,9 @@ async function onGenerateDraft() {
     duties: formState.duties,
     selectedCode: selectedMatch.value.code,
     selectedTitle: selectedMatch.value.title,
+    selectedLevel: selectedMatch.value.selectedLevel,
+    fullClassification: selectedMatch.value.fullClassification,
+    levelEvidence: selectedMatch.value.levelEvidence,
     levels: selectedMatch.value.levels,
     plan: selectedMatch.value.plan,
     source: selectedMatch.value.source,
@@ -154,9 +167,50 @@ async function onGenerateDraft() {
   })
 }
 
+async function onDownloadDocx() {
+  if (!selectedMatch.value || !generationState.html) {
+    return
+  }
+
+  downloadError.value = ''
+
+  try {
+    const blob = await buildJobDescriptionDocx(
+      {
+        jobTitle: formState.jobTitle,
+        duties: formState.duties,
+        selectedCode: selectedMatch.value.code,
+        selectedTitle: selectedMatch.value.title,
+        selectedLevel: selectedMatch.value.selectedLevel,
+        fullClassification: selectedMatch.value.fullClassification,
+        levelEvidence: selectedMatch.value.levelEvidence,
+        levels: selectedMatch.value.levels,
+        plan: selectedMatch.value.plan,
+        source: selectedMatch.value.source,
+        context: formState.generationContext,
+      },
+      { ...createEmptySections(), ...generationState.sections },
+    )
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `${formState.jobTitle.trim().replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() || 'job-description'}.docx`
+    link.click()
+    URL.revokeObjectURL(url)
+  } catch (error) {
+    downloadError.value = error instanceof Error ? error.message : 'Unable to create Word document'
+  }
+}
+
 onMounted(async () => {
+  preloadModel()
+
   const stored = window.localStorage.getItem('job-desc:generation-model')
-  if (stored && GENERATION_MODEL_CANDIDATES.some((candidate) => candidate.id === stored)) {
+  if (
+    stored &&
+    stored !== LEGACY_DEFAULT_GENERATION_MODEL_ID &&
+    GENERATION_MODEL_CANDIDATES.some((candidate) => candidate.id === stored)
+  ) {
     setSelectedModel(stored)
   } else {
     setSelectedModel(runtimeConfig.public.generationModel || DEFAULT_GENERATION_MODEL_ID)
@@ -165,11 +219,13 @@ onMounted(async () => {
   const capabilities = await detectBrowserInferenceCapabilities()
   webGpuReady.value = capabilities.webGpuSupported
   browserInferenceNote.value = capabilities.note || ''
+  preloadGenerationModel()
 })
 
 watch(selectedModel, (value) => {
   if (import.meta.client) {
     window.localStorage.setItem('job-desc:generation-model', value)
+    preloadGenerationModel()
   }
 })
 </script>
@@ -191,6 +247,14 @@ watch(selectedModel, (value) => {
                 Screen a job title and optional duties against the JES index, then draft a
                 template-aligned job description using a browser-based local model.
               </p>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <NuxtLink
+                  to="/benchmarks"
+                  class="inline-flex items-center border border-blue-800 bg-white px-4 py-2 text-sm font-semibold text-blue-900 hover:bg-blue-50"
+                >
+                  How it works and benchmarks
+                </NuxtLink>
+              </div>
             </div>
             <div class="max-w-sm border-l-4 border-blue-800 bg-slate-50 px-4 py-4 text-sm leading-6 text-slate-700">
               <p class="font-semibold text-slate-950">Hosting target</p>
@@ -344,10 +408,13 @@ watch(selectedModel, (value) => {
                     </span>
                   </div>
                   <h3 class="text-lg font-semibold text-slate-950">
-                    {{ match.title }}
+                    {{ match.fullClassification }}
                   </h3>
                   <p class="max-w-3xl text-sm leading-6 text-slate-700">
                     {{ match.why.join(' · ') || 'Semantic similarity from the local embedding model.' }}
+                  </p>
+                  <p class="max-w-3xl text-sm leading-6 text-slate-700">
+                    {{ match.evidenceLabel }}: {{ match.levelEvidence }}
                   </p>
                   <div class="flex flex-wrap gap-2 text-xs text-slate-600">
                     <span class="border border-slate-300 bg-slate-50 px-2 py-1">
@@ -357,11 +424,10 @@ watch(selectedModel, (value) => {
                       {{ match.source }}
                     </span>
                     <span
-                      v-for="level in match.levels.slice(0, 3)"
-                      :key="level"
+                      :key="match.selectedLevel"
                       class="border border-slate-300 bg-slate-50 px-2 py-1"
                     >
-                      {{ level }}
+                      Level: {{ match.selectedLevel }}
                     </span>
                   </div>
                   <div class="pt-2">
@@ -384,8 +450,8 @@ watch(selectedModel, (value) => {
                     {{ confidence(match.score) }}
                   </p>
                   <p class="mt-2 text-xs text-slate-600">
-                    semantic {{ confidence(match.semanticScore) }} · lexical
-                    {{ confidence(match.lexicalScore) }}
+                    group {{ confidence(match.groupConfidence) }} · level
+                    {{ match.levelConfidence ? confidence(match.levelConfidence) : 'TBC' }}
                   </p>
                 </div>
               </div>
@@ -421,11 +487,11 @@ watch(selectedModel, (value) => {
                   Selected classification
                 </p>
                 <p class="mt-1 text-lg font-semibold text-slate-950">
-                  {{ selectedMatch.code }} · {{ selectedMatch.title }}
+                  {{ selectedMatch.fullClassification }}
                 </p>
                 <p class="mt-2 text-sm text-slate-700">
-                  The generator uses the selected JES entry, its factors, levels, and the
-                  fixed template sections as grounding context.
+                  The generator uses the selected JES entry, selected level evidence, and
+                  the fixed template sections as grounding context.
                 </p>
               </div>
 
@@ -483,9 +549,8 @@ watch(selectedModel, (value) => {
               <div
                 class="border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-950"
               >
-                Large browser models still have a heavy first run. The benchmark panel on
-                the right shows which models are strongest, fastest, and largest before the
-                user commits to a download.
+                Large browser models still have a heavy first run. Use the benchmarks page
+                to compare quality, speed, and first-download size before changing models.
               </div>
 
               <div
@@ -519,21 +584,29 @@ watch(selectedModel, (value) => {
                 class="border border-slate-300 bg-slate-50 px-5 py-5"
               >
                 <div class="mb-3 flex items-center justify-between gap-3">
-                  <p class="text-sm font-semibold text-slate-950">Streaming output</p>
+                  <p class="text-sm font-semibold text-slate-950">Generated sections</p>
                   <UBadge color="warning" variant="subtle">Live</UBadge>
                 </div>
                 <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6 text-slate-800">{{ generationState.streamText }}</pre>
               </div>
 
               <div
-                v-if="generationState.markdown"
+                v-if="generationState.html"
                 class="border border-slate-300 bg-slate-50 px-5 py-5"
               >
                 <div class="mb-3 flex items-center justify-between gap-3">
                   <p class="text-sm font-semibold text-slate-950">Template-aligned draft</p>
-                  <UBadge color="neutral" variant="subtle">Markdown</UBadge>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <UBadge color="neutral" variant="subtle">HTML preview</UBadge>
+                    <UButton size="sm" variant="outline" color="primary" @click="onDownloadDocx">
+                      Download Word doc
+                    </UButton>
+                  </div>
                 </div>
-                <pre class="overflow-x-auto whitespace-pre-wrap text-sm leading-6 text-slate-800">{{ generationState.markdown }}</pre>
+                <div class="jd-preview-content" v-html="generationState.html" />
+                <p v-if="downloadError" class="mt-3 text-sm text-red-800">
+                  {{ downloadError }}
+                </p>
               </div>
             </template>
           </div>
@@ -543,17 +616,51 @@ watch(selectedModel, (value) => {
       <aside class="space-y-8 lg:sticky lg:top-6 lg:self-start">
         <div class="border border-slate-400 bg-white">
           <div class="border-b border-slate-300 bg-slate-50 px-5 py-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Inference
-            </p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-950">
-              Step 1 Retrieval Model
-            </h2>
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Inference
+                </p>
+                <h2 class="mt-1 text-lg font-semibold text-slate-950">
+                  Step 1 Retrieval Model
+                </h2>
+              </div>
+              <UBadge :color="retrievalBadge.color" variant="subtle">
+                {{ retrievalBadge.label }}
+              </UBadge>
+            </div>
           </div>
           <div class="space-y-4 px-5 py-5 text-sm leading-6 text-slate-700">
             <div>
               <p class="font-semibold text-slate-950">{{ selectedBenchmark?.label }}</p>
               <p>{{ runtimeConfig.public.selectedModel }}</p>
+            </div>
+            <div class="border border-slate-300 bg-slate-50 px-4 py-4">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="font-semibold text-slate-950">
+                    {{ state.progress.label }}
+                  </p>
+                  <p class="text-xs text-slate-600">
+                    {{ state.progress.stage }}<span v-if="state.progress.currentFile">
+                      · {{ state.progress.currentFile }}
+                    </span>
+                  </p>
+                </div>
+                <p class="text-sm font-semibold text-slate-950">
+                  {{ state.progress.percent }}%
+                </p>
+              </div>
+              <div class="mt-3 h-3 w-full border border-slate-300 bg-white">
+                <div
+                  class="h-full bg-blue-800 transition-all"
+                  :style="{ width: `${state.progress.percent}%` }"
+                />
+              </div>
+              <div class="mt-2 text-xs text-slate-600">
+                {{ formatBytes(state.progress.loadedBytes) }} /
+                {{ formatBytes(state.progress.totalBytes) }}
+              </div>
             </div>
             <div class="grid grid-cols-3 gap-3">
               <div class="border border-slate-300 bg-slate-50 px-3 py-3">
@@ -575,197 +682,97 @@ watch(selectedModel, (value) => {
                 </p>
               </div>
             </div>
-            <p>
-              Benchmarking uses a 300-case local corpus and compares semantic retrieval
-              quality before choosing the default step-1 model.
-            </p>
-          </div>
-        </div>
-
-        <div class="border border-slate-400 bg-white">
-          <div class="border-b border-slate-300 bg-slate-50 px-5 py-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Phase 2
-            </p>
-            <h2 class="mt-1 text-lg font-semibold text-slate-950">
-              Generation Models
-            </h2>
-          </div>
-          <div class="divide-y divide-slate-300">
-            <div
-              v-for="model in GENERATION_MODEL_CANDIDATES"
-              :key="model.id"
-              class="space-y-3 px-5 py-5 text-sm leading-6 text-slate-700"
+            <NuxtLink
+              to="/benchmarks#step-1"
+              class="inline-flex text-sm font-semibold text-blue-800 underline underline-offset-2"
             >
-              <div class="flex flex-wrap items-center gap-2">
-                <p class="font-semibold text-slate-950">{{ model.label }}</p>
-                <UBadge
-                  :color="selectedModel === model.id ? 'primary' : 'neutral'"
-                  variant="subtle"
-                >
-                  {{ selectedModel === model.id ? 'Selected' : model.recommendation }}
-                </UBadge>
-                <UBadge
-                  v-if="model.browserSupport === 'webgpu'"
-                  color="warning"
-                  variant="subtle"
-                >
-                  WebGPU required
-                </UBadge>
-              </div>
-              <p>{{ model.rationale }}</p>
-              <div class="flex flex-wrap gap-2 text-xs text-slate-600">
-                <span class="border border-slate-300 bg-slate-50 px-2 py-1">{{ model.family }}</span>
-                <span class="border border-slate-300 bg-slate-50 px-2 py-1">{{ model.params }}</span>
-                <span class="border border-slate-300 bg-slate-50 px-2 py-1">
-                  {{ model.approxDownloadMB }} MB
-                </span>
-                <span class="border border-slate-300 bg-slate-50 px-2 py-1">{{ model.dtype }}</span>
-              </div>
-              <div class="flex flex-wrap items-center gap-3">
-                <UButton
-                  size="sm"
-                  variant="outline"
-                  :disabled="!model.benchmarkEligible || !canUseGenerationModel(model.id)"
-                  :color="selectedModel === model.id ? 'primary' : 'neutral'"
-                  @click="setSelectedModel(model.id)"
-                >
-                  {{
-                    selectedModel === model.id
-                      ? 'Using this model'
-                      : canUseGenerationModel(model.id)
-                        ? 'Choose model'
-                        : 'WebGPU required'
-                  }}
-                </UButton>
-                <a
-                  :href="model.officialUrl"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="text-xs font-medium text-blue-800 underline underline-offset-2"
-                >
-                  Official model card
-                </a>
-              </div>
-              <p v-if="!model.benchmarkEligible" class="text-xs text-amber-700">
-                Local benchmark disabled for this candidate because the local ONNX runtime
-                smoke test failed in this environment.
-              </p>
-              <p
-                v-else-if="!canUseGenerationModel(model.id)"
-                class="text-xs text-amber-700"
-              >
-                {{ browserInferenceNote || 'This browser session does not currently expose WebGPU for local generation.' }}
-              </p>
-            </div>
+              View retrieval benchmark details
+            </NuxtLink>
           </div>
         </div>
 
         <div class="border border-slate-400 bg-white">
           <div class="border-b border-slate-300 bg-slate-50 px-5 py-4">
             <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-              Benchmark
+              Step 2
             </p>
             <h2 class="mt-1 text-lg font-semibold text-slate-950">
-              Model Comparison
+              Draft Model
             </h2>
           </div>
           <div class="space-y-4 px-5 py-5 text-sm leading-6 text-slate-700">
-            <p>
-              This report uses 100 handcrafted generation cases. Smartest reflects the
-              blended benchmark score, fastest is based on average generation time and
-              throughput, and biggest is the approximate first-download size.
-            </p>
-
-            <div v-if="selectedGenerationBenchmark" class="grid grid-cols-2 gap-3">
-              <div class="border border-slate-300 bg-slate-50 px-3 py-3">
-                <p class="text-xs uppercase tracking-[0.14em] text-slate-600">Selected</p>
+            <div>
+              <p class="font-semibold text-slate-950">
+                {{ selectedGenerationModelConfig?.label || 'No model selected' }}
+              </p>
+              <p v-if="selectedGenerationModelConfig">
+                {{ selectedGenerationModelConfig.rationale }}
+              </p>
+            </div>
+            <div class="border border-slate-300 bg-slate-50 px-4 py-4">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="font-semibold text-slate-950">
+                    {{ generationState.progress.label }}
+                  </p>
+                  <p class="text-xs text-slate-600">
+                    {{ generationState.progress.stage }}<span v-if="generationState.progress.currentFile">
+                      · {{ generationState.progress.currentFile }}
+                    </span>
+                  </p>
+                </div>
                 <p class="text-sm font-semibold text-slate-950">
-                  {{ selectedGenerationBenchmark.label }}
+                  {{ generationState.progress.percent }}%
                 </p>
               </div>
-              <div class="border border-slate-300 bg-slate-50 px-3 py-3">
-                <p class="text-xs uppercase tracking-[0.14em] text-slate-600">Smart score</p>
-                <p class="text-sm font-semibold text-slate-950">
-                  {{ benchmarkScoreLabel(selectedGenerationBenchmark.totalScore, selectedGenerationBenchmark.benchmarked) }}
-                </p>
+              <div class="mt-3 h-3 w-full border border-slate-300 bg-white">
+                <div
+                  class="h-full bg-blue-800 transition-all"
+                  :style="{ width: `${generationState.progress.percent}%` }"
+                />
               </div>
-              <div class="border border-slate-300 bg-slate-50 px-3 py-3">
-                <p class="text-xs uppercase tracking-[0.14em] text-slate-600">Avg time</p>
-                <p class="text-sm font-semibold text-slate-950">
-                  {{ formatDuration(selectedGenerationBenchmark.avgDurationMs) }}
-                </p>
-              </div>
-              <div class="border border-slate-300 bg-slate-50 px-3 py-3">
-                <p class="text-xs uppercase tracking-[0.14em] text-slate-600">Download</p>
-                <p class="text-sm font-semibold text-slate-950">
-                  {{ selectedGenerationBenchmark.approxDownloadMB }} MB
-                </p>
+              <div class="mt-2 text-xs text-slate-600">
+                {{ formatBytes(generationState.progress.loadedBytes) }} /
+                {{ formatBytes(generationState.progress.totalBytes) }}
               </div>
             </div>
-
-            <div class="overflow-x-auto border border-slate-300">
-              <table class="min-w-full divide-y divide-slate-300 text-left text-xs">
-                <thead class="bg-slate-50 text-slate-700">
-                  <tr>
-                    <th class="px-3 py-2 font-semibold">Model</th>
-                    <th class="px-3 py-2 font-semibold">Smart</th>
-                    <th class="px-3 py-2 font-semibold">Avg</th>
-                    <th class="px-3 py-2 font-semibold">P95</th>
-                    <th class="px-3 py-2 font-semibold">Size</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-300">
-                  <tr
-                    v-for="result in sortedGenerationBenchmarks"
-                    :key="result.id"
-                    :class="selectedModel === result.id ? 'bg-blue-50' : 'bg-white'"
-                  >
-                    <td class="px-3 py-2">
-                      <div class="font-semibold text-slate-950">{{ result.label }}</div>
-                      <div class="text-slate-600">{{ result.params }} · {{ result.family }}</div>
-                    </td>
-                    <td class="px-3 py-2">{{ benchmarkScoreLabel(result.totalScore, result.benchmarked) }}</td>
-                    <td class="px-3 py-2">{{ formatDuration(result.avgDurationMs) }}</td>
-                    <td class="px-3 py-2">{{ formatDuration(result.p95DurationMs) }}</td>
-                    <td class="px-3 py-2">{{ result.approxDownloadMB }} MB</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="space-y-3">
-              <div
-                v-for="result in sortedGenerationBenchmarks"
-                :key="`${result.id}-detail`"
-                class="border border-slate-300 bg-slate-50 px-4 py-4"
+            <label class="block">
+              <span class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">
+                Select model
+              </span>
+              <select
+                class="mt-2 w-full border border-slate-400 bg-white px-3 py-2 text-sm text-slate-950"
+                :value="selectedModel"
+                @change="onGenerationModelChange"
               >
-                <div class="flex flex-wrap items-center gap-2">
-                  <p class="font-semibold text-slate-950">{{ result.label }}</p>
-                  <UBadge v-if="result.selected" color="primary" variant="subtle">
-                    Default
-                  </UBadge>
-                  <UBadge v-if="smartestGenerationModelId === result.id" color="success" variant="subtle">
-                    Smartest
-                  </UBadge>
-                  <UBadge v-if="fastestGenerationModelId === result.id" color="warning" variant="subtle">
-                    Fastest
-                  </UBadge>
-                  <UBadge v-if="largestGenerationModelId === result.id" color="neutral" variant="subtle">
-                    Biggest
-                  </UBadge>
-                </div>
-                <div class="mt-2 grid grid-cols-2 gap-2 text-xs text-slate-700">
-                  <p>Grounding: {{ benchmarkScoreLabel(result.groundingScore, result.benchmarked) }}</p>
-                  <p>Coverage: {{ benchmarkScoreLabel(result.coverageScore, result.benchmarked) }}</p>
-                  <p>Section completeness: {{ benchmarkScoreLabel(result.sectionCompleteness, result.benchmarked) }}</p>
-                  <p>Throughput: {{ result.benchmarked ? `${Math.round(result.avgCharsPerSecond)} chars/s` : 'Pending' }}</p>
-                </div>
-                <p v-if="result.benchmarkNotes" class="mt-2 text-xs text-slate-600">
-                  {{ result.benchmarkNotes }}
-                </p>
-              </div>
+                <option
+                  v-for="model in GENERATION_MODEL_CANDIDATES"
+                  :key="model.id"
+                  :value="model.id"
+                  :disabled="!model.benchmarkEligible || !canUseGenerationModel(model.id)"
+                >
+                  {{ model.label }} · {{ model.recommendation }}
+                </option>
+              </select>
+            </label>
+            <div v-if="selectedGenerationModelConfig" class="flex flex-wrap gap-2 text-xs text-slate-600">
+              <span class="border border-slate-300 bg-slate-50 px-2 py-1">{{ selectedGenerationModelConfig.family }}</span>
+              <span class="border border-slate-300 bg-slate-50 px-2 py-1">{{ selectedGenerationModelConfig.params }}</span>
+              <span class="border border-slate-300 bg-slate-50 px-2 py-1">~{{ selectedGenerationModelConfig.approxDownloadMB }} MB download</span>
+              <span class="border border-slate-300 bg-slate-50 px-2 py-1">{{ selectedGenerationModelConfig.dtype }}</span>
             </div>
+            <p
+              v-if="selectedGenerationModelConfig && !canUseGenerationModel(selectedGenerationModelConfig.id)"
+              class="text-xs text-amber-700"
+            >
+              {{ browserInferenceNote || 'This browser session does not currently expose WebGPU for local generation.' }}
+            </p>
+            <NuxtLink
+              to="/benchmarks#step-2"
+              class="inline-flex text-sm font-semibold text-blue-800 underline underline-offset-2"
+            >
+              View generation benchmark details
+            </NuxtLink>
           </div>
         </div>
 
@@ -780,13 +787,15 @@ watch(selectedModel, (value) => {
           </div>
           <div class="space-y-3 px-5 py-5 text-sm leading-6 text-slate-700">
             <p>
-              The app uses the compact JES single-file index produced from the PDF and
-              Markdown source set, not folder scanning at runtime.
+              The JES index is curated into separate group-allocation and level-evidence
+              retrieval documents.
             </p>
-            <p>
-              Matching features combine title, aliases, group definitions, inclusions,
-              factors, subgroups, and normalized tags for semantic and lexical ranking.
-            </p>
+            <NuxtLink
+              to="/benchmarks#workflow"
+              class="inline-flex text-sm font-semibold text-blue-800 underline underline-offset-2"
+            >
+              Read the workflow explanation
+            </NuxtLink>
           </div>
         </div>
       </aside>

@@ -26,6 +26,17 @@ function overlapRatio(queryTokens: string[], docTokens: string[]): number {
   return queryTokens.length ? hits.length / queryTokens.length : 0
 }
 
+function tagTokenHits(queryTokens: string[], tags: string[]): string[] {
+  const querySet = new Set(queryTokens.map((token) => stem(token)))
+
+  return tags
+    .filter((tag) => {
+      const tagTokens = tokenize(tag).map((token) => stem(token))
+      return tagTokens.some((token) => querySet.has(token))
+    })
+    .slice(0, 4)
+}
+
 export function cosineSimilarity(a: number[], b: number[]): number {
   let dot = 0
   let normA = 0
@@ -54,6 +65,7 @@ export function lexicalScore(query: string, doc: SearchDocument): { score: numbe
   const titleOverlap = overlapRatio(queryTokens, titleTokens)
   const bodyOverlap = overlapRatio(queryTokens, textTokens)
   const exactTagHits = doc.tags.filter((tag) => normalize(query).includes(tag.toLowerCase())).slice(0, 3)
+  const partialTagHits = tagTokenHits(queryTokens, doc.tags)
 
   const why = []
 
@@ -67,10 +79,15 @@ export function lexicalScore(query: string, doc: SearchDocument): { score: numbe
 
   if (exactTagHits.length) {
     why.push(`matched tags: ${exactTagHits.join(', ')}`)
+  } else if (partialTagHits.length) {
+    why.push(`related tags: ${partialTagHits.join(', ')}`)
   }
 
   return {
-    score: Math.min(1, titleOverlap * 0.55 + bodyOverlap * 0.35 + exactTagHits.length * 0.05),
+    score: Math.min(
+      1,
+      titleOverlap * 0.62 + bodyOverlap * 0.28 + exactTagHits.length * 0.07 + partialTagHits.length * 0.025,
+    ),
     why,
   }
 }
@@ -86,11 +103,18 @@ export function rankDocuments(
     .map((doc, index) => {
       const semanticScore = cosineSimilarity(queryEmbedding, documentEmbeddings[index] ?? [])
       const lexical = lexicalScore(query, doc)
-      const score = semanticScore * 0.74 + lexical.score * 0.26
+      const score = semanticScore * 0.62 + lexical.score * 0.38
 
       return {
         code: doc.code,
         title: doc.title,
+        selectedGroup: doc.code,
+        selectedLevel: doc.level ?? 'To be confirmed',
+        fullClassification: doc.levelLabel ? `${doc.levelLabel} - ${doc.title}` : `${doc.code} - ${doc.title}`,
+        groupConfidence: score,
+        levelConfidence: doc.kind === 'level' ? score : 0,
+        levelEvidence: doc.evidence ?? 'Group allocation evidence only; level requires JES confirmation.',
+        evidenceLabel: doc.kind === 'level' ? 'JES level profile' : 'JES group allocation',
         score,
         semanticScore,
         lexicalScore: lexical.score,

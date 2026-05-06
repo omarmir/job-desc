@@ -12,6 +12,7 @@ type Entry = {
 type BenchmarkCase = {
   id: string
   target: string
+  expectedLevel?: string
   title: string
   duties: string
   notes: string
@@ -22,6 +23,20 @@ const indexPath = resolve(root, 'resources', 'jes_compact_index.json')
 const outputPath = resolve(root, 'resources', 'benchmark_corpus.json')
 
 const priorityCodes = ['AS', 'PM', 'EC', 'PG', 'PE', 'CT', 'CO', 'EN-ENG', 'EG', 'IS', 'WP', 'CR', 'PO', 'EX', 'FB', 'NU']
+const levelCases: Record<string, string[]> = {
+  PM: ['01', '03', '04', '05'],
+  AS: ['01', '03', '04', '05'],
+  EC: ['02', '04', '05', '06'],
+  CR: ['03', '04', '05', '06'],
+  CO: ['01', '02', '03', '04'],
+  PE: ['01', '02', '03', '04'],
+  PG: ['01', '02', '03', '04'],
+  IT: ['01', '02', '03', '04'],
+  EG: ['02', '03', '04', '05'],
+  'EN-ENG': ['01', '02', '03', '04'],
+  GT: ['02', '03', '04', '05'],
+  FB: ['02', '03', '04', '05'],
+}
 
 function normalize(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
@@ -86,6 +101,10 @@ function makeDutySentence(entry: Entry, tags: string[], variant: number): string
   return variants[variant % variants.length] ?? variants[0] ?? `Supports ${focus} work.`
 }
 
+function expectedLevel(entry: Entry, index: number): string | undefined {
+  return levelCases[entry.c]?.[index]
+}
+
 function buildCasesForEntry(entry: Entry, count: number): BenchmarkCase[] {
   const roleStem = toRoleStem(entry)
   const tags = topTags(entry)
@@ -100,6 +119,7 @@ function buildCasesForEntry(entry: Entry, count: number): BenchmarkCase[] {
   return Array.from({ length: count }, (_, index) => ({
     id: `${entry.c.toLowerCase()}-${String(index + 1).padStart(2, '0')}`,
     target: entry.c,
+    expectedLevel: expectedLevel(entry, index),
     title: titleVariants[index % titleVariants.length] ?? roleStem,
     duties: makeDutySentence(entry, tags, index),
     notes: normalize([entry.t, tags.slice(0, 3).join(', ')].filter(Boolean).join(' | ')),

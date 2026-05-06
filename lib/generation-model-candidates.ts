@@ -6,7 +6,7 @@ export const GENERATION_MODEL_CANDIDATES: GenerationModelCandidate[] = [
     label: 'Gemma 3 270M Edge',
     family: 'Gemma',
     params: '270M',
-    approxDownloadMB: 430,
+    approxDownloadMB: 280,
     dtype: 'q4f16',
     browserSupport: 'webgpu',
     benchmarkEligible: true,
@@ -20,7 +20,7 @@ export const GENERATION_MODEL_CANDIDATES: GenerationModelCandidate[] = [
     label: 'Qwen2.5 0.5B Instruct',
     family: 'Qwen',
     params: '0.5B',
-    approxDownloadMB: 620,
+    approxDownloadMB: 756,
     dtype: 'q4',
     browserSupport: 'webgpu',
     benchmarkEligible: true,
@@ -34,7 +34,7 @@ export const GENERATION_MODEL_CANDIDATES: GenerationModelCandidate[] = [
     label: 'Gemma 3 1B Instruct',
     family: 'Gemma',
     params: '1B',
-    approxDownloadMB: 998,
+    approxDownloadMB: 748,
     dtype: 'q4f16',
     browserSupport: 'webgpu',
     benchmarkEligible: true,
@@ -48,7 +48,7 @@ export const GENERATION_MODEL_CANDIDATES: GenerationModelCandidate[] = [
     label: 'Qwen2.5 1.5B Instruct',
     family: 'Qwen',
     params: '1.5B',
-    approxDownloadMB: 1790,
+    approxDownloadMB: 1712,
     dtype: 'q4',
     browserSupport: 'webgpu',
     benchmarkEligible: true,
@@ -62,7 +62,7 @@ export const GENERATION_MODEL_CANDIDATES: GenerationModelCandidate[] = [
     label: 'Gemma 3n E2B Edge',
     family: 'Gemma',
     params: 'E2B',
-    approxDownloadMB: 1600,
+    approxDownloadMB: 3106,
     dtype: 'q4',
     browserSupport: 'webgpu',
     benchmarkEligible: true,
@@ -73,4 +73,4 @@ export const GENERATION_MODEL_CANDIDATES: GenerationModelCandidate[] = [
   },
 ] as const
 
-export const DEFAULT_GENERATION_MODEL_ID = 'onnx-community/Qwen2.5-0.5B-Instruct'
+export const DEFAULT_GENERATION_MODEL_ID = 'onnx-community/gemma-3-270m-it-ONNX'

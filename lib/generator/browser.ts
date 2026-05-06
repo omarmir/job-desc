@@ -1,14 +1,17 @@
-import { buildJobDescriptionMessages } from '~/lib/job-description-prompt'
+import { buildJobDescriptionSectionMessages } from '~/lib/job-description-prompt'
 import {
-  extractJobDescriptionSections,
-  formatJobDescriptionTemplate,
+  createEmptySections,
+  formatJobDescriptionHtml,
+  JD_SECTION_KEYS,
+  JD_SECTION_LABELS,
+  type JobDescriptionSections,
 } from '~/lib/job-description-template'
 import {
   buildWebGpuRequiredMessage,
   detectBrowserInferenceCapabilities,
 } from '~/lib/browser-capabilities'
 import { GENERATION_MODEL_CANDIDATES } from '~/lib/generation-model-candidates'
-import type { DraftInput, GenerationProgressState } from '~/lib/types'
+import type { DraftInput, DraftSectionKey, GenerationProgressState } from '~/lib/types'
 
 type TransformersModule = typeof import('@huggingface/transformers')
 type TextGenerator = {
@@ -135,6 +138,14 @@ async function ensureGenerator(
     generatorPromise.catch(() => {
       generatorCache.delete(modelId)
     })
+  } else {
+    generatorCache.get(modelId)!.then(() => {
+      applyProgress(progress, {
+        stage: 'ready',
+        label: 'Model ready',
+        percent: 100,
+      })
+    })
   }
 
   return generatorCache.get(modelId)!
@@ -168,38 +179,55 @@ export async function generateJobDescriptionDraft(
   localModelPath: string,
   progress: GenerationProgressState,
   onStream?: (text: string) => void,
+  onSection?: (key: DraftSectionKey, text: string) => void,
 ) {
   const generator = await ensureGenerator(modelId, allowRemoteModels, localModelPath, progress)
   const { TextStreamer } = await ensureTransformers()
-  const messages = buildJobDescriptionMessages(input)
+  const sections: JobDescriptionSections = createEmptySections()
+  const rawParts: string[] = []
 
   applyProgress(progress, {
     stage: 'generating',
-    label: 'Generating draft',
-    percent: 100,
+    label: 'Generating draft sections',
+    percent: 0,
   })
 
-  let streamedText = ''
-  const streamer = new TextStreamer(generator.tokenizer as never, {
-    skip_prompt: true,
-    skip_special_tokens: true,
-    callback_function(text: string) {
-      streamedText += text
-      onStream?.(streamedText)
-    },
-  })
+  for (const [index, sectionKey] of JD_SECTION_KEYS.entries()) {
+    const label = JD_SECTION_LABELS[sectionKey]
+    const messages = buildJobDescriptionSectionMessages(input, sectionKey)
+    let streamedText = ''
 
-  const output = await generator(messages, {
-    max_new_tokens: 420,
-    temperature: 0.2,
-    do_sample: false,
-    repetition_penalty: 1.08,
-    no_repeat_ngram_size: 4,
-    streamer,
-  })
+    applyProgress(progress, {
+      stage: 'generating',
+      label: `Generating ${label}`,
+      percent: Math.round((index / JD_SECTION_KEYS.length) * 100),
+    })
 
-  const rawText = readGeneratedText(output)
-  const sections = extractJobDescriptionSections(rawText || streamedText)
+    const streamer = new TextStreamer(generator.tokenizer as never, {
+      skip_prompt: true,
+      skip_special_tokens: true,
+      callback_function(text: string) {
+        streamedText += text
+        const completedText = rawParts.length ? `${rawParts.join('\n\n')}\n\n` : ''
+        onStream?.(`${completedText}${label}\n${streamedText}`)
+      },
+    })
+
+    const output = await generator(messages, {
+      max_new_tokens: sectionKey === 'key_activities' ? 360 : 220,
+      temperature: 0.2,
+      do_sample: false,
+      repetition_penalty: 1.08,
+      no_repeat_ngram_size: 4,
+      streamer,
+    })
+
+    const text = (readGeneratedText(output) || streamedText).trim() || createEmptySections()[sectionKey]
+    sections[sectionKey] = text
+    rawParts.push(`${label}\n${text}`)
+    onSection?.(sectionKey, text)
+    onStream?.(rawParts.join('\n\n'))
+  }
 
   applyProgress(progress, {
     stage: 'complete',
@@ -208,8 +236,22 @@ export async function generateJobDescriptionDraft(
   })
 
   return {
-    rawText: rawText || streamedText,
-    markdown: formatJobDescriptionTemplate(input, sections),
+    rawText: rawParts.join('\n\n'),
+    html: formatJobDescriptionHtml(input, sections),
     sections,
   }
+}
+
+export async function preloadJobDescriptionGenerator(
+  modelId: string,
+  allowRemoteModels: boolean,
+  localModelPath: string,
+  progress: GenerationProgressState,
+) {
+  await ensureGenerator(modelId, allowRemoteModels, localModelPath, progress)
+  applyProgress(progress, {
+    stage: 'ready',
+    label: 'Model ready',
+    percent: 100,
+  })
 }

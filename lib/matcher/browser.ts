@@ -1,5 +1,5 @@
-import { matchRoleRuntime } from '~/lib/matcher/runtime'
-import type { RankedMatch, SearchDocument } from '~/lib/types'
+import { ensureDocumentEmbeddings, matchRoleRuntime } from '~/lib/matcher/runtime'
+import type { InferenceProgressState, RankedMatch, SearchDocument } from '~/lib/types'
 
 type MatchWorkerResultMessage = {
   type: 'result'
@@ -13,11 +13,27 @@ type MatchWorkerErrorMessage = {
   message: string
 }
 
-type MatchWorkerMessage = MatchWorkerResultMessage | MatchWorkerErrorMessage
+type MatchWorkerProgressMessage = {
+  type: 'progress'
+  requestId: string
+  payload: Partial<InferenceProgressState>
+}
+
+type MatchWorkerReadyMessage = {
+  type: 'ready'
+  requestId: string
+}
+
+type MatchWorkerMessage =
+  | MatchWorkerResultMessage
+  | MatchWorkerErrorMessage
+  | MatchWorkerProgressMessage
+  | MatchWorkerReadyMessage
 
 type PendingRequest = {
-  resolve: (value: { matches: RankedMatch[]; documents: SearchDocument[] }) => void
+  resolve: (value?: any) => void
   reject: (reason?: unknown) => void
+  onProgress?: (progress: Partial<InferenceProgressState>) => void
 }
 
 let workerInstance: Worker | null = null
@@ -41,10 +57,16 @@ function ensureWorker() {
         return
       }
 
-      pendingRequests.delete(message.requestId)
       if (message.type === 'result') {
+        pendingRequests.delete(message.requestId)
         pending.resolve(message.payload)
+      } else if (message.type === 'ready') {
+        pendingRequests.delete(message.requestId)
+        pending.resolve()
+      } else if (message.type === 'progress') {
+        pending.onProgress?.(message.payload)
       } else {
+        pendingRequests.delete(message.requestId)
         pending.reject(new Error(message.message))
       }
     }
@@ -63,6 +85,39 @@ function ensureWorker() {
   return workerInstance
 }
 
+function createRequestId() {
+  return typeof crypto !== 'undefined' && 'randomUUID' in crypto
+    ? crypto.randomUUID()
+    : `${Date.now()}-${Math.random()}`
+}
+
+export async function preloadMatcherModel(
+  modelId: string,
+  allowRemoteModels: boolean,
+  localModelPath: string,
+  onProgress?: (progress: Partial<InferenceProgressState>) => void,
+): Promise<void> {
+  const worker = ensureWorker()
+  if (!worker) {
+    await ensureDocumentEmbeddings(modelId, allowRemoteModels, localModelPath, onProgress)
+    return
+  }
+
+  await new Promise<void>((resolve, reject) => {
+    const requestId = createRequestId()
+    pendingRequests.set(requestId, { resolve, reject, onProgress })
+    worker.postMessage({
+      type: 'preload',
+      requestId,
+      payload: {
+        modelId,
+        allowRemoteModels,
+        localModelPath,
+      },
+    })
+  })
+}
+
 export async function matchRole(
   query: string,
   modelId: string,
@@ -75,11 +130,7 @@ export async function matchRole(
   }
 
   return await new Promise((resolve, reject) => {
-    const requestId =
-      typeof crypto !== 'undefined' && 'randomUUID' in crypto
-        ? crypto.randomUUID()
-        : `${Date.now()}-${Math.random()}`
-
+    const requestId = createRequestId()
     pendingRequests.set(requestId, { resolve, reject })
     worker.postMessage({
       type: 'match',
