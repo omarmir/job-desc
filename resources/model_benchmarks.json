@@ -1,0 +1,37 @@
+{
+  "generated": "2026-05-06",
+  "corpusSize": 300,
+  "selectedModel": "Xenova/bge-small-en-v1.5",
+  "results": [
+    {
+      "id": "Xenova/all-MiniLM-L6-v2",
+      "label": "all-MiniLM-L6-v2",
+      "sizeMB": 24.5,
+      "durationMs": 11079,
+      "top1": 0.8867,
+      "top3": 0.9733,
+      "mrr": 0.9329,
+      "selected": false
+    },
+    {
+      "id": "Xenova/bge-small-en-v1.5",
+      "label": "bge-small-en-v1.5",
+      "sizeMB": 133,
+      "durationMs": 13715,
+      "top1": 0.92,
+      "top3": 0.9933,
+      "mrr": 0.9553,
+      "selected": true
+    },
+    {
+      "id": "mixedbread-ai/mxbai-embed-xsmall-v1",
+      "label": "mxbai-embed-xsmall-v1",
+      "sizeMB": 91,
+      "durationMs": 11029,
+      "top1": 0.88,
+      "top3": 0.9667,
+      "mrr": 0.9252,
+      "selected": false
+    }
+  ]
+}

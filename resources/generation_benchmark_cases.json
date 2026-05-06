@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "as-01",
+    "code": "AS",
+    "title": "Operations Coordinator",
+    "duties": "Coordinates calendars, records, correspondence tracking, travel requests, and briefing logistics for a busy internal directorate.",
+    "context": "Hybrid regional office supporting internal operations.",
+    "expectedKeywords": [
+      "administrative",
+      "coordination",
+      "records",
+      "correspondence",
+      "procedures"
+    ]
+  },
+  {
+    "id": "as-02",
+    "code": "AS",
+    "title": "Administrative Officer",
+    "duties": "Maintains workflow controls, prepares standard reports, and supports office procedures for managers and staff.",
+    "context": "Branch support environment with multiple managers.",
+    "expectedKeywords": [
+      "administrative",
+      "coordination",
+      "records",
+      "correspondence",
+      "procedures"
+    ]
+  },
+  {
+    "id": "as-03",
+    "code": "AS",
+    "title": "Regional Support Advisor",
+    "duties": "Organizes meetings, tracks action items, and manages intake for administrative service requests.",
+    "context": "Hybrid regional office supporting internal operations.",
+    "expectedKeywords": [
+      "administrative",
+      "coordination",
+      "records",
+      "correspondence",
+      "procedures"
+    ]
+  },
+  {
+    "id": "as-04",
+    "code": "AS",
+    "title": "Executive Services Coordinator",
+    "duties": "Supports records, approvals, procurement requests, and routine liaison with internal service teams.",
+    "context": "Branch support environment with multiple managers.",
+    "expectedKeywords": [
+      "administrative",
+      "coordination",
+      "records",
+      "correspondence",
+      "procedures"
+    ]
+  },
+  {
+    "id": "as-05",
+    "code": "AS",
+    "title": "Corporate Services Analyst",
+    "duties": "Provides operational support, file management, and procedural advice to a branch-level office.",
+    "context": "Hybrid regional office supporting internal operations.",
+    "expectedKeywords": [
+      "administrative",
+      "coordination",
+      "records",
+      "correspondence",
+      "procedures"
+    ]
+  },
+  {
+    "id": "cm-01",
+    "code": "CM",
+    "title": "Communications Advisor",
+    "duties": "Drafts web content, speaking points, and media lines for program announcements and service updates.",
+    "context": "Public-facing program communications unit.",
+    "expectedKeywords": [
+      "communications",
+      "messaging",
+      "briefing",
+      "content",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "cm-02",
+    "code": "CM",
+    "title": "Digital Content Officer",
+    "duties": "Coordinates communications products, stakeholder messaging, and plain-language edits across approval cycles.",
+    "context": "Small corporate communications shop with rapid turnaround products.",
+    "expectedKeywords": [
+      "communications",
+      "messaging",
+      "briefing",
+      "content",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "cm-03",
+    "code": "CM",
+    "title": "Media Relations Analyst",
+    "duties": "Develops outreach materials, briefing content, and internal messaging for senior management.",
+    "context": "Public-facing program communications unit.",
+    "expectedKeywords": [
+      "communications",
+      "messaging",
+      "briefing",
+      "content",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "cm-04",
+    "code": "CM",
+    "title": "Public Affairs Coordinator",
+    "duties": "Supports media monitoring, issue notes, and publication planning for public-facing information.",
+    "context": "Small corporate communications shop with rapid turnaround products.",
+    "expectedKeywords": [
+      "communications",
+      "messaging",
+      "briefing",
+      "content",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "cm-05",
+    "code": "CM",
+    "title": "Web Communications Strategist",
+    "duties": "Advises on product tone, accessibility, and consistent messaging across digital channels.",
+    "context": "Public-facing program communications unit.",
+    "expectedKeywords": [
+      "communications",
+      "messaging",
+      "briefing",
+      "content",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "co-01",
+    "code": "CO",
+    "title": "Commercial Officer",
+    "duties": "Analyzes market conditions, engages industry contacts, and develops advice on commercial opportunities and risks.",
+    "context": "Commercial policy and outreach environment.",
+    "expectedKeywords": [
+      "commercial",
+      "market",
+      "industry",
+      "advice",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "co-02",
+    "code": "CO",
+    "title": "Market Access Advisor",
+    "duties": "Supports trade-related files, business outreach, and briefing material for management decisions.",
+    "context": "Industry-facing program with advisory and liaison duties.",
+    "expectedKeywords": [
+      "commercial",
+      "market",
+      "industry",
+      "advice",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "co-03",
+    "code": "CO",
+    "title": "Trade Compliance Analyst",
+    "duties": "Reviews sector trends, liaises with firms, and recommends approaches to commercial issues.",
+    "context": "Commercial policy and outreach environment.",
+    "expectedKeywords": [
+      "commercial",
+      "market",
+      "industry",
+      "advice",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "co-04",
+    "code": "CO",
+    "title": "Business Development Officer",
+    "duties": "Coordinates commercial intelligence, client briefings, and issue tracking on business files.",
+    "context": "Industry-facing program with advisory and liaison duties.",
+    "expectedKeywords": [
+      "commercial",
+      "market",
+      "industry",
+      "advice",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "co-05",
+    "code": "CO",
+    "title": "Industry Liaison Officer",
+    "duties": "Provides advice on trade and industry considerations affecting program and business decisions.",
+    "context": "Commercial policy and outreach environment.",
+    "expectedKeywords": [
+      "commercial",
+      "market",
+      "industry",
+      "advice",
+      "stakeholder"
+    ]
+  },
+  {
+    "id": "cr-01",
+    "code": "CR",
+    "title": "Regulatory Clerk",
+    "duties": "Processes client files, validates data, responds to routine enquiries, and maintains accurate records.",
+    "context": "High-volume service processing team.",
+    "expectedKeywords": [
+      "clerical",
+      "processing",
+      "records",
+      "data",
+      "procedures"
+    ]
+  },
+  {
+    "id": "cr-02",
+    "code": "CR",
+    "title": "Program Clerk",
+    "duties": "Screens incoming documents, updates tracking systems, and applies standard procedures to file processing.",
+    "context": "Records and file administration environment.",
+    "expectedKeywords": [
+      "clerical",
+      "processing",
+      "records",
+      "data",
+      "procedures"
+    ]
+  },
+  {
+    "id": "cr-03",
+    "code": "CR",
+    "title": "Client Records Clerk",
+    "duties": "Provides front-line clerical support, file control, and basic information to clients and staff.",
+    "context": "High-volume service processing team.",
+    "expectedKeywords": [
+      "clerical",
+      "processing",
+      "records",
+      "data",
+      "procedures"
+    ]
+  },
+  {
+    "id": "cr-04",
+    "code": "CR",
+    "title": "Processing Clerk",
+    "duties": "Performs data entry, document verification, and records maintenance under established procedures.",
+    "context": "Records and file administration environment.",
+    "expectedKeywords": [
+      "clerical",
+      "processing",
+      "records",
+      "data",
+      "procedures"
+    ]
+  },
+  {
+    "id": "cr-05",
+    "code": "CR",
+    "title": "Administrative Clerk",
+    "duties": "Handles routine transactions, correspondence, and information requests with close attention to accuracy.",
+    "context": "High-volume service processing team.",
+    "expectedKeywords": [
+      "clerical",
+      "processing",
+      "records",
+      "data",
+      "procedures"
+    ]
+  },
+  {
+    "id": "ct-01",
+    "code": "CT",
+    "title": "Financial Management Advisor",
+    "duties": "Provides financial management advice, monitors forecasts, and supports internal control practices.",
+    "context": "Corporate finance and planning team.",
+    "expectedKeywords": [
+      "financial",
+      "controls",
+      "budget",
+      "reporting",
+      "stewardship"
+    ]
+  },
+  {
+    "id": "ct-02",
+    "code": "CT",
+    "title": "Internal Controls Analyst",
+    "duties": "Analyzes spending trends, prepares variance reports, and advises managers on stewardship requirements.",
+    "context": "Comptrollership environment supporting several cost centres.",
+    "expectedKeywords": [
+      "financial",
+      "controls",
+      "budget",
+      "reporting",
+      "stewardship"
+    ]
+  },
+  {
+    "id": "ct-03",
+    "code": "CT",
+    "title": "Resource Management Officer",
+    "duties": "Coordinates budgeting inputs, challenge functions, and financial reporting for a branch.",
+    "context": "Corporate finance and planning team.",
+    "expectedKeywords": [
+      "financial",
+      "controls",
+      "budget",
+      "reporting",
+      "stewardship"
+    ]
+  },
+  {
+    "id": "ct-04",
+    "code": "CT",
+    "title": "Comptrollership Advisor",
+    "duties": "Supports governance, control assessments, and documentation for finance and resource management.",
+    "context": "Comptrollership environment supporting several cost centres.",
+    "expectedKeywords": [
+      "financial",
+      "controls",
+      "budget",
+      "reporting",
+      "stewardship"
+    ]
+  },
+  {
+    "id": "ct-05",
+    "code": "CT",
+    "title": "Finance Governance Analyst",
+    "duties": "Advises on financial policies, risk controls, and compliance with departmental requirements.",
+    "context": "Corporate finance and planning team.",
+    "expectedKeywords": [
+      "financial",
+      "controls",
+      "budget",
+      "reporting",
+      "stewardship"
+    ]
+  },
+  {
+    "id": "ec-01",
+    "code": "EC",
+    "title": "Economic Analyst",
+    "duties": "Conducts policy analysis, synthesizes evidence, and prepares briefing notes on economic and social issues.",
+    "context": "Central policy unit with briefing-driven work.",
+    "expectedKeywords": [
+      "policy",
+      "analysis",
+      "research",
+      "briefing",
+      "evidence"
+    ]
+  },
+  {
+    "id": "ec-02",
+    "code": "EC",
+    "title": "Policy Analyst",
+    "duties": "Reviews legislation and program data, develops options, and advises management on policy implications.",
+    "context": "Research and strategic analysis team supporting program design.",
+    "expectedKeywords": [
+      "policy",
+      "analysis",
+      "research",
+      "briefing",
+      "evidence"
+    ]
+  },
+  {
+    "id": "ec-03",
+    "code": "EC",
+    "title": "Socio-Economic Research Officer",
+    "duties": "Leads research, environmental scanning, and recommendations related to public policy questions.",
+    "context": "Central policy unit with briefing-driven work.",
+    "expectedKeywords": [
+      "policy",
+      "analysis",
+      "research",
+      "briefing",
+      "evidence"
+    ]
+  },
+  {
+    "id": "ec-04",
+    "code": "EC",
+    "title": "Program Policy Advisor",
+    "duties": "Assesses trends, drafts memoranda, and supports strategic policy development and reporting.",
+    "context": "Research and strategic analysis team supporting program design.",
+    "expectedKeywords": [
+      "policy",
+      "analysis",
+      "research",
+      "briefing",
+      "evidence"
+    ]
+  },
+  {
+    "id": "ec-05",
+    "code": "EC",
+    "title": "Research Economist",
+    "duties": "Builds analysis products, stakeholder summaries, and evidence-based advice for decision-makers.",
+    "context": "Central policy unit with briefing-driven work.",
+    "expectedKeywords": [
+      "policy",
+      "analysis",
+      "research",
+      "briefing",
+      "evidence"
+    ]
+  },
+  {
+    "id": "eg-01",
+    "code": "EG",
+    "title": "Engineering Technologist",
+    "duties": "Supports engineering operations, technical reviews, and project coordination for infrastructure assets.",
+    "context": "Technical operations environment with field coordination.",
+    "expectedKeywords": [
+      "technical",
+      "engineering",
+      "project",
+      "documentation",
+      "operations"
+    ]
+  },
+  {
+    "id": "eg-02",
+    "code": "EG",
+    "title": "Technical Project Officer",
+    "duties": "Conducts site-related analysis, prepares technical documentation, and monitors operational requirements.",
+    "context": "Applied engineering support team.",
+    "expectedKeywords": [
+      "technical",
+      "engineering",
+      "project",
+      "documentation",
+      "operations"
+    ]
+  },
+  {
+    "id": "eg-03",
+    "code": "EG",
+    "title": "Field Engineering Advisor",
+    "duties": "Provides applied technical advice, inspection support, and engineering records management.",
+    "context": "Technical operations environment with field coordination.",
+    "expectedKeywords": [
+      "technical",
+      "engineering",
+      "project",
+      "documentation",
+      "operations"
+    ]
+  },
+  {
+    "id": "eg-04",
+    "code": "EG",
+    "title": "Infrastructure Support Officer",
+    "duties": "Coordinates technical services, maintenance planning, and issue resolution for assets and systems.",
+    "context": "Applied engineering support team.",
+    "expectedKeywords": [
+      "technical",
+      "engineering",
+      "project",
+      "documentation",
+      "operations"
+    ]
+  },
+  {
+    "id": "eg-05",
+    "code": "EG",
+    "title": "Engineering Operations Coordinator",
+    "duties": "Assists engineers by gathering data, reviewing specifications, and tracking project deliverables.",
+    "context": "Technical operations environment with field coordination.",
+    "expectedKeywords": [
+      "technical",
+      "engineering",
+      "project",
+      "documentation",
+      "operations"
+    ]
+  },
+  {
+    "id": "en-eng-01",
+    "code": "EN-ENG",
+    "title": "Civil Engineer",
+    "duties": "Designs or reviews engineering solutions, assesses technical risks, and provides professional recommendations.",
+    "context": "Professional engineering unit with project responsibilities.",
+    "expectedKeywords": [
+      "engineering",
+      "design",
+      "technical",
+      "project",
+      "standards"
+    ]
+  },
+  {
+    "id": "en-eng-02",
+    "code": "EN-ENG",
+    "title": "Mechanical Engineer",
+    "duties": "Plans engineering work, analyzes specifications, and supports project delivery and compliance.",
+    "context": "Infrastructure design and oversight function.",
+    "expectedKeywords": [
+      "engineering",
+      "design",
+      "technical",
+      "project",
+      "standards"
+    ]
+  },
+  {
+    "id": "en-eng-03",
+    "code": "EN-ENG",
+    "title": "Project Engineer",
+    "duties": "Prepares technical advice, reviews designs, and coordinates engineering aspects of infrastructure work.",
+    "context": "Professional engineering unit with project responsibilities.",
+    "expectedKeywords": [
+      "engineering",
+      "design",
+      "technical",
+      "project",
+      "standards"
+    ]
+  },
+  {
+    "id": "en-eng-04",
+    "code": "EN-ENG",
+    "title": "Structural Engineer",
+    "duties": "Leads engineering assessments, contract inputs, and quality review of technical deliverables.",
+    "context": "Infrastructure design and oversight function.",
+    "expectedKeywords": [
+      "engineering",
+      "design",
+      "technical",
+      "project",
+      "standards"
+    ]
+  },
+  {
+    "id": "en-eng-05",
+    "code": "EN-ENG",
+    "title": "Engineering Advisor",
+    "duties": "Applies engineering judgment to planning, standards, and project implementation issues.",
+    "context": "Professional engineering unit with project responsibilities.",
+    "expectedKeywords": [
+      "engineering",
+      "design",
+      "technical",
+      "project",
+      "standards"
+    ]
+  },
+  {
+    "id": "ex-01",
+    "code": "EX",
+    "title": "Director",
+    "duties": "Leads a directorate, sets priorities, manages resources, and is accountable for results and stakeholder relationships.",
+    "context": "Executive leadership role with delegated management responsibilities.",
+    "expectedKeywords": [
+      "leadership",
+      "strategic",
+      "resources",
+      "oversight",
+      "accountability"
+    ]
+  },
+  {
+    "id": "ex-02",
+    "code": "EX",
+    "title": "Executive Director",
+    "duties": "Directs program delivery, risk management, and strategic planning across a broad mandate.",
+    "context": "Branch-level oversight with strategic and operational accountability.",
+    "expectedKeywords": [
+      "leadership",
+      "strategic",
+      "resources",
+      "oversight",
+      "accountability"
+    ]
+  },
+  {
+    "id": "ex-03",
+    "code": "EX",
+    "title": "Regional Director",
+    "duties": "Provides executive leadership, oversight, and decision support for complex operational and policy files.",
+    "context": "Executive leadership role with delegated management responsibilities.",
+    "expectedKeywords": [
+      "leadership",
+      "strategic",
+      "resources",
+      "oversight",
+      "accountability"
+    ]
+  },
+  {
+    "id": "ex-04",
+    "code": "EX",
+    "title": "Director General Office Lead",
+    "duties": "Allocates budgets, guides managers, and ensures organizational performance and accountability.",
+    "context": "Branch-level oversight with strategic and operational accountability.",
+    "expectedKeywords": [
+      "leadership",
+      "strategic",
+      "resources",
+      "oversight",
+      "accountability"
+    ]
+  },
+  {
+    "id": "ex-05",
+    "code": "EX",
+    "title": "Branch Director",
+    "duties": "Represents the organization with senior stakeholders and steers strategic initiatives and governance.",
+    "context": "Executive leadership role with delegated management responsibilities.",
+    "expectedKeywords": [
+      "leadership",
+      "strategic",
+      "resources",
+      "oversight",
+      "accountability"
+    ]
+  },
+  {
+    "id": "fb-01",
+    "code": "FB",
+    "title": "Border Services Officer",
+    "duties": "Applies border legislation, conducts examinations, and resolves compliance issues involving travellers or goods.",
+    "context": "Operational border services environment.",
+    "expectedKeywords": [
+      "border",
+      "enforcement",
+      "compliance",
+      "inspection",
+      "legislation"
+    ]
+  },
+  {
+    "id": "fb-02",
+    "code": "FB",
+    "title": "Border Intelligence Advisor",
+    "duties": "Supports enforcement operations, intelligence sharing, and case documentation for border programs.",
+    "context": "Front-line compliance and enforcement setting.",
+    "expectedKeywords": [
+      "border",
+      "enforcement",
+      "compliance",
+      "inspection",
+      "legislation"
+    ]
+  },
+  {
+    "id": "fb-03",
+    "code": "FB",
+    "title": "Enforcement Programs Officer",
+    "duties": "Monitors compliance, prepares enforcement records, and liaises with operational partners.",
+    "context": "Operational border services environment.",
+    "expectedKeywords": [
+      "border",
+      "enforcement",
+      "compliance",
+      "inspection",
+      "legislation"
+    ]
+  },
+  {
+    "id": "fb-04",
+    "code": "FB",
+    "title": "Port Operations Supervisor",
+    "duties": "Provides front-line border program delivery, inspection activity, and incident reporting.",
+    "context": "Front-line compliance and enforcement setting.",
+    "expectedKeywords": [
+      "border",
+      "enforcement",
+      "compliance",
+      "inspection",
+      "legislation"
+    ]
+  },
+  {
+    "id": "fb-05",
+    "code": "FB",
+    "title": "Traveller Operations Officer",
+    "duties": "Coordinates operational responses and applies procedures related to border service enforcement.",
+    "context": "Operational border services environment.",
+    "expectedKeywords": [
+      "border",
+      "enforcement",
+      "compliance",
+      "inspection",
+      "legislation"
+    ]
+  },
+  {
+    "id": "hr-01",
+    "code": "HR",
+    "title": "Historical Research Officer",
+    "duties": "Conducts historical research, analyzes archival sources, and prepares interpretive products and advice.",
+    "context": "Research-based heritage program.",
+    "expectedKeywords": [
+      "historical",
+      "research",
+      "archival",
+      "analysis",
+      "interpretation"
+    ]
+  },
+  {
+    "id": "hr-02",
+    "code": "HR",
+    "title": "Research Historian",
+    "duties": "Assesses documentary evidence, writes historical summaries, and supports research-based program work.",
+    "context": "Historical analysis team supporting publications and interpretation.",
+    "expectedKeywords": [
+      "historical",
+      "research",
+      "archival",
+      "analysis",
+      "interpretation"
+    ]
+  },
+  {
+    "id": "hr-03",
+    "code": "HR",
+    "title": "Archival Interpretation Advisor",
+    "duties": "Develops research findings, contextual analysis, and briefing material on historical subjects.",
+    "context": "Research-based heritage program.",
+    "expectedKeywords": [
+      "historical",
+      "research",
+      "archival",
+      "analysis",
+      "interpretation"
+    ]
+  },
+  {
+    "id": "hr-04",
+    "code": "HR",
+    "title": "Collections Research Analyst",
+    "duties": "Advises on sources, interpretation, and historical accuracy for publications and projects.",
+    "context": "Historical analysis team supporting publications and interpretation.",
+    "expectedKeywords": [
+      "historical",
+      "research",
+      "archival",
+      "analysis",
+      "interpretation"
+    ]
+  },
+  {
+    "id": "hr-05",
+    "code": "HR",
+    "title": "Historical Programs Officer",
+    "duties": "Coordinates historical files, knowledge products, and stakeholder responses grounded in archival evidence.",
+    "context": "Research-based heritage program.",
+    "expectedKeywords": [
+      "historical",
+      "research",
+      "archival",
+      "analysis",
+      "interpretation"
+    ]
+  },
+  {
+    "id": "is-01",
+    "code": "IS",
+    "title": "Information Services Advisor",
+    "duties": "Manages information resources, prepares access products, and advises on publishing or information services processes.",
+    "context": "Information management and publishing function.",
+    "expectedKeywords": [
+      "information",
+      "records",
+      "access",
+      "publishing",
+      "metadata"
+    ]
+  },
+  {
+    "id": "is-02",
+    "code": "IS",
+    "title": "Publishing Officer",
+    "duties": "Supports document lifecycle controls, client access needs, and information management guidance.",
+    "context": "Knowledge and records service environment.",
+    "expectedKeywords": [
+      "information",
+      "records",
+      "access",
+      "publishing",
+      "metadata"
+    ]
+  },
+  {
+    "id": "is-03",
+    "code": "IS",
+    "title": "Access to Information Analyst",
+    "duties": "Coordinates records discovery, retrieval, and publication or disclosure workflows.",
+    "context": "Information management and publishing function.",
+    "expectedKeywords": [
+      "information",
+      "records",
+      "access",
+      "publishing",
+      "metadata"
+    ]
+  },
+  {
+    "id": "is-04",
+    "code": "IS",
+    "title": "Knowledge Management Officer",
+    "duties": "Provides information services advice, metadata support, and document handling procedures.",
+    "context": "Knowledge and records service environment.",
+    "expectedKeywords": [
+      "information",
+      "records",
+      "access",
+      "publishing",
+      "metadata"
+    ]
+  },
+  {
+    "id": "is-05",
+    "code": "IS",
+    "title": "Library and Information Specialist",
+    "duties": "Analyzes requests, organizes information assets, and supports service delivery for information products.",
+    "context": "Information management and publishing function.",
+    "expectedKeywords": [
+      "information",
+      "records",
+      "access",
+      "publishing",
+      "metadata"
+    ]
+  },
+  {
+    "id": "it-01",
+    "code": "IT",
+    "title": "IT Analyst",
+    "duties": "Analyzes technical requirements, supports systems, and provides advice on applications, infrastructure, or cyber service delivery.",
+    "context": "Enterprise IT service delivery team.",
+    "expectedKeywords": [
+      "technology",
+      "systems",
+      "technical",
+      "service",
+      "analysis"
+    ]
+  },
+  {
+    "id": "it-02",
+    "code": "IT",
+    "title": "Business Systems Analyst",
+    "duties": "Coordinates incident resolution, system changes, and documentation for information technology services.",
+    "context": "Applications and infrastructure support environment.",
+    "expectedKeywords": [
+      "technology",
+      "systems",
+      "technical",
+      "service",
+      "analysis"
+    ]
+  },
+  {
+    "id": "it-03",
+    "code": "IT",
+    "title": "Applications Support Advisor",
+    "duties": "Assesses client needs, translates them into technical options, and supports implementation planning.",
+    "context": "Enterprise IT service delivery team.",
+    "expectedKeywords": [
+      "technology",
+      "systems",
+      "technical",
+      "service",
+      "analysis"
+    ]
+  },
+  {
+    "id": "it-04",
+    "code": "IT",
+    "title": "Cyber Operations Officer",
+    "duties": "Supports platform operations, user issues, and service improvement for digital systems.",
+    "context": "Applications and infrastructure support environment.",
+    "expectedKeywords": [
+      "technology",
+      "systems",
+      "technical",
+      "service",
+      "analysis"
+    ]
+  },
+  {
+    "id": "it-05",
+    "code": "IT",
+    "title": "Technical Services Lead",
+    "duties": "Produces technical analysis, testing inputs, and lifecycle documentation for IT solutions.",
+    "context": "Enterprise IT service delivery team.",
+    "expectedKeywords": [
+      "technology",
+      "systems",
+      "technical",
+      "service",
+      "analysis"
+    ]
+  },
+  {
+    "id": "pe-01",
+    "code": "PE",
+    "title": "Human Resources Advisor",
+    "duties": "Provides human resources advice on staffing, classification, policy interpretation, and people management practices.",
+    "context": "Corporate HR advisory team.",
+    "expectedKeywords": [
+      "human resources",
+      "staffing",
+      "classification",
+      "advice",
+      "policy"
+    ]
+  },
+  {
+    "id": "pe-02",
+    "code": "PE",
+    "title": "Classification Advisor",
+    "duties": "Analyzes HR issues, develops options, and supports managers on staffing and labour matters.",
+    "context": "People management services environment.",
+    "expectedKeywords": [
+      "human resources",
+      "staffing",
+      "classification",
+      "advice",
+      "policy"
+    ]
+  },
+  {
+    "id": "pe-03",
+    "code": "PE",
+    "title": "Staffing Officer",
+    "duties": "Coordinates HR service delivery, case management, and documentation for management clients.",
+    "context": "Corporate HR advisory team.",
+    "expectedKeywords": [
+      "human resources",
+      "staffing",
+      "classification",
+      "advice",
+      "policy"
+    ]
+  },
+  {
+    "id": "pe-04",
+    "code": "PE",
+    "title": "Labour Relations Advisor",
+    "duties": "Supports classification or staffing files, guidance products, and issue resolution.",
+    "context": "People management services environment.",
+    "expectedKeywords": [
+      "human resources",
+      "staffing",
+      "classification",
+      "advice",
+      "policy"
+    ]
+  },
+  {
+    "id": "pe-05",
+    "code": "PE",
+    "title": "HR Policy Analyst",
+    "duties": "Advises on workforce policies, processes, and compliance requirements affecting managers and employees.",
+    "context": "Corporate HR advisory team.",
+    "expectedKeywords": [
+      "human resources",
+      "staffing",
+      "classification",
+      "advice",
+      "policy"
+    ]
+  },
+  {
+    "id": "pg-01",
+    "code": "PG",
+    "title": "Procurement Officer",
+    "duties": "Manages procurement or contracting files, provides advice on supply processes, and supports vendor interactions.",
+    "context": "Procurement and materiel management unit.",
+    "expectedKeywords": [
+      "procurement",
+      "contracting",
+      "supply",
+      "materiel",
+      "compliance"
+    ]
+  },
+  {
+    "id": "pg-02",
+    "code": "PG",
+    "title": "Supply Advisor",
+    "duties": "Prepares solicitation documents, evaluates procurement requirements, and tracks contracts and materiel.",
+    "context": "Internal acquisition services environment.",
+    "expectedKeywords": [
+      "procurement",
+      "contracting",
+      "supply",
+      "materiel",
+      "compliance"
+    ]
+  },
+  {
+    "id": "pg-03",
+    "code": "PG",
+    "title": "Contracting Specialist",
+    "duties": "Advises clients on procurement options, policy compliance, and acquisition planning.",
+    "context": "Procurement and materiel management unit.",
+    "expectedKeywords": [
+      "procurement",
+      "contracting",
+      "supply",
+      "materiel",
+      "compliance"
+    ]
+  },
+  {
+    "id": "pg-04",
+    "code": "PG",
+    "title": "Materiel Management Officer",
+    "duties": "Coordinates purchasing transactions, documentation, and contract administration activities.",
+    "context": "Internal acquisition services environment.",
+    "expectedKeywords": [
+      "procurement",
+      "contracting",
+      "supply",
+      "materiel",
+      "compliance"
+    ]
+  },
+  {
+    "id": "pg-05",
+    "code": "PG",
+    "title": "Purchasing Analyst",
+    "duties": "Supports materiel planning, inventory controls, and procurement reporting for operational needs.",
+    "context": "Procurement and materiel management unit.",
+    "expectedKeywords": [
+      "procurement",
+      "contracting",
+      "supply",
+      "materiel",
+      "compliance"
+    ]
+  },
+  {
+    "id": "pm-01",
+    "code": "PM",
+    "title": "Program Officer",
+    "duties": "Delivers program operations, interprets procedures, and coordinates service or benefit files with clients and partners.",
+    "context": "Operational program delivery team.",
+    "expectedKeywords": [
+      "program",
+      "delivery",
+      "operations",
+      "clients",
+      "procedures"
+    ]
+  },
+  {
+    "id": "pm-02",
+    "code": "PM",
+    "title": "Service Delivery Officer",
+    "duties": "Supports program implementation, case review, and operational reporting under established frameworks.",
+    "context": "Regional service delivery environment with client-facing work.",
+    "expectedKeywords": [
+      "program",
+      "delivery",
+      "operations",
+      "clients",
+      "procedures"
+    ]
+  },
+  {
+    "id": "pm-03",
+    "code": "PM",
+    "title": "Operations Program Advisor",
+    "duties": "Analyzes program issues, prepares recommendations, and coordinates delivery activities.",
+    "context": "Operational program delivery team.",
+    "expectedKeywords": [
+      "program",
+      "delivery",
+      "operations",
+      "clients",
+      "procedures"
+    ]
+  },
+  {
+    "id": "pm-04",
+    "code": "PM",
+    "title": "Regional Program Coordinator",
+    "duties": "Monitors service requests, resolves operational problems, and maintains program records.",
+    "context": "Regional service delivery environment with client-facing work.",
+    "expectedKeywords": [
+      "program",
+      "delivery",
+      "operations",
+      "clients",
+      "procedures"
+    ]
+  },
+  {
+    "id": "pm-05",
+    "code": "PM",
+    "title": "Client Programs Analyst",
+    "duties": "Provides advice, file management, and quality control for ongoing program administration.",
+    "context": "Operational program delivery team.",
+    "expectedKeywords": [
+      "program",
+      "delivery",
+      "operations",
+      "clients",
+      "procedures"
+    ]
+  },
+  {
+    "id": "sg-01",
+    "code": "SG",
+    "title": "Regulatory Scientist",
+    "duties": "Evaluates scientific evidence, applies regulatory frameworks, and prepares recommendations on compliance or approvals.",
+    "context": "Scientific regulatory review function.",
+    "expectedKeywords": [
+      "scientific",
+      "regulatory",
+      "assessment",
+      "evidence",
+      "compliance"
+    ]
+  },
+  {
+    "id": "sg-02",
+    "code": "SG",
+    "title": "Scientific Evaluator",
+    "duties": "Analyzes technical submissions, risk information, and standards relevant to scientific regulation.",
+    "context": "Evidence-based compliance and approvals environment.",
+    "expectedKeywords": [
+      "scientific",
+      "regulatory",
+      "assessment",
+      "evidence",
+      "compliance"
+    ]
+  },
+  {
+    "id": "sg-03",
+    "code": "SG",
+    "title": "Compliance Science Advisor",
+    "duties": "Supports reviews, prepares scientific advice, and documents regulatory findings and rationale.",
+    "context": "Scientific regulatory review function.",
+    "expectedKeywords": [
+      "scientific",
+      "regulatory",
+      "assessment",
+      "evidence",
+      "compliance"
+    ]
+  },
+  {
+    "id": "sg-04",
+    "code": "SG",
+    "title": "Assessment Officer",
+    "duties": "Coordinates evidence assessment, stakeholder questions, and regulatory issue tracking.",
+    "context": "Evidence-based compliance and approvals environment.",
+    "expectedKeywords": [
+      "scientific",
+      "regulatory",
+      "assessment",
+      "evidence",
+      "compliance"
+    ]
+  },
+  {
+    "id": "sg-05",
+    "code": "SG",
+    "title": "Scientific Programs Analyst",
+    "duties": "Provides science-based recommendations to support regulatory decisions and ongoing oversight.",
+    "context": "Scientific regulatory review function.",
+    "expectedKeywords": [
+      "scientific",
+      "regulatory",
+      "assessment",
+      "evidence",
+      "compliance"
+    ]
+  },
+  {
+    "id": "wp-01",
+    "code": "WP",
+    "title": "Social Program Officer",
+    "duties": "Plans or delivers welfare-related services, assesses client or community needs, and coordinates interventions or supports.",
+    "context": "Client or community service program environment.",
+    "expectedKeywords": [
+      "social",
+      "services",
+      "community",
+      "clients",
+      "support"
+    ]
+  },
+  {
+    "id": "wp-02",
+    "code": "WP",
+    "title": "Community Services Advisor",
+    "duties": "Advises on social development programs, case approaches, and service coordination for clients or communities.",
+    "context": "Social support and rehabilitation setting.",
+    "expectedKeywords": [
+      "social",
+      "services",
+      "community",
+      "clients",
+      "support"
+    ]
+  },
+  {
+    "id": "wp-03",
+    "code": "WP",
+    "title": "Rehabilitation Case Officer",
+    "duties": "Supports rehabilitation or settlement work, reviews cases, and maintains service partnerships.",
+    "context": "Client or community service program environment.",
+    "expectedKeywords": [
+      "social",
+      "services",
+      "community",
+      "clients",
+      "support"
+    ]
+  },
+  {
+    "id": "wp-04",
+    "code": "WP",
+    "title": "Settlement Support Officer",
+    "duties": "Analyzes social program issues, writes recommendations, and coordinates follow-up with service providers.",
+    "context": "Social support and rehabilitation setting.",
+    "expectedKeywords": [
+      "social",
+      "services",
+      "community",
+      "clients",
+      "support"
+    ]
+  },
+  {
+    "id": "wp-05",
+    "code": "WP",
+    "title": "Welfare Programs Analyst",
+    "duties": "Provides client-centred program support grounded in social development and adjustment needs.",
+    "context": "Client or community service program environment.",
+    "expectedKeywords": [
+      "social",
+      "services",
+      "community",
+      "clients",
+      "support"
+    ]
+  },
+  {
+    "id": "bi-01",
+    "code": "BI",
+    "title": "Biologist",
+    "duties": "Conducts biological analysis, field or lab-based research, and prepares advice on ecological or species issues.",
+    "context": "Applied science and monitoring program.",
+    "expectedKeywords": [
+      "biological",
+      "research",
+      "analysis",
+      "science",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "bi-02",
+    "code": "BI",
+    "title": "Wildlife Research Officer",
+    "duties": "Designs studies, interprets biological data, and produces scientific documentation and recommendations.",
+    "context": "Biological research and advisory environment.",
+    "expectedKeywords": [
+      "biological",
+      "research",
+      "analysis",
+      "science",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "bi-03",
+    "code": "BI",
+    "title": "Ecosystem Assessment Analyst",
+    "duties": "Supports biological monitoring, evidence synthesis, and stakeholder advice on science files.",
+    "context": "Applied science and monitoring program.",
+    "expectedKeywords": [
+      "biological",
+      "research",
+      "analysis",
+      "science",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "bi-04",
+    "code": "BI",
+    "title": "Aquatic Science Advisor",
+    "duties": "Analyzes environmental or species information and contributes to research planning and reporting.",
+    "context": "Biological research and advisory environment.",
+    "expectedKeywords": [
+      "biological",
+      "research",
+      "analysis",
+      "science",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "bi-05",
+    "code": "BI",
+    "title": "Biological Programs Officer",
+    "duties": "Provides science-based recommendations grounded in biological observations, data, and literature.",
+    "context": "Applied science and monitoring program.",
+    "expectedKeywords": [
+      "biological",
+      "research",
+      "analysis",
+      "science",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "ch-01",
+    "code": "CH",
+    "title": "Chemist",
+    "duties": "Performs chemical analysis, interprets results, and prepares technical advice or reports.",
+    "context": "Laboratory and analytical science setting.",
+    "expectedKeywords": [
+      "chemical",
+      "analysis",
+      "laboratory",
+      "technical",
+      "reports"
+    ]
+  },
+  {
+    "id": "ch-02",
+    "code": "CH",
+    "title": "Laboratory Chemist",
+    "duties": "Supports laboratory operations, method documentation, and quality review of chemical work.",
+    "context": "Chemistry-based evaluation program.",
+    "expectedKeywords": [
+      "chemical",
+      "analysis",
+      "laboratory",
+      "technical",
+      "reports"
+    ]
+  },
+  {
+    "id": "ch-03",
+    "code": "CH",
+    "title": "Chemical Evaluation Officer",
+    "duties": "Analyzes samples, evaluates findings, and provides recommendations grounded in chemistry.",
+    "context": "Laboratory and analytical science setting.",
+    "expectedKeywords": [
+      "chemical",
+      "analysis",
+      "laboratory",
+      "technical",
+      "reports"
+    ]
+  },
+  {
+    "id": "ch-04",
+    "code": "CH",
+    "title": "Analytical Science Advisor",
+    "duties": "Coordinates analytical workflows, reporting, and technical records for chemical assessments.",
+    "context": "Chemistry-based evaluation program.",
+    "expectedKeywords": [
+      "chemical",
+      "analysis",
+      "laboratory",
+      "technical",
+      "reports"
+    ]
+  },
+  {
+    "id": "ch-05",
+    "code": "CH",
+    "title": "Chemical Programs Analyst",
+    "duties": "Provides chemistry-based advice, evidence summaries, and documentation for scientific decisions.",
+    "context": "Laboratory and analytical science setting.",
+    "expectedKeywords": [
+      "chemical",
+      "analysis",
+      "laboratory",
+      "technical",
+      "reports"
+    ]
+  }
+]

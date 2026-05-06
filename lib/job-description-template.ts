@@ -1,0 +1,189 @@
+import type { DraftInput } from '~/lib/types'
+
+export const JD_SECTION_KEYS = [
+  'organizational_context',
+  'client_service_results',
+  'key_activities',
+  'skill',
+  'effort',
+  'responsibility',
+  'working_conditions',
+] as const
+
+export type JobDescriptionSectionKey = (typeof JD_SECTION_KEYS)[number]
+
+export type JobDescriptionSections = Record<JobDescriptionSectionKey, string>
+
+export const JD_SECTION_LABELS: Record<JobDescriptionSectionKey, string> = {
+  organizational_context: 'Organizational context',
+  client_service_results: 'Client service results',
+  key_activities: 'Key activities',
+  skill: 'Skill',
+  effort: 'Effort',
+  responsibility: 'Responsibility',
+  working_conditions: 'Working conditions',
+}
+
+const EMPTY_SECTION = 'To be confirmed.'
+
+export function createEmptySections(): JobDescriptionSections {
+  return {
+    organizational_context: EMPTY_SECTION,
+    client_service_results: EMPTY_SECTION,
+    key_activities: '- To be confirmed.',
+    skill: EMPTY_SECTION,
+    effort: EMPTY_SECTION,
+    responsibility: EMPTY_SECTION,
+    working_conditions: EMPTY_SECTION,
+  }
+}
+
+function cleanText(text: string): string {
+  return text
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/\r/g, '')
+    .trim()
+}
+
+function extractSection(body: string, heading: string, nextHeadings: string[]): string | null {
+  const escapedHeading = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const nextPattern = nextHeadings
+    .map((next) => next.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|')
+  const regex = new RegExp(
+    `(?:^|\\n)#{0,3}\\s*${escapedHeading}\\s*\\n([\\s\\S]*?)(?=\\n#{0,3}\\s*(?:${nextPattern})\\s*\\n|$)`,
+    'i',
+  )
+  const match = body.match(regex)
+  return match?.[1]?.trim() || null
+}
+
+function normalizeBullets(text: string): string {
+  const lines = cleanText(text)
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+
+  if (!lines.length) {
+    return '- To be confirmed.'
+  }
+
+  const bullets = lines.map((line) => {
+    if (/^[-*]\s+/.test(line)) return line.replace(/^\*\s+/, '- ')
+    if (/^\d+\.\s+/.test(line)) return `- ${line.replace(/^\d+\.\s+/, '')}`
+    return `- ${line}`
+  })
+
+  return bullets.join('\n')
+}
+
+function normalizeSectionValue(key: JobDescriptionSectionKey, value: string | null): string {
+  if (!value) {
+    return createEmptySections()[key]
+  }
+
+  const cleaned = cleanText(value)
+  if (!cleaned) {
+    return createEmptySections()[key]
+  }
+
+  if (key === 'key_activities') {
+    return normalizeBullets(cleaned)
+  }
+
+  return cleaned
+}
+
+export function extractJobDescriptionSections(rawText: string): JobDescriptionSections {
+  const headings = JD_SECTION_KEYS.map((key) => JD_SECTION_LABELS[key])
+  const sections = createEmptySections()
+
+  JD_SECTION_KEYS.forEach((key, index) => {
+    const heading = headings[index] ?? JD_SECTION_LABELS[key]
+    const nextHeadings = headings.slice(index + 1)
+    sections[key] = normalizeSectionValue(key, extractSection(rawText, heading, nextHeadings))
+  })
+
+  return sections
+}
+
+export function formatJobDescriptionTemplate(input: DraftInput, sections: JobDescriptionSections): string {
+  return [
+    '# Job Description Template',
+    '',
+    '## Part 1: Position information and signatures',
+    '',
+    '| Field | Value |',
+    '| --- | --- |',
+    '| Position number | To be confirmed |',
+    `| Position title | ${input.jobTitle.trim()} |`,
+    `| Position classification | ${input.selectedCode} - ${input.selectedTitle} |`,
+    '| Position Effective date | To be confirmed |',
+    '| Job Code | To be confirmed |',
+    '| National occupational classification | To be confirmed |',
+    '| Department/Agency Name | To be confirmed |',
+    '| Geographic location | To be confirmed |',
+    '| Organizational component (Branch/Division) | To be confirmed |',
+    '| Office code | To be confirmed |',
+    '| Language requirements | To be confirmed |',
+    '| Linguistic profile | To be confirmed |',
+    '| Communications requirements | To be confirmed |',
+    '| Security requirements | To be confirmed |',
+    '| Supervisor position number | To be confirmed |',
+    '| Supervisor position title | To be confirmed |',
+    '| Supervisor classification | To be confirmed |',
+    '',
+    '### Employee statement',
+    '',
+    'I have been given the opportunity to read and comment on the content of this job description.',
+    '',
+    '**Employee name**: To be confirmed',
+    '',
+    '**Employee signature**: To be confirmed',
+    '',
+    '**Date**: To be confirmed',
+    '',
+    '### Supervisor statement',
+    '',
+    'This job description accurately describes the work assigned to this position.',
+    '',
+    '**Supervisor name**: To be confirmed',
+    '',
+    '**Supervisor signature**: To be confirmed',
+    '',
+    '**Date**: To be confirmed',
+    '',
+    '### Manager authorization',
+    '',
+    'This job description accurately describes the work assigned to this position.',
+    '',
+    '**Manager name**: To be confirmed',
+    '',
+    '**Manager signature**: To be confirmed',
+    '',
+    '**Date**: To be confirmed',
+    '',
+    '## Part 2: Job description',
+    '',
+    '### Organizational context',
+    sections.organizational_context,
+    '',
+    '### Client service results',
+    sections.client_service_results,
+    '',
+    '### Key activities',
+    sections.key_activities,
+    '',
+    '### Skill',
+    sections.skill,
+    '',
+    '### Effort',
+    sections.effort,
+    '',
+    '### Responsibility',
+    sections.responsibility,
+    '',
+    '### Working conditions',
+    sections.working_conditions,
+  ].join('\n')
+}

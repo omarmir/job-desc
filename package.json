@@ -1,0 +1,31 @@
+{
+  "name": "job-desc",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "NITRO_NO_UNIX_SOCKET=1 nuxt dev",
+    "postinstall": "bun run scripts/patch-nuxt-vite-builder.ts",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "bench:build-cases": "bun run scripts/build_benchmark_corpus.ts",
+    "bench:models": "bun run scripts/benchmark_models.ts",
+    "bench:build-generation-cases": "bun run scripts/build_generation_benchmark_cases.ts",
+    "bench:generation-models": "bun run scripts/benchmark_generation_models.ts",
+    "bench:generation-chunk": "bun run scripts/benchmark_generation_model_chunk.ts",
+    "bench:generation-merge": "bun run scripts/merge_generation_benchmark_chunks.ts",
+    "bench:generation-models-py": ".venv/bin/python scripts/benchmark_generation_models_py.py"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@nuxt/ui": "^4.7.1",
+    "nuxt": "^4.4.4",
+    "tailwindcss": "^4.2.4"
+  }
+}

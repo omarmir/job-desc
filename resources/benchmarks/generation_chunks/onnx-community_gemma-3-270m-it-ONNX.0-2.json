@@ -1,0 +1,29 @@
+{
+  "generated": "2026-05-06T03:48:37.048Z",
+  "modelId": "onnx-community/gemma-3-270m-it-ONNX",
+  "label": "Gemma 3 270M Edge",
+  "family": "Gemma",
+  "params": "270M",
+  "dtype": "q4f16",
+  "approxDownloadMB": 430,
+  "caseStart": 0,
+  "caseCount": 3,
+  "caseIds": [
+    "as-01",
+    "as-02",
+    "as-03"
+  ],
+  "loadMs": 554,
+  "durations": [
+    14088,
+    13238,
+    13258
+  ],
+  "totalChars": 5492,
+  "groundingSum": 0.5,
+  "coverageSum": 0.6,
+  "completenessSum": 0.375,
+  "promptMode": "compact-proxy",
+  "maxNewTokens": 12,
+  "batchSize": 1
+}
