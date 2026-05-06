@@ -2,7 +2,6 @@
 import benchmarkSummary from '~/resources/model_benchmarks.json'
 import generationBenchmarkReport from '~/resources/generation_model_benchmarks.json'
 import jesIndex from '~/resources/jes_compact_index.json'
-import { GENERATION_MODEL_CANDIDATES } from '~/lib/generation-model-candidates'
 
 useSeoMeta({
   title: 'How It Works and Benchmarks · Job Classification Assistant',
@@ -60,12 +59,23 @@ function formatDuration(value: number) {
   return `${(value / 1000).toFixed(1)} s`
 }
 
-function generationModelNotes(id: string) {
-  return GENERATION_MODEL_CANDIDATES.find((candidate) => candidate.id === id)
-}
-
 function metricLabel(score: number | undefined, benchmarked: boolean) {
   return benchmarkScoreLabel(score ?? 0, benchmarked)
+}
+
+function generationModelBlurb(id: string) {
+  switch (id) {
+    case 'onnx-community/gemma-3-1b-it-ONNX':
+      return 'Best raw rewrite score in the 100-case run. It preserved source material most consistently and kept formatting clean, but it is much slower than the smaller options and still added enough unsupported content that validation remains necessary.'
+    case 'HuggingFaceTB/SmolLM2-360M-Instruct':
+      return 'Best practical default from this run. It landed very close to Gemma 1B while using about half the download size and less than half the CPU generation time, with the strongest balance of conservative wording, usable formatting, and unsupported-claim control.'
+    case 'onnx-community/Qwen2.5-0.5B-Instruct':
+      return 'Strong at carrying source terms forward, but poor for this workflow because formatting almost always failed and unsupported content remained common. It is larger and slower than SmolLM2 without producing a more usable rewrite.'
+    case 'onnx-community/gemma-3-270m-it-ONNX':
+      return 'Fastest and smallest option, but the rewrite quality is not dependable. It kept formatting clean, yet it lost too much grounded content and performed worst at avoiding unsupported additions, so it is mainly useful as a speed baseline.'
+    default:
+      return 'No qualitative benchmark interpretation is available for this model yet.'
+  }
 }
 </script>
 
@@ -125,10 +135,10 @@ function metricLabel(score: number | undefined, benchmarked: boolean) {
           <div class="px-6 py-6 text-sm leading-6 text-slate-700">
             <p class="font-semibold text-slate-950">3. Draft from the selected candidate</p>
             <p class="mt-2">
-              The app first builds a grounded draft from the selected classification and user
-              facts. The generation model can rewrite that grounded text, but a validator rejects
-              rewrites that add unsupported or suspicious content. The browser renders an HTML
-              preview and can fill the Word template for download.
+              The app builds each job description section from deterministic, grounded text first.
+              The selected generation model can then rewrite one section at a time. A validator
+              accepts only conservative rewrites and falls back to the grounded section when the
+              model adds facts, leaks prompt labels, drifts from the source, or breaks formatting.
             </p>
           </div>
         </div>
@@ -271,9 +281,36 @@ function metricLabel(score: number | undefined, benchmarked: boolean) {
         <div class="space-y-5 px-6 py-6 text-sm leading-6 text-slate-700">
           <p>
             The generation benchmark uses {{ generationBenchmarkReport.corpusSize }} handcrafted
-            conservative rewrite cases. Each model is scored for preserving grounded content,
-            avoiding unsupported claims, improving wording, and keeping usable formatting. The app
-            uses the grounded draft as the fallback whenever a model rewrite fails these checks.
+            conservative rewrite cases. Each case starts with the same deterministic draft section
+            built from the selected classification, JES-derived evidence, duties, and user-entered
+            context. The model does not receive permission to invent missing details; it is only
+            asked to make the grounded section read better.
+          </p>
+          <div class="border border-slate-300 bg-slate-50 px-4 py-4">
+            <p class="font-semibold text-slate-950">How Step 2 Uses The Model</p>
+            <ol class="mt-3 grid gap-3 pl-5 text-xs leading-5 text-slate-700 md:grid-cols-4">
+              <li class="list-decimal">
+                The app writes a plain grounded section using known facts and explicit “To be
+                confirmed” placeholders where facts are missing.
+              </li>
+              <li class="list-decimal">
+                The selected local model receives only that section, the selected classification,
+                and the relevant user facts for a conservative rewrite.
+              </li>
+              <li class="list-decimal">
+                The validator checks the rewrite for unsupported claims, prompt/input labels,
+                headings, markdown tables, suspicious entities, and source drift.
+              </li>
+              <li class="list-decimal">
+                The accepted rewrite is shown in the HTML preview. If validation fails, the original
+                grounded section is kept instead.
+              </li>
+            </ol>
+          </div>
+          <p>
+            Scores reflect that production workflow: preserving grounded content, avoiding
+            unsupported claims, improving wording, and keeping usable plain-text formatting. A model
+            can score well only if it improves the draft without becoming the source of new facts.
           </p>
           <p>
             Size is the approximate browser download for the app's selected ONNX dtype and required
@@ -395,7 +432,7 @@ function metricLabel(score: number | undefined, benchmarked: boolean) {
                 </UBadge>
               </div>
               <p class="mt-2">
-                {{ generationModelNotes(result.id)?.rationale || 'No local model note available.' }}
+                {{ generationModelBlurb(result.id) }}
               </p>
               <div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600">
                 <span class="border border-slate-300 bg-white px-2 py-1">
@@ -422,11 +459,12 @@ function metricLabel(score: number | undefined, benchmarked: boolean) {
           <div class="border border-slate-300 bg-slate-50 px-4 py-4 text-xs leading-5 text-slate-700">
             <p class="font-semibold text-slate-950">Current interpretation</p>
             <p class="mt-2">
-              SmolLM2 is the default because it behaved better than Gemma 270M in conservative
-              rewrite smoke tests, not because it can be trusted without checks. Gemma 270M failed
-              by adding unsupported facts and markdown structure. Qwen2.5 0.5B leaked prompt/input
-              labels in a smoke case. The production path therefore treats every model as optional
-              polish over a grounded draft and rejects unsafe rewrites.
+              SmolLM2 remains the selected recommendation because it is close to Gemma 1B on the
+              conservative rewrite score while being materially smaller and faster. Gemma 1B has the
+              strongest raw score in this CPU benchmark. Gemma 270M is fastest but weak on
+              unsupported-claim avoidance, and Qwen2.5 0.5B preserves more source terms but often
+              returns unusable formatting. The production path therefore treats every model as
+              optional polish over a grounded draft and rejects unsafe rewrites.
             </p>
           </div>
         </div>

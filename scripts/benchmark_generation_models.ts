@@ -301,9 +301,7 @@ for (const candidate of benchmarkCandidates) {
     benchmarkNotes:
       candidate.id === 'onnx-community/gemma-3-270m-it-ONNX'
         ? 'Fastest model in the benchmark set, but its smaller context budget shows up in weaker duty coverage.'
-        : candidate.id === 'onnx-community/Qwen2.5-1.5B-Instruct'
-          ? 'Best quality in local runs, with the slowest load and generation times.'
-          : undefined,
+        : undefined,
     selected: false,
   })
 }

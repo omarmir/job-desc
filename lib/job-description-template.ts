@@ -1,4 +1,5 @@
 import type { DraftInput, DraftSectionKey } from '~/lib/types'
+import { getPayScalesForDraft } from '~/lib/pay-scales'
 
 export const JD_SECTION_KEYS = [
   'organizational_context',
@@ -111,6 +112,22 @@ export function extractJobDescriptionSections(rawText: string): JobDescriptionSe
 }
 
 export function formatJobDescriptionTemplate(input: DraftInput, sections: JobDescriptionSections): string {
+  const payScales = getPayScalesForDraft(input)
+  const classification = input.fullClassification || `${input.selectedCode} - ${input.selectedTitle}`
+  const payScaleLines = payScales.length
+    ? payScales.flatMap((payScale) => [
+      `### ${payScale.code} effective ${payScale.effectiveDate}`,
+      '',
+      `Annual salary range: ${payScale.range}`,
+      '',
+      ...payScale.steps.map((step) => `- Step ${step.step}: ${step.amount}`),
+      '',
+    ])
+    : [
+      `No deterministic pay scale was found for ${classification} in the bundled pay data.`,
+      'Confirm the level and applicable collective agreement before use.',
+    ]
+
   return [
     '# Job Description Template',
     '',
@@ -188,6 +205,12 @@ export function formatJobDescriptionTemplate(input: DraftInput, sections: JobDes
     '',
     '### Working conditions',
     sections.working_conditions,
+    '',
+    '## Pay scale',
+    '',
+    `Deterministic lookup from bundled public service pay data for ${classification}.`,
+    '',
+    ...payScaleLines,
   ].join('\n')
 }
 
@@ -247,6 +270,33 @@ function sectionToHtml(key: JobDescriptionSectionKey, text: string): string {
   return lines.map((line) => `<p>${formatInlineHtml(line)}</p>`).join('')
 }
 
+function formatPayScaleHtml(input: DraftInput): string {
+  const payScales = getPayScalesForDraft(input)
+  const classification = input.fullClassification || `${input.selectedCode} - ${input.selectedTitle}`
+
+  if (!payScales.length) {
+    return [
+      '<h2>Pay scale</h2>',
+      `<p>No deterministic pay scale was found for ${escapeHtml(classification)} in the bundled pay data. Confirm the level and applicable collective agreement before use.</p>`,
+    ].join('')
+  }
+
+  return [
+    '<h2>Pay scale</h2>',
+    `<p>Deterministic lookup from bundled public service pay data for ${escapeHtml(classification)}. Use the latest effective agreement shown below and confirm applicability before final staffing or classification use.</p>`,
+    ...payScales.map((payScale) => [
+      `<h3>${escapeHtml(payScale.code)} effective ${escapeHtml(payScale.effectiveDate)}</h3>`,
+      `<p>Annual salary range: ${escapeHtml(payScale.range)}</p>`,
+      '<table>',
+      '<thead><tr><th>Step</th><th>Annual rate</th></tr></thead>',
+      '<tbody>',
+      ...payScale.steps.map((step) => `<tr><td>${escapeHtml(step.step)}</td><td>${escapeHtml(step.amount)}</td></tr>`),
+      '</tbody>',
+      '</table>',
+    ].join('')),
+  ].join('')
+}
+
 export function formatJobDescriptionHtml(input: DraftInput, sections: JobDescriptionSections): string {
   const classification = input.fullClassification || `${input.selectedCode} - ${input.selectedTitle}`
   const infoRows = [
@@ -281,6 +331,7 @@ export function formatJobDescriptionHtml(input: DraftInput, sections: JobDescrip
     ...JD_SECTION_KEYS.map(
       (key) => `<section><h3>${escapeHtml(JD_SECTION_LABELS[key])}</h3>${sectionToHtml(key, sections[key])}</section>`,
     ),
+    formatPayScaleHtml(input),
     '</article>',
   ].join('')
 }

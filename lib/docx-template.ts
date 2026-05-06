@@ -6,6 +6,7 @@ import {
   type JobDescriptionSections,
   type JobDescriptionSectionKey,
 } from '~/lib/job-description-template'
+import { getPayScalesForDraft } from '~/lib/pay-scales'
 
 const WORD_NS = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
 const templateUrl = new URL('../resources/template.docx', import.meta.url).href
@@ -164,6 +165,17 @@ function createParagraph(doc: Document, item: SectionParagraph): Element {
   return paragraph
 }
 
+function createHeadingParagraph(doc: Document, text: string): Element {
+  const paragraph = doc.createElementNS(WORD_NS, 'w:p')
+  const paragraphProperties = createParagraphProperties(doc, false)
+  const paragraphStyle = doc.createElementNS(WORD_NS, 'w:pStyle')
+  paragraphStyle.setAttributeNS(WORD_NS, 'w:val', 'Heading2')
+  paragraphProperties.insertBefore(paragraphStyle, paragraphProperties.firstChild)
+  paragraph.appendChild(paragraphProperties)
+  paragraph.appendChild(createTextRun(doc, text, true))
+  return paragraph
+}
+
 function cleanLine(value: string): string {
   return value
     .replace(/^#{1,6}\s+/, '')
@@ -282,6 +294,48 @@ function fillSections(doc: Document, sections: JobDescriptionSections) {
   }
 }
 
+function appendPayScale(body: Element, input: DraftInput) {
+  const doc = body.ownerDocument
+  const payScales = getPayScalesForDraft(input)
+  const classification = input.fullClassification || `${input.selectedCode} - ${input.selectedTitle}`
+  const paragraphs = [
+    createHeadingParagraph(doc, 'Pay scale'),
+    createParagraph(doc, {
+      text: payScales.length
+        ? `Deterministic lookup from bundled public service pay data for ${classification}. Confirm applicability before final staffing or classification use.`
+        : `No deterministic pay scale was found for ${classification} in the bundled pay data. Confirm the level and applicable collective agreement before use.`,
+      bullet: false,
+    }),
+  ]
+
+  for (const payScale of payScales) {
+    paragraphs.push(
+      createParagraph(doc, {
+        text: `${payScale.code} effective ${payScale.effectiveDate}`,
+        bullet: false,
+      }),
+      createParagraph(doc, {
+        text: `Annual salary range: ${payScale.range}`,
+        bullet: false,
+      }),
+      ...payScale.steps.map((step) =>
+        createParagraph(doc, {
+          text: `Step ${step.step}: ${step.amount}`,
+          bullet: true,
+        }),
+      ),
+    )
+  }
+
+  const sectionProperties = Array.from(body.childNodes).find(
+    (child) => (child as Element).localName === 'sectPr',
+  )
+
+  for (const paragraph of paragraphs) {
+    body.insertBefore(paragraph, sectionProperties ?? null)
+  }
+}
+
 function findHeadingParagraphs(doc: Document) {
   const paragraphs = Array.from(doc.getElementsByTagNameNS(WORD_NS, 'p'))
   return new Map(
@@ -312,6 +366,10 @@ export async function buildJobDescriptionDocx(input: DraftInput, sections: JobDe
   fillTableValue(doc, 'Position Effective date', 'To be confirmed')
   fillTableValue(doc, 'National occupational classification', 'To be confirmed')
   fillSections(doc, sections)
+  const body = doc.getElementsByTagNameNS(WORD_NS, 'body')[0]
+  if (body) {
+    appendPayScale(body, input)
+  }
   removeMarkdownArtifacts(doc)
 
   zip.file('word/document.xml', new XMLSerializer().serializeToString(doc))

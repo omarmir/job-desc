@@ -100,28 +100,6 @@ MODEL_SPECS: list[ModelSpec] = [
         batch_size=4,
         benchmark_notes="Benchmarked with the public Unsloth mirror of the Gemma 3 1B instruct family because the official Google weights are gated on Hugging Face.",
     ),
-    ModelSpec(
-        app_id="onnx-community/Qwen2.5-1.5B-Instruct",
-        label="Qwen2.5 1.5B Instruct",
-        family="Qwen",
-        params="1.5B",
-        dtype="fp16",
-        approx_download_mb=1790,
-        hf_model_id="Qwen/Qwen2.5-1.5B-Instruct",
-        batch_size=3,
-        benchmark_notes="Benchmarked with the official Qwen2.5 1.5B instruct weights.",
-    ),
-    ModelSpec(
-        app_id="onnx-community/gemma-3n-E2B-it-ONNX",
-        label="Gemma 3n E2B Edge",
-        family="Gemma",
-        params="E2B",
-        dtype="bf16",
-        approx_download_mb=1600,
-        hf_model_id="unsloth/gemma-3n-E2B-it",
-        batch_size=1,
-        benchmark_notes="Benchmarked with the public Unsloth mirror of Gemma 3n E2B Instruct because the official Google Hugging Face weights are gated. This benchmark uses the native Transformers checkpoint, while the app serves the ONNX q4 browser variant.",
-    ),
 ]
 
 
@@ -399,7 +377,7 @@ def write_report(results: list[dict[str, Any]]) -> None:
                 selected_id = item["id"]
                 break
     else:
-        selected_id = "onnx-community/Qwen2.5-1.5B-Instruct"
+        selected_id = "HuggingFaceTB/SmolLM2-360M-Instruct"
 
     for item in results:
         item["selected"] = item["id"] == selected_id

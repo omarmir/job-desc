@@ -75,7 +75,12 @@ const chunks = chunkFiles.map((file) => {
 const results: GenerationBenchmarkResult[] = GENERATION_MODEL_CANDIDATES
   .filter((candidate) => candidate.benchmarkEligible)
   .map((candidate) => {
-    const modelChunks = chunks.filter((chunk) => chunk.modelId === candidate.id)
+    const candidateChunks = chunks.filter((chunk) => chunk.modelId === candidate.id)
+    const fullCorpusChunks = candidateChunks.filter((chunk) => {
+      const uniqueCaseIds = new Set(chunk.caseIds)
+      return chunk.caseCount === totalCaseCount && uniqueCaseIds.size === totalCaseCount
+    })
+    const modelChunks = fullCorpusChunks.length ? fullCorpusChunks : candidateChunks
     const caseIds = [...new Set(modelChunks.flatMap((chunk) => chunk.caseIds))]
     const durations = modelChunks.flatMap((chunk) => chunk.durations)
     const totalChars = modelChunks.reduce((sum, chunk) => sum + chunk.totalChars, 0)
