@@ -12,7 +12,7 @@ type ReadonlyRankedMatch = Omit<Readonly<RankedMatch>, 'why' | 'levels'> & {
 }
 
 useSeoMeta({
-  title: 'Job Classification Assistant',
+  title: 'Job Description Assistant',
   description:
     'Static two-step job classification and job description prototype for GitHub Pages using Nuxt, Nuxt UI, and local Transformers.js inference.',
 })

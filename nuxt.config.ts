@@ -30,7 +30,7 @@ export default defineNuxtConfig({
         class: 'light',
         'data-color-mode-forced': 'light',
       },
-      title: 'Job Classification Assistant',
+      title: 'Job Description Assistant',
       meta: [
         {
           name: 'description',
@@ -45,7 +45,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      appName: 'Job Classification Assistant',
+      appName: 'Job Description Assistant',
       selectedModel: 'Xenova/bge-small-en-v1.5',
       generationModel: 'HuggingFaceTB/SmolLM2-360M-Instruct',
       allowRemoteModels: true,

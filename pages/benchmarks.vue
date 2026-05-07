@@ -4,7 +4,7 @@ import generationBenchmarkReport from '~/resources/generation_model_benchmarks.j
 import jesIndex from '~/resources/jes_compact_index.json'
 
 useSeoMeta({
-  title: 'How It Works and Benchmarks · Job Classification Assistant',
+  title: 'How It Works and Benchmarks · Job Description Assistant',
   description:
     'Explanation of the two-step local inference workflow and benchmark reports for classification retrieval and job description generation.',
 })
